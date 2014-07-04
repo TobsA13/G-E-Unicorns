@@ -32,9 +32,7 @@ switch (_item) do
 	case "donuts": {1};
 	case "coffee": {1};
 	case "fuelE": {2};
-	case "fuelE": {2};
-	case "platinu": {5};
-	case "platinp": {3};
+	case "fuelF": {5};
 	case "money": {0};
 	case "pickaxe": {2};
 	case "copperore": {4};
@@ -53,9 +51,5 @@ switch (_item) do
 	case "rock": {6};
 	case "cement": {5};
 	case "goldbar": {12};
-	case "meth_kit": {10};
-	case "sodium_hydroxyde": {5};
-	case "crystal_meth": {4};
-	case "crystal_meth_pure": {4}; 
 	default {1};
 };

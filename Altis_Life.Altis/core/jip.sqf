@@ -1,7 +1,7 @@
 /*
 	File: jip.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	JIP functionality for JIP required things like vehicles.
 */

@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_clothingMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -11,12 +12,13 @@ createDialog "Life_Clothing";
 disableSerialization;
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb","blackwater"] && playerSide != civilian) exitWith {hint "Du must Zivilist sein für diesen Shop!"; closeDialog 0;};
-if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "Du hast kein Rebellentraining!"; closeDialog 0;};
-if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "Du must Polizist sein um den Shop benutzen zu dürfen!"; closeDialog 0;};
-if((_this select 3) == "medic" && !(str(player) in ["medic_1","medic_2","medic_3","medic_4"])) exitWith {hint "Du bist leider kein Arzt!"; closeDialog 0;};
-if((_this select 3) == "adac" && !(str(player) in ["adac_1","adac_2"])) exitWith {hint "Du bist keiner vom ADAC!"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb","kart","blackwater","kopfgeld","inkasso"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
+if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
 if((_this select 3) == "blackwater" && !license_civ_blackwater) exitWith {hint "Du gehörst nicht zu Blackwater Limited & Co.KG!"; closeDialog 0;};
+if((_this select 3) == "kopfgeld" && !license_civ_kopfgeld) exitWith {hint "Du gehörst nicht zur Kopfgeld Firma!"; closeDialog 0;};
+if((_this select 3) == "inkasso" && !license_civ_inkasso) exitWith {hint "Du gehörst nicht zum Inkasso!"; closeDialog 0;};
+if((_this select 3) == "donator" && __GETC__(life_donator) == 0) exitWith {hint "Du bist kein Donator!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -170,24 +172,6 @@ life_clothing_purchase = [-1,-1,-1,-1,-1];
 if(playerSide == west) then
 {
 	[] call life_fnc_saveGear;
-    
-    if(uniform player == "U_B_CombatUniform_mcam_worn")then{
-    player setObjectTextureGlobal [0,"textures\skins\SEK_fertig.jpg"];};
-
-    if(uniform player == "U_Rangemaster")then{
-    player setObjectTextureGlobal [0,"textures\skins\pol.jpg"];};
-};
-
-if(str(player) in ["medic_1","medic_2","medic_3","medic_4"]) then
-{    
-    if(uniform player == "U_I_CombatUniform")then{
-    player setObjectTextureGlobal [0,"textures\skins\saniuniform.jpg"];};
-};
-
-if(str(player) in ["adac_1","adac_2"]) then
-{    
-    if(uniform player == "U_I_CombatUniform")then{
-    player setObjectTextureGlobal [0,"textures\skins\ADAC.jpg"];};
 };
 
 if(playerSide == civilian) then
@@ -195,3 +179,4 @@ if(playerSide == civilian) then
     if(uniform player == "U_B_SpecopsUniform_sgg")then{
     player setObjectTextureGlobal [0,"textures\skins\blackwater.jpg"];};
 };
+

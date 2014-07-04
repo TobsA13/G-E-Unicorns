@@ -4,7 +4,7 @@
 #include "common.hpp"
 #include "shop_items.hpp"
 #include "player_inv.hpp"
-#include "settings.hpp"
+#include "settings.h"
 #include "gang.hpp"
 #include "key_chain.hpp"
 #include "impound.hpp"
@@ -22,5 +22,12 @@
 #include "chop_shop.h"
 #include "pInteraction.h"
 #include "deathScreen.h"
-#include "trunkHouse.hpp"
-#include "house.hpp"
+#include "vehicleShop.h"
+#include "trunkHouse.hpp"		//Hausing
+#include "house.hpp"			//Hausing
+#include "wantedadd2.hpp"		//manuell-zur-wanted-liste-hinzuf
+
+#include "common_EditorWrapper.hpp"   //Marktsystem
+#include "market.hpp"					//Marktsystem
+
+#include "jail_time.hpp"

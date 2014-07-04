@@ -12,5 +12,3 @@ _callerName = [_this,1,"Unknown Player",[""]] call BIS_fnc_param;
 if(isNull _caller) exitWith {}; //Bad data
 
 ["MedicalRequestEmerg",[format["%1 is requesting EMS Revive.",_callerName]]] call BIS_fnc_showNotification;
-player say2D "piepser";
-//[player,"piepser"] call life_fnc_globalSound;

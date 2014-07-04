@@ -9,15 +9,15 @@ private["_vehicle"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 if(isNull _vehicle) exitWith {};
-if(isNil {_vehicle getVariable "siren"}) exitWith {};
+if(isNil {_vehicle getVariable "sirenall"}) exitWith {};
 
 while {true} do
 {
-	if(!(_vehicle getVariable "siren")) exitWith {};
-	if(count (crew (_vehicle)) == 0) then {_vehicle setVariable["siren",false,true]};
+	if(!(_vehicle getVariable "sirenall")) exitWith {};
+	if(count (crew (_vehicle)) == 0) then {_vehicle setVariable["sirenall",false,true]};
 	if(!alive _vehicle) exitWith {};
 	if(isNull _vehicle) exitWith {};
 	_vehicle say3D "SirenLong";
-	sleep 1.38;
-	if(!(_vehicle getVariable "siren")) exitWith {};
+	sleep 1.38; // war 4 min ist jetzt kleiner
+	if(!(_vehicle getVariable "sirenall")) exitWith {};
 };

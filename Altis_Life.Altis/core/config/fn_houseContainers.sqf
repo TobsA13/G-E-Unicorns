@@ -24,9 +24,9 @@ switch (_type) do
 	case "Land_i_House_Big_02_V1_F": {2};
 	case "Land_i_House_Big_02_V2_F": {2};
 	case "Land_i_House_Big_02_V3_F": {2};
-	case "Land_i_Addon_02_V1_F": {0};
-	case "Land_i_Addon_03_V1_F": {0};
-	case "Land_i_Addon_03mid_V1": {0};
-	case "Land_i_Addon_04_V1_F": {0};
+	case "Land_i_Addon_02_V1_F": {1};
+	case "Land_i_Addon_03_V1_F": {1};
+	case "Land_i_Addon_03mid_V1": {1};
+	case "Land_i_Addon_04_V1_F": {1};
 	default {0};
 };

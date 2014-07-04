@@ -43,8 +43,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
 		{
 			_text = "";
 		};
-        
-		        if(playerSide != civilian) then {_price=0};
+		
 		_name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
 		_cars lbAdd format["%1 %2 - Cost: $%3",_name,_text,[_price] call life_fnc_numberText];

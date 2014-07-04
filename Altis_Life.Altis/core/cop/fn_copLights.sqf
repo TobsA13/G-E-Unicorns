@@ -9,7 +9,7 @@
 Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRed"];
 _vehicle = _this select 0;
 if(!(_vehicle isKindOf "Car")) exitWith {};
-if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lights")) exitWith {};
+if(isNil "_vehicle" OR isNull _vehicle) exitWith {};
 
 _lightfleft = "#lightpoint" createVehicle getpos _vehicle; 
 _lightbleft = "#lightpoint" createVehicle getpos _vehicle;  
@@ -26,7 +26,7 @@ _lightfleft setLightAmbient [0.1,0.1,1];
 _lightfleft setLightAttenuation [0.04, 0, 1000, 130]; 
 _lightfleft setLightIntensity 10;
 _lightfleft setLightFlareSize 0.38;
-_lightfleft setLightFlareMaxDistance 150;
+_lightfleft setLightFlareMaxDistance 40;
 _lightfleft setLightUseFlare true;
 _lightfleft setLightDayLight true;
 
@@ -36,7 +36,7 @@ _lightbleft setLightAmbient [0.1,0.1,1];
 _lightbleft setLightAttenuation [0.04, 0, 1000, 130]; 
 _lightbleft setLightIntensity 10;
 _lightbleft setLightFlareSize 0.38;
-_lightbleft setLightFlareMaxDistance 150;
+_lightbleft setLightFlareMaxDistance 40;
 _lightbleft setLightUseFlare true;
 _lightbleft setLightDayLight true;
 
@@ -46,7 +46,7 @@ _lightfright setLightAmbient [0.1,0.1,1];
 _lightfright setLightAttenuation [0.04, 0, 1000, 130]; 
 _lightfright setLightIntensity 10;
 _lightfright setLightFlareSize 0.38;
-_lightfright setLightFlareMaxDistance 150;
+_lightfright setLightFlareMaxDistance 40;
 _lightfright setLightUseFlare true;
 _lightfright setLightDayLight true;
 
@@ -56,7 +56,7 @@ _lightbright setLightAmbient [0.1,0.1,1];
 _lightbright setLightAttenuation [0.04, 0, 1000, 130]; 
 _lightbright setLightIntensity 10;
 _lightbright setLightFlareSize 0.38;
-_lightbright setLightFlareMaxDistance 150;
+_lightbright setLightFlareMaxDistance 40;
 _lightbright setLightUseFlare true;
 _lightbright setLightDayLight true;
 
@@ -99,7 +99,7 @@ switch (typeOf _vehicle) do
 _leftRed = true; 
 while{ (alive _vehicle)} do  
 {  
-	if(!(_vehicle getVariable "lights")) exitWith {};
+	if(!(_vehicle getVariable "lightson")) exitWith {};
 	if(_leftRed) then  
 	{  
 		_leftRed = false;  

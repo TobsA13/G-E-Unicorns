@@ -15,4 +15,10 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
+.pbo
+.bak
+.paa
+.jpg
+.png
+.ogg
 

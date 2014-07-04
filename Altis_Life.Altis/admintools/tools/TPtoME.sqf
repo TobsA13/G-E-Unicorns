@@ -1,7 +1,7 @@
 //AlPMaker
 _max = 10; snext = false; plist = []; pselect5 = "";
-{if ((_x != player) && (getPlayerUID _x != "")) then {plist set [count plist, name _x];};} forEach entities "CAManBase";
-{if ((count crew _x) > 0) then {{if ((_x != player) && (getPlayerUID _x != "")) then {plist set [count plist, name _x];};} forEach crew _x;};} foreach (entities "LandVehicle" + entities "Air" + entities "Ship");
+{if ((_x != player) && (getPlayerUID _x != "")) then {plist set [count plist, _x getVariable["realname",name _x]];};} forEach entities "CAManBase";
+{if ((count crew _x) > 0) then {{if ((_x != player) && (getPlayerUID _x != "")) then {plist set [count plist, _x getVariable["realname",name _x]];};} forEach crew _x;};} foreach (entities "LandVehicle" + entities "Air" + entities "Ship");
 smenu =
 {
 	_pmenu = [["",true]];
@@ -23,7 +23,7 @@ if (pselect5 != "exit") then
 {
 	_name = pselect5;
 	{
-		if(name _x == _name) then
+		if(_x getVariable["realname",name _x] == _name) then
 		{
 			hint format ["Teleporting %1", _name];
 			_x attachTo [vehicle player, [2, 2, 0]];

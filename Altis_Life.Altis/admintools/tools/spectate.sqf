@@ -9,7 +9,7 @@ selecteditem = "";
 if (isNil "spectate") then {spectate = true;} else {spectate = !spectate;};
 if (spectate) then 
 {	 
-	{if (_x != player) then {nlist set [count nlist, name _x];};} forEach playableUnits;
+	{if (_x != player) then {nlist set [count nlist, _x getVariable["realname",name _x]];};} forEach playableUnits;
 		
 	shnmenu = 
 	{
@@ -33,7 +33,7 @@ if (spectate) then
 	{
 		_name = selecteditem;
 		{
-			if(format[name _x] == _name) then 
+			if(format[_x getVariable["realname",name _x]] == _name) then 
 			{
 				
 				F3_EH = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == 0x3D) then {spectate = false;};"];	

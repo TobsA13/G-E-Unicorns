@@ -32,9 +32,8 @@ with missionnamespace do {
 	//--- Send to server
 	if(isServer && isDedicated) then {
 		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
-		systemChat "SERVER";
 	} else {
-		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,name player,getPlayerUID player];
+		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,player getVariable["realname",name player],getPlayerUID player];
 	};
 	publicvariableserver "life_fnc_MP_packet";
 

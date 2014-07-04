@@ -13,11 +13,9 @@ _item = [_this,2,"",[""]] call BIS_fnc_param;
 _house = nearestObject [position player, "House_F"];
 _owner = _container getVariable ["owner", ""];
 
-if(_owner == "") exitWith {
-	_handle = [] spawn life_fnc_sessionUpdate;
-};
+if(_owner == "") exitWith {};
 // quick'n dirty
-if(_owner != getPlayerUID _unit && side _unit != west) exitWith {
+if((_house getVariable["storage_locked", 1]) == 0 && side _unit != west && typeOf _container in ["B_supplyCrate_F","Land_Box_AmmoOld_F"]) exitWith {
 	
 	private ["_mags", "_weapons", "_items", "_backpack"];
 	_weapons = weapons _unit;
@@ -46,36 +44,31 @@ if(_owner != getPlayerUID _unit && side _unit != west) exitWith {
 		_container addBackpackCargoGlobal [_item, 1];
 	};
 	
-	removeAllWeapons player;
+/*	
+    removeAllWeapons player;
 	removeAllItems player;
 	removeBackpack _unit;
 	removeVest _unit;
+*/
 	
-	hint "You are not allowed to take stuff from this ammobox! You have lost all items!";
+    hint "Diese Kiste ist Verschlossen! Du kannst sie nicht öffnen!";
 	disableSerialization;
 	_gearDisplay = displayNull;
 	waitUntil {
 		_gearDisplay = findDisplay 602;
 		!isNull _gearDisplay;
 	};
-	//waitUntil {!(isNull (findDisplay 602))};
 	_gearDisplay closeDisplay 0;
-	_handle = [] spawn life_fnc_sessionUpdate;
+	//_handle = [] spawn SOCK_fnc_updateGear;
 };
 
-if(typeOf _container == "B_supplyCrate_F") then {
+if(typeOf _container in ["B_supplyCrate_F","Land_Box_AmmoOld_F"]) then {
 	
 	_wc = getWeaponCargo _container;
 	_mc = getMagazineCargo _container;
 	_ic = getItemCargo _container;
 	_bc = getBackpackCargo _container;
 
-	//hint format ["take %1 %2 %3 %4 %5 %6 %7", _unit, _wc, _mc, _ic, _bc, _item, _owner];
-	//hint format ["%1", typeOf _item];
-	///[false,_item,1] call life_fnc_handleInv;
-	
-	//sleep 0.5;
-
-	[[_house, [_wc, _mc, _ic, _bc]],"BRUUUDIS_fnc_updateHouseWeaponStorage",false,false] spawn BIS_fnc_MP;
+	[[_house, typeOf _container, [_wc, _mc, _ic, _bc]],"BRUUUDIS_fnc_updateHouseWeaponStorage",false,false] spawn life_fnc_MP;
 };
-_handle = [] spawn life_fnc_sessionUpdate;
+//_handle = [] spawn SOCK_fnc_updateGear;

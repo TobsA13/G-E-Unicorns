@@ -41,31 +41,4 @@ if(life_is_arrested) then
 player addRating 9999999;
 
 [] call life_fnc_zoneCreator;
-
 [] call life_fnc_initHouses;
-
-[] spawn  {
-    sleep 15;
-    while {true} do {
-    _units = units (group player);
-for "_i" from 0 to (count _units)-1 do{
-    _varname = name (_units select _i);
-    createMarkerLocal [_varname, [0,0]];
-    _varname setMarkerShape "ICON";
-    _varname setMarkerColorLocal "ColorYellow";
-    _varname setMarkerSizeLocal [0.5,0.5];
-    _varname setMarkerTypeLocal "hd_arrow";
-    _varname setMarkerTextLocal name (_units select _i);
-    _varname setMarkerDirLocal getDir (_units select _i);
-    _varname setMarkerPosLocal getPos (_units select _i);
-
-};
-    sleep 3;
-for "_i" from 0 to (count _units)-1 do{
-    _varname = name (_units select _i);
-    deleteMarkerLocal _varname;
-
-    };
-    
-    };  
-};

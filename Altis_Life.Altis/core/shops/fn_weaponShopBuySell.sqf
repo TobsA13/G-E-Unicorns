@@ -5,7 +5,7 @@
 	Description:
 	Master handling of the weapon shop for buying / selling an item.
 */
-private["_price","_item","_itemInfo","_bad","_msg"];
+private["_price","_item","_itemInfo","_bad"];
 if((lbCurSel 38403) == -1) exitWith {hint "You need to select an item to buy/sell."};
 _price = lbValue[38403,(lbCurSel 38403)]; if(isNil "_price") then {_price = 0;};
 _item = lbData[38403,(lbCurSel 38403)];
@@ -26,17 +26,14 @@ if(_bad != "") exitWith {hint _bad};
 if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 {
 	life_cash = life_cash + _price;
-	[_item,false,false,false,false] call life_fnc_handleItem;
+	[_item,false] call life_fnc_handleItem;
 	hint parseText format["You sold a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
-    //anticheat_sell = anticheat_sell + 1;
-    //anticheat_sell_sa = anticheat_sell_sa + 1;
-    //if(anticheat_sell > 49) then {hint "Anticheat!"; anticheat_sell = 0; _msg = format ["Sold Items: %1<br/>Last sold: %2",anticheat_sell_sa,_itemInfo select 1]; [[_msg,name player,5],"clientMessage",true,false] spawn life_fnc_MP;};
 }
 	else
 {
 	if(_price > life_cash) exitWith {hint "You do not have enough money!"};
-	[_item,true,false,true,false] call life_fnc_handleItem;
+	[_item,true] call life_fnc_handleItem;
 	hint parseText format["You bought a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	life_cash = life_cash - _price;
 };

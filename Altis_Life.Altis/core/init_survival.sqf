@@ -1,4 +1,6 @@
-        
+[] spawn  { sleep 20;
+titleText["Falls ihr noch Bugs findet auf der neuen Version des Server, SCHREIBT sie TobsA13 im TS, schreibt sie ins Forum oder schreibt sie in dieses Formular: http://goo.gl/giz3cu  Vielen Dank TobsA13","PLAIN",3];
+};
 [] spawn  {
 	private["_fnc_food","_fnc_water"];
 	_fnc_food = 

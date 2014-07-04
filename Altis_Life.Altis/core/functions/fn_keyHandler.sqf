@@ -20,54 +20,29 @@ _mapKey = actionKeys "ShowMap" select 0;
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
+//Vault handling...
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith {
+	true;
+};
+
 if(life_action_inUse) exitWith {
 	if(!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
 	_handled;
 };
-if(player getVariable ["restrained", false]) exitWith
-{
-	hintSilent "Du bist gefesselt!";
 
-	_handled = false;
-	_handled;
-};
-
-if(life_hands_up) exitWith
-{
-	hintSilent "Du hast deine Hände oben!";
-
-	_handled = false;
-	_handled;
-};
-_dist = player distance (getMarkerPos "jail_marker");
 switch (_code) do
 {
 	//Space key for Jumping
 	case 57:
 	{
-		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2} && {_dist > 30}) then {
-			[[player],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP;
+		if(isNil "jumpActionTime") then {jumpActionTime = 0;};
+		if(_shift && {animationState player != "AovrPercMrunSrasWrflDf"} && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2} && {!life_is_arrested} && {(velocity player) select 2 < 2.5} && {time - jumpActionTime > 1.5}) then {
+			jumpActionTime = time; //Update the time.
+			[player,true] spawn life_fnc_jumpFnc; //Local execution
+			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP; //Global execution 
 			_handled = true;
 		};
 	};
-    
-    case 15:
-    {
-        if((!life_action_inUse) && (vehicle player == player) ) then
-        {
-            {
-                _str = [_x] call life_fnc_varToStr;
-                _val = missionNameSpace getVariable _x;
-                if(_val > 0 ) then
-                {
-                    if( _str == "Spitzhacke" || _str == "pickaxe" ) then
-                    {
-                        [] spawn life_fnc_pickAxeUse;
-                    };
-                };
-            } foreach life_inv_items;
-        };
-    };
 	
 	//Map Key
 	case _mapKey:
@@ -76,6 +51,22 @@ switch (_code) do
 		{
 			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
+		};
+	};
+	
+	//Holster / recall weapon.
+	case 35:
+	{
+		if(_shift && !_ctrlKey && currentWeapon player != "") then {
+			life_curWep_h = currentWeapon player;
+			player action ["SwitchWeapon", player, player, 100];
+			player switchcamera cameraView;
+		};
+		
+		if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {(life_curWep_h != "")}) then {
+			if(life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
+				player selectWeapon life_curWep_h;
+			};
 		};
 	};
 	
@@ -92,24 +83,7 @@ switch (_code) do
 			};
 		};
 	};
-	//Q Key
-    case 15:
-    {    
-        if((!life_action_inUse) && (vehicle player == player) ) then
-        {
-            {
-                _str = [_x] call life_fnc_varToStr;
-                _val = missionNameSpace getVariable _x;
-                if(_val > 0 ) then
-                {
-                    if( _str == "Spitzhacke" || _str == "pickaxe" ) then
-                    {
-                        [] spawn life_fnc_pickAxeUse;
-                    };
-                };
-            } foreach life_inv_items;
-        }
-    };
+	
 	//Restraining (Shift + R)
 	case 19:
 	{
@@ -119,6 +93,22 @@ switch (_code) do
 			[] call life_fnc_restrainAction;
 		};
 	};
+	
+	//Pause + Shift Admintool   //Admintool start
+	case 197:
+	{   
+    if(!(__GETC__(life_adminlevel) == 0)) then{
+            if(_shift) then {[] execVM "admintools\AdminToolsMain.sqf";};
+        };
+	};
+	
+    //Rollen + Shift GCAM
+	case 70:
+	{
+        if(!(__GETC__(life_adminlevel) == 0)) then{
+            if(_shift) then {[player] execVM "spectator\specta.sqf";};
+        };
+	};									//Adnintool Ende
 	
 	//Knock out, this is experimental and yeah...
 	case 34:
@@ -161,24 +151,21 @@ switch (_code) do
 	case 38: 
 	{
 		//If cop run checks for turning lights on.
-		if(_shift) then {
-            if(!(str(player) in ["adac_1","adac_2"])) then {
+		if(!isNil {vehicle player getVariable "lightsS"}) then {
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
-				if(!isNil {vehicle player getVariable "lights"}) then {
-					[vehicle player] call life_fnc_sirenLights;
+					if(vehicle player getVariable "lightsS" == west) then {
+						[vehicle player] call life_fnc_sirenLights;
+					};
+                    if(vehicle player getVariable "lightsS" == independent) then {
+						[vehicle player] call life_fnc_sirenLights;
+					};
+                    if(vehicle player getVariable "lightsS" == east) then {
+						[vehicle player] call life_fnc_adacsirenLights;
+					};
 					_handled = true;
-				};
 			};
-		}else{
-        
-        			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F"]) then {
-				if(!isNil {vehicle player getVariable "lights"}) then {
-					[vehicle player] call life_fnc_ADACsirenLights;
-					_handled = true;
-				};
-			};
-     };
-	};	
+		};
+		
 		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
 	};
 	//Y Player Menu
@@ -189,80 +176,75 @@ switch (_code) do
 			[] call life_fnc_p_openMenu;
 		};
 	};
-    // Shift + H, Holster
-	case 35:
-	{
-		switch(true) do
-		{
-			case (_shift && !_alt && !_ctrlKey):
-			{
-				if(!life_action_inUse) then
-			    {
-			    	if ((time - life_holster_time) > 4) then {
-				life_holster_time = time;
-				[] spawn life_fnc_holsterHandgun;
-			};
-			    };
-			};
-			case (_shift && !_alt && _ctrlKey):
-			{
-				//Ctrl + Shift + H: hands up			 
-			    	if(!life_action_inUse) then
-			    	{
-			    		[0,0,0,true] spawn life_fnc_putHandsUp;
-			    	};	
-			};
-			case (!_shift && !_alt && !_ctrlKey):
-			{
-				[] spawn life_fnc_showQuickHelp;
-			};
-		};		
-	};
-	//V Key
-	case 47:
-	{
-		if(playerSide != west && (player getVariable "restrained") OR (player getVariable "transporting")) then {_handled = true;};
-	};
-    //Pause + Shift Admintool
-	case 197:
-	{   if(!(__GETC__(life_adminlevel) == 0)) then{
-            if(_shift) then {[] execVM "admintools\AdminToolsMain.sqf";};
-        };
-	};
-    //Rollen + Shift GCAM
-	case 70:
-	{
-        if(!(__GETC__(life_adminlevel) == 0)) then{
-            if(_shift) then {[player] execVM "spectator\specta.sqf";};
-        };
-	};
 	//F Key
-	case 33:
-	{
-		if((playerSide == west || playerSide == resistance) && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
-		{
-			[] spawn
-			{
-				life_siren_active = true;
-				sleep 4.7;
-				life_siren_active = false;
-			};
-			_veh = vehicle player;
-			if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
-			if((_veh getVariable "siren")) then
-			{
-				titleText ["Sirene AUS","PLAIN"];
-				_veh setVariable["siren",false,true];
-			}
-				else
-			{
-				titleText ["Sirene AN","PLAIN"];
-				_veh setVariable["siren",true,true];
-				[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
-			};
-		};
-	};
-	//U Key
+case 79:
+    { 
+        if((!isNil {vehicle player getVariable "siren"}) && vehicle player != player && !life_siren2_active && ((driver vehicle player) == player)) then
+                {
+                    [] spawn
+                    {
+                        life_siren2_active = true;
+                        sleep 2.6;
+                        life_siren2_active = false;
+            };
+            [[vehicle player],"life_fnc_copYelp",true,false] spawn life_fnc_MP;
+      };
+	
+};
+	//F Key
+case 80:
+    {    
+        if((!isNil {vehicle player getVariable "siren"}) && vehicle player != player && !life_siren3_active && ((driver vehicle player) == player)) then
+        {
+            [] spawn
+            {
+                life_siren3_active = true;
+                sleep 5.5;
+                life_siren3_active = false;
+            };
+            [[vehicle player],"life_fnc_copYelp2",true,false] spawn life_fnc_MP;
+      };
+	
+};
+case 81:
+    {    
+        if((!isNil {vehicle player getVariable "siren"}) && vehicle player != player && !life_siren4_active && ((driver vehicle player) == player)) then
+        {
+            [] spawn
+            {
+                life_siren4_active = true;
+                sleep 5;
+                life_siren4_active = false;
+            };
+            ["Legen sie die Waffe auf den Boden und nehmen sie die Hände hoch!"] call life_fnc_copText;
+     };
+	
+};
+case 33:
+    {
+
+    if((!isNil {vehicle player getVariable "sirenall"}) && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
+    {
+        [] spawn
+        {
+            life_siren_active = true;
+            sleep 4.7;
+            life_siren_active = false;
+        };
+        if((vehicle player getVariable "sirenall")) then
+        {
+            titleText ["Sirens Off","PLAIN"];
+            vehicle player setVariable["sirenall",false,true];
+        }
+            else
+        {
+            titleText ["Sirens On","PLAIN"];
+            vehicle player setVariable["sirenall",true,true];
+            [[vehicle player],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+        };
+    };                                            
+};
+    //U Key
 	case 22:
 	{
 		if(!_alt && !_ctrlKey) then
@@ -290,8 +272,11 @@ switch (_code) do
 					{
 						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 					};
-					systemChat "You have unlocked your vehicle.";
-                    [player,"car_lock"] call life_fnc_globalSound;
+					//systemChat "You have unlocked your vehicle.";
+					hint composeText [ image "icons\unlock.paa", "  Fahrzeug aufgeschlossen" ];
+					
+					//play sound
+					[player,"unlock"] call life_fnc_globalSound;
 				}
 					else
 				{
@@ -303,14 +288,53 @@ switch (_code) do
 					{
 						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 					};
-					systemChat "You have locked your vehicle.";
-                    [player,"unlock"] call life_fnc_globalSound;
+					
+					hint composeText [ image "icons\lock.paa", "  Fahrzeug abgeschlossen" ];
+					//systemChat "You have locked your vehicle.";
+					
+					//play sound
+					[player,"car_lock"] call life_fnc_globalSound;
 				};
 			};
 		};
 	};
-	// O, police gate opener
-        case 24:
+    //Ä Key
+	case 40:
+	{
+		if (_shift && (playerSide == west) && (vehicle player != player)) then {
+			[] call life_fnc_copOpener;
+		};
+		
+		if (_shift && (playerSide == east) && (vehicle player != player)) then {
+			[] call life_fnc_adacOpener;
+		};
+		if (_shift && (playerSide == civilian) && (vehicle player != player)) then {
+			[] call life_fnc_adacOpener;
+		};
+		if (_shift && (playerSide == resistance) && (vehicle player != player)) then {
+			[] call life_fnc_adacOpener;
+		};
+	};
+    //Q Key
+	case 16:
+	{	
+		if((!life_action_inUse) && (vehicle player == player) ) then
+		{
+			{
+				_str = [_x] call life_fnc_varToStr;
+				_val = missionNameSpace getVariable _x;
+				if(_val > 0 ) then
+				{
+					if( _str == "Spitzhacke" || _str == "pickaxe" ) then
+					{
+						[] spawn life_fnc_pickAxeUse;
+					};
+				};
+			} foreach life_inv_items;
+		}
+	};
+    //o für cop´s
+	case 24:
 	{
 		if (!_shift && !_alt && !_ctrlKey && (playerSide == west)) then {
 			[] call life_fnc_copOpener;

@@ -1,40 +1,26 @@
 waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
-player createDiarySubject ["changelog","Change Log"];
-player createDiarySubject ["serverrules","General Rules"];
-player createDiarySubject ["policerules","Police Procedures/Rules"];
-player createDiarySubject ["safezones","Safe Zones (No Killing)"];
-//player createDiarySubject ["civrules","Civilian Rules"];
-player createDiarySubject ["illegalitems","Illegal Activity"];
-//player createDiarySubject ["gangrules","Gang Rules"];
-//player createDiarySubject ["terrorrules","Terrorism Rules"];
+player createDiarySubject ["welcome","Willkommen"];
+player createDiarySubject ["serverrules","Hauptregeln"];
+player createDiarySubject ["policerules","Polizei Procedures/Regeln"];
+player createDiarySubject ["safezones","Sicherheitsgebiet (Kein Töten)"];
+player createDiarySubject ["illegalitems","Illegale Aktivitäten"];
+player createDiarySubject ["fine","Bußgeldkatalog"];
 player createDiarySubject ["controls","Controls"];
+player createDiarySubject ["saves","Was genau gespeichert wird"];
+player createDiarySubject ["house","Haussystem: Vorteile"];
+player createDiarySubject ["adacrules","ADAC Regeln"];
 
-/*  Example
-	player createDiaryRecord ["", //Container
+	player createDiaryRecord ["welcome",
 		[
-			"", //Subsection
+			"Herzlich Willkommen",
 				"
-				TEXT HERE<br/><br/>
-				"
-		]
-	];
-*/
-	player createDiaryRecord["changelog",
-		[
-			"Official Change Log",
-				"
-					The official change log can be found on the BIS forums (search Altis Life RPG)
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Custom Change Log",
-				"
-					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
+				Herzlich willkommen auf dem Server der German Elite Unicorns,<br/>
+				Ihr könnt gerne auf unseren Teamspeak3-Server kommen!<br/>
+				TS3: g-e-unicorns.de<br/>
+				Homepage: http://g-e-unicorns.de/<br/>
+				Viel spaß auf unserem Server<br/><br/>
 				"
 		]
 	];
@@ -43,13 +29,12 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Exploits", 
 				"
-				Für folgende Taten wird man nicht nur gekickt, sondern gebannt<br/><br/>
-
-				1. Jede andere Art aus dem Gefängnis zu entkommen, als durch Bezahlen der Kaution oder mit einem Helikopter<br/>
-				2. Selbstmord um dem Roleplay zu entkommen. Um zu entkommen getazed, festgenommen, verhaftet, im Gefängnis, etc zu sein. Zahl nicht die Kaution und töte dich nicht selbst um einfach nach Hause zu kommen. Lauf du fauler Sack.<br/>
-				3. Duplizieren von Gegenständen und/oder Geld. Wenn du eine unerreichbare Summe an Geld von einem anderen Spieler überwiesen bekommst, melde dies einem Admin und sende ihm das Geld. Mach dies so schnell wie möglich sonst könntest du von einem Admin gebannt werden.<br/>
-				4. Benutzen von gehackten Gegenständen. Wenn ein Hacker unerhältliche Gegenständen spawnt, darfst du diese nicht benutzen oder du wirst gebannt. Melde dies sofort einem Admin und bleibe weg von den Gegenständen.<br/>
-				5. Ausnutzen von Spielfehlern um sich einen Vorteil zu verschaffen. Wenn du eine zum Beispiel eine duplizierte Waffe findest, musst du dies einem Admin melden und die Waffe in liegen lassen. Wenn dich ein Admin erwischt, während du eine solche Waffe benutzt wirst du gebannt.<br/><br/>
+				Die Folgenden Dinge sind Exploits und werden mit Ban bestraft:
+					1. Auf unnormalem Weg aus dem Gefängnis frei kommen.
+					2. Suizid oder disconnecten um dem Roleplay zu entgehen (z.B.: in getasert, Feuergefecht, gefesselt, etc.)
+					3. Duplizieren von Items oder Geld. Wenn dir jemand einen auffällig hohen Geldbetrag sendet melde es, sonst begehst du die Gefahr selbst gebannt zu werden.
+					4. Benutzen von gecheateten Items. Falls ein Hacker Items spawnt und du diese benutzt kannst du gebannt werden. Melde dies umgehend bei einem Admin und bleib von den Items fern.
+					5. Das benutzen von Bugs die dir ein Vorteil verschaffen ist untersagt./>
 				"
 		]
 	];
@@ -58,14 +43,14 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Safe Zones",
 				"
-					Zerstören von Fahrzeugen, überfallen oder töten in diesen Umgebungen führt zu einem Ban<br/><br/>
+					Bei Sprengungen (auch Fahrzeugexplosionen), ausrauben, oder töten in diesen Zonen wird der Spieler mit Kick/Ban bestraft.<br/><br/>
 					
-					Fahrzeug-Spawn (Läden oder Garagen)<br/>
-					Waffenladen<br/>
-					Polizei-HQ<br/>
-					Rebel Outposts<br/>
-					Kavala<br/>
-					Donator Shops<br/><br/>
+					Rot markierter Bereich<br/>
+					Fahrzeugspawns (Laden und Garage)<br/>
+					Waffenläden<br/>
+					Bankautomaten<br/>
+					Schießplatz<br/>
+					Donator Shop<br/><br/>
 				"
 		]
 	];
@@ -73,29 +58,28 @@ player createDiarySubject ["controls","Controls"];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Bann-Gründe", 
+			"Banbare Aktivitäten", 
 				"
-				Siehe dies als die erste und einzige Warnung.<br/><br/>
-				
-				1. Hacking<br/>
-				2. Cheating<br/>
-				3. Exploiting (Siehe 'Exploits')<br/>
-				4. Being kicked 3 or more times.<br/><br/>
+				Einzige und letzte Warung.<br/><br/>
+					
+					1. Hacken<br/>
+					2. Cheaten<br/>
+					3. Exploiten (siehe Exploits)<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Polizei-Interaktion", 
+			"Polizei Interaktion", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
-				
-				1. Zivilisten können für das Durchsuchen von Rucksäcken/Fahrzeugen von Polizisten verhaftet werden.<br/>
-				2. Zivilisten können für das Verfolgen von Polizisten verhaftet werden.<br/>
-				3. Zivilisten und Rebellen, welche Polizisten ohne Roleplay-Gründe töten werden für RDMing angeklagt. Siehe RDM Bereich.<br/>
-				4. Dauerhaftes verfolgen und/oder belästigen von Polizisten wird als griefing und/oder spamming eingestuft.<br/>
-				5. Aktives hindern von Polizisten ihren Pflichten nachzugehen kann zur Festnahme führen. Wiederholtes hindern führt zu einem Kick/Ban.<br/><br/>
+				Die folgenden Aktivitäten sind Straftaten:<br/><br/>
+					
+					1. Zivilisten können dafür bestarft werden, dass sie bei Polizisten in die Fahrzeuge und Rucksäcke schauen.<br/>
+					2. Zivilisten können dafür bestraft werden, dass sie Polizisten verfolgen.<br/>
+					3. Zivilisten oder Rebellen die Polizisten ohne RP Grund töten fallen unter RDM (siehe RDM Sektion).<br/>
+					4. Das Verfolgen oder Beleidigen von Polizisten kann lange Gefängnisstrafen zur Folge haben.<br/>
+					5. Das mutwillige blockieren von Polizisten, die ihrer Arbeit nachgehen, wird bestraft.<br/><br/>
 				"
 		]
 	];
@@ -104,24 +88,22 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Boote", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
+				Die folgenden Aktivitäten können mit Kick/Ban bestraft werden:<br/><br/>
 				
-				1. Wiederholtes rammen von Booten ohne Erlaubnis.<br/>
-				2. Rammen von Booten mit Vorsatz Spieler zu verletzen oder zu töten.<br/>
-				3. Absichtliches überfahren von Spielern/Schwimmern.<br/><br/>
+				1. Das wiederholte hereindrücken von Booten ohne Genehmigung vom Besitzer.<br/>
+				2. Das hereindrücken von Booten wobei Spieler sterben oder verletzt werden.<br/>
+				3. Das überfahren von Schwimmern oder Tauchern.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Flugzeuge/Hubschrauber", 
+			"Luftfahrt", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
+				Die folgende Aktivität kann mit einem Kick/Ban bestraft werden:<br/><br/>
 				
-				1. Absichtliches rammen von Helikoptern gegen andere Helikopter, Fahrzeuge oder Häuser.<br/>
-				2. Fliegen von 150m oder tiefer über eine Stadt. Ein einmaliges Vorkommen ist nur illegal<br/>
-				3. Stehlen von Helikoptern ohne angemessene Warnung und genug Zeit für den Fahrer ihn abzuschließen.<br/><br/>
+				1. Mutwilliges rammen mit einem Helikopter in Helikopter, Autos, Häuser kann mit einem Ban bestraft werden.<br/><br/>
 				"
 		]
 	];
@@ -130,28 +112,26 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Fahrzeuge", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
+				Die folgenden Aktivitäten können mit mit Kick/Ban bestraft werden:<br/><br/>
 				
-				1. Absichtliches Überfahren von Personen (VRDM).<br/>
-				2. Absichtliches Rennen vor ein Fahrzeuge um verletzt zu werden oder zu sterben<br/>
-				3. Rammen eines anderen Fahrzeuges um es zur Explosion zu bringen.<br/>
-				4. Wiederholtes versuchen in ein Fahrzeug, welches nicht dir gehört, einzusteigen.<br/>
-				5. Stehlen eines Fahrzeuges nur um es zu zerstören.<br/>
-				6. Man darf nur auf ein Fahrzeug schießen um die Reifen zu zerstören und/oder Warnschüsse während einer Roleplay-Situation abzugeben. Man darf nicht absichtlich feindliche Fahrzeuge zerstören.<br/><br/>
+				1. Das mutwillige überfahren von Spielern(VRDM).<br/>
+				2. Gezielt vor ein fahrendes Fahrzeug werfen um verletzt oder getötet zu werden.<br/>
+				3. Das mutwillige rammen von anderen Fahrzeugen um Explosionen zu verursachen.<br/>
+				4. Das Stehlen eines Fahrzeugs nur um es zu zerstören.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Regeln zu Kommunikation", 
+			"Kommunikationsregeln", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.br/><br/>
+				Die folgenden Aktivitäten können mit Kick/Ban bestraft werden:<br/><br/>
 				
-				1. Der Sidechat ist nicht da um Musik abzuspielen.<br/>
-				2. Spammen in jedem Chat ist verboten.<br/>
-				4. Es hat einen Grund, dass der Teamspeak-Server in verschiedene Räume aufgeteilt ist. Polizisten müssen immer in den Polizei-Räumen sein.<br/>
-				5. Zivilisten dürfen nicht in Polizei-Räumen sein um Informationen über deren Aufenthaltsort oder ähnliches zu erfahren.<br/><br/>
+				1. Das Abspielen vom Musik oder spamen im Side Chat.<br/>
+				2. Das spamen in jedem Chat Channel, auch Teamspeak.<br/>
+				3. Polizisten dürfen im Teamspeak nur kurz in Zivilisten Channels gehen. Zivilisten dürfen sich auch nur kurz in Polizei Channels aufhalten.<br/>
+				4. Das durchgeben von Polizeiinformationen während man in Polizei Channels ist.<br/><br/>
 				"
 		]
 	];
@@ -160,78 +140,54 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Random Deathmatching (RDM)", 
 				"
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
+				Random Deathmatching kann mit Kick/Ban bestraft werden:<br/><br/>
 				
-				1. Töten ohne Roleplay-Grund.<br/>
-				2. Erklären einer Rebellion ist kein Grund jemanden zu töten, nicht einmal Polizisten.<br/>
-				3. Polizisten und Zivilisten/Rebellen dürfen nur wegen kriminellen Gründen aufeinander schießen.<br/>
-				4. Es ist kein RDM, wenn du im Kreuzfeuer getötet wirst.<br/>
-				5. Es ist kein RDM, wenn du damit dich oder andere versuchst zu schützen.<br/>
-				6. Es wird als RDM eingestuft, wenn du auf eine Person schießt ohne ihr genug Zeit zu geben die Anweisungen zu befolgen.<br/><br/>
-				
-				
+				1. Jemanden ohne RP-Hintergrund töten ist RDM.<br/>
+				2. Zu deklarieren, dass man ein Rebell ist, ist kein RP-Hintergrund zu töten.<br/>
+				3. Falls du im Kreuzfeuer getetötet wirst ist das kein RDM.<br/>
+				4. Jemanden zu töten in dem Versuch, dich selbst oder andere Persenen zu schützen ist kein RDM.<br/><br/>				
 				"
 		]
 	];
-	player createDiaryRecord ["serverrules",
-		[
-			"Neue Life Regeln", 
-				"
-				Neue Island Life Regeln für Polizisten und Zivilisten.<br/><br/>
-				
-				Folgendes kann zu einem Kick oder einem Ban führen, je nach empfinden der Admins.<br/><br/>
-
-				1. Wenn du getötet wurdest darfst du 15min nicht zu deinem Todesort zurückkehren.<br/>
-				2. Wenn du während einer Roleplay-Situation getötet wirst sind deine Verbrechen vergessen aber du darfst keine Rache nehmen.<br/>
-				3. RDM ist kein neues Leben.<br/>
-				4. Respawnen zählt nicht als neues Leben.<br/>
-				5. Wenn du dich absichtlich tötest, um dem Roleplay zu entkommen, ist es auch kein neues Leben.<br/><br/>
-				"
-		]
-	];
-
 	
-// Police Section
+
+	// Police Section
 	player createDiaryRecord ["policerules",
 		[
-			"Krisenverhandlungen",
+			"Krisenüberwindung",
 				"
-				Krisenverhandlungen müssen von einem Oberkommissar durchgeführt werden. Wenn keiner verfügbar ist, ist die Person mit dem nächst höheren Rang verantwortlich.<br/><br/>
+				Die Krisenüberwindung muss vom ranghöchsten Polizist übernommen werden.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["policerules",
 		[
-			"Bundesbank",
+			"Die Staatsbank",
 				"
-				1. Das Betreten der Bundesbank durch Zivilisten ist verboten, außer sie haben eine Genehmigung dazu. Wenn Zivilisten diese ohne Erlaubnis betreten, werden sie abgeführt oder verhaftet.
-				2. Helikopter, welche über die Bundesbank fliegen werden aufgefordert wegzufliegen, wenn diese sich weigern werden sie flugunfähig gemacht.<br/>
-				2. Wenn die Bundesbank überfallen wird müssen alle Polizisten sich dorthin begeben um dies zu stoppen.<br/>
-				3. Kleinere Verbrechen können während des Überfalls auf die Bundesbank vernachlässigt werden.<br/>
-				4. Waffengewalt ist bei einem Bankraub erlaubt falls es keine andere Möglichkeit gibt. Jede andere Möglichkeit zu tazen und zu verhaften sollte versucht werden.<br/>
-				5. Die Polizei darf nicht blind in das Gebäude schießen.<br/>
-				6. Die Polizei sollte Zivilisten während einem Raub aus dem Gebäude bringen.<br/>
-				7. Jeder Zivilisten, der die Polizei blockiert, wird als Komplize gesehen.<br/>
-				8. Der höchstrangige Polizist kann einzelne Personen oder Gruppen beauftragen als Security an der Bank zu arbeiten.<br/><br/>
+				1. Die Staatsbank ist ein illegales Areal für Zivilisten.
+				2. Helikopter die über der Staatsbank fliegen haben diese nach Aufforderung zu verlassen, ansonsten werden sie außer Gefecht gesetzt.<br/>
+				2. Falls die Staatsbank überfallen wird, müssen alle verfügbaren Polizeikräfte den Überfall verhindern.<br/>
+				3. Tödliche Gewalt kann angewandt werden, je nach Bedingung sollten die Räuber aber verhaftet werden.<br/>
+				4. Die Polizei sollte nicht blind um sich schießen, da Unbeteiligte verletzt werden könnten.<br/>
+				5. Jeder Zivlist, der in irgendeiner Weiße die Räuber unterstützt wird als Komplize angesehen.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["policerules",
 		[
-			"Flugzeuge/Hubschrauber",
+			"Helikopterlandungen",
 				"
-				1. Helikopter dürfen nur mit Erlaubnis des höchstrangige Polizisten in der Nähe der Stadt landen.<br/>
-					Ausnahmen:<br/>
-				Kavala: Helipad am Krankenhaus (037129) oder am Dock (031128).<br/>
-				Athira: Sportplatz (138185) oder hinter dem Lizenzhändler (140188).<br/>
-				Pyrgos: Auf den Feldern nördlich/östlich des Lizenzhändlers (170127)<br/>
-				Sofia: Gegenüber des Autohändlers (258214) oder auf den Feldern süd-östlich der Garage (257212)<br/>
-				Kleine Städte: An angemessenen Orten. Dies wird von der Polizei entschieden.<br/><br/>
+				1. Helikopter dürfen in Städten nur auf diesen Punkten Landen.<br/>
+				Kavala: Helikoptergarage.<br/>
+				Athira: Sportfeld.<br/>
+				Pyrgos: Felder am Stadtrand<br/>
+				Sofia: Felder am Stadtrand<br/>
+				Dörfer: beliebige Auswahl<br/><br/>
 				
-				2. Helikopter dürfen nicht auf Straßen landen.<br/>
-				3. Polizei kann vorübergehendes Landen verbieten aber nicht dauerhaft.<br/>
-				4. Helikopter dürfen nur mit Erlaubnis von einem Polizisten unter 150m über eine Stadt fliegen.<br/>
-				5. Helikopter dürfen nicht über Städten schweben. Polizisten dürfen nur bei einem Einsatz über einer Stadt schweben.<br/><br/>
+				2. Helikopter sollten nicht auf der Straße landen.<br/>
+				3. Die Polizei darf Landungen verbieten.<br/>
+				4. Helikopter dürfen über Städten nicht niedriger als 150m fliegen.<br/>
+				5. Helikopter dürfen über Städten nicht still schweben.<br/><br/>
 
 				"
 		]
@@ -239,23 +195,19 @@ player createDiarySubject ["controls","Controls"];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Illegale Gebiete", 
+			"Illegale Bereiche", 
 				"
-				1. Gang-Gebiete sind nicht illegal. Also dürfen Polizisten diese betreten aber niemanden ohne Grund festnehmen. (Mit dem NPC reden ist kein Grund)<br/>
-				2. Polizisten dürfen illegale Gebiete nur während eines Einsatzes betreten.<br/>
-				3. Bei einer Verfolgung in ein illegales Gebiet muss Verstärkung gerufen werden.<br/>
-				4. Die Polizei darf unter keinen Umständen in illegalen gebieten campen.<br/><br/>
+				1. Betrete keinen illegalen Bereich ohne, dass er Teil einer Razzia ist.<br/>
+				2. Falls du Jemanden in einen illegalen Bereich verfolgst solltest du um Verstärkung bitten.<br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Patroullien", 
+			"Patrouillie", 
 				"
-				1. Polizisten können auf den Straßen und in Städten patrouillieren um nach Verbrechen und verlassenen Fahrzeugen zu suchen.<br/>
-				2. Patrouillen werden in der Stadt zu Fuß und außerhalb mit einem Fahrzeug durchgeführt.<br/>
-				3. Patrouillen dürfen nicht in illegalen Gebieten durchgeführt werden.<br/><br/>
+				1. Die Polizei sollte die Straßen und Städte/Dörfer nach verlassenen Fahrzeugen und kriminellen Aktivitäten durchsuchen.<br/>
 				"
 		]
 	];
@@ -264,24 +216,22 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Checkpoints", 
 				"
-				Die Polizei wird dazu aufgefordert, Checkpoints zu errichten um Verbrechen einzudämmen und um die Sicherheit auf den Straßen zu erhöhen.<br/><br/>
+				Polizisten sollten Checkpoints in strategischen Gebieten errichten um illegale Aktivitäten zu unterbinden und um die Sicherheit auf den Straßen zu gewährleisten.<br/><br/>
 				
-				1. Ein Checkpoint muss von mindestens 3 Polizisten und 2 Fahrzeugen besetzt sein. ATVs zählen nicht zu den benötigten Fahrzeugen, dürfen aber zusätzlich genutzt werden.<br/>
-				2. Ein Checkpoint muss mindestens 300m von einem illegalen Gebiet entfernt sein.<br/>
-				3. Checkpoints dürfen nur auf Straßen errichtet werden.<br/>
-				4. Checkpoints müssen nicht auf der Karte markiert werden.<br/><br/>
+				1. Ein Checkpoint darf nicht weniger als 500m von einem illegalen Bereich entfernt sein.<br/>
+				2. Checkpoints sollten nur auf Straßen errichtet werden.<br/>
+				3. Checkpoints dürfen nicht auf der Karte markiert werden.<br/><br/>
 
 
-				Ablauf bei einer Kontrolle:<br/>
-				1. Bringe den Fahrer dazu das Fahrzeug an einer sicheren Stelle zu parken und den Motor auszuschalten.<br/>
-				2. Frage den Fahrer und die Mitfahrer ob sie Waffen bei sich tragen.<br/>
-				3. Bitte die Insassen des Fahrzeuges auszusteigen und falls sie Waffen besitzen diese abzulegen. Lasse ihnen aber genug Zeit und fessle sie nicht sofort.</br>
-				4. Frage woher sie kommen und wohin sie wollen.<br/>
-				5. Frage ob sie einer Durchsuchung zustimmen.<br/>
-				6. Wenn sie zustimmen, fessle sie und durchsuche sie.<br/>
-				7. Wenn sie nicht zustimmen, musst du sie fahren lassen, außer du hast einen berechtigten Grund dagegen.<br/>
-				8. Nach der Durchsuchung kannst du ihnen erlauben in ihr Fahrzeug zu steigen.<br/>
-				9. Wenn etwas verbotenes gefunden wurde, darfst du ihm/ihnen ein/en Strafzettel geben oder ihn/sie verhaften, je nach der Straftat .<br/><br/>
+				Checkpoint Prozedur:<br/>
+				1. Der Fahrer sollte das Fahrzeug in einer sicheren Distanz anhalten und den Motor ausschalten.<br/>
+				2. Frage den Fahrer nach weiteren Passagieren und Waffen.<br/>
+				3. Sag dem Fahrer sie sollen aussteigen und die Waffen senken(falls vorhanden), gieb ihnen hierbei eine vernünftige Zeit zum reagieren.<br/>
+				4. Frag sie woher sie kommen und wohin sie fahren.<br/>
+				5. Frag sie ob du sie durchsuchen darfst.<br/>
+				6. Falls sie es erlauben fassel und durchsuche sie.<br/>
+				7. Nachdem die Durchsuchung getan ist erlaube ihnen wieder ins Fahrzeug steigen zu können und wegzufahren.<br/>
+				8. Falls etwas illegales gefunden wird müssen Tickets oder Gefängnisstrafen erteilt werden (abhängig vom Delikt).<br/><br/>
 				"
 		]
 	];
@@ -290,68 +240,56 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Fahrzeuge", 
 				"
-				1. Fahrzeuge auf Parkplätzen oder anderweitig angebracht geparkte Fahrzeuge müssen in Ruhe gelassen werden.<br/>
-				2. Fahrzeuge, welche verlassen, fahruntüchtig und ohne Fahrer sind, dürfen beschlagnahmt werden.<br/>
-				3. Boote sollen am Ufer geparkt werden.<br/>
-				4. Jedes Fahrzeug, welches länger nicht bewegt wurde, darf beschlagnahmt werden.<br/>
-				5. Beschlagnahmen von Fahrzeugen ist eine grundlegende Aufgabe der Polizei, die dazu dient den Server sauber und lagfrei zu halten.<br/>
-				6. Ermittle im Zweifelsfall den Halter des Fahrzeuges und kontaktiere ihn.<br/>
-				7. Polizei-Schnellboote und Hunter HMGs dürfen genutzt werden um Verbrechen zu bekämpfen. Die Waffen sollten genutzt werden um die Reifen zu zerstören und nicht um das Fahrzeug in die Luft zu sprengen.<br/><br/>
+				1. Fahrzeuge die vernünftig geparkt wurden sollten in Ruhe gelassen werden.<br/>
+				2. Fahrzeuge die verlassen, zerstört und ohne Fahrer sind können beschlagnahmt werden.<br/>
+				3. Boote sollten vernünftig in der Küste oder im Hafen geparkt werden.<br/>
+				4. Beschlagnahmen ist ein essentieller Bestandteil eines Polizisten, es hält den Server sauber und weniger laggy.<br/>
+				6. Im Zweifelsfall solltest du den Besitzer benachrichtigen.<br/>
+				7. Bewaffnete Polizeifahrzeuge sollten nur in Krisensituationen genutzt werden.<br/><br/>
 				"
 		]
 	];
 
 	player createDiaryRecord ["policerules",
 		[
-			"Geschwindigkeit", 
+			"Geschwindigkeiten", 
 				"
-				Die folgenden Höchstgeschwindigkeiten sind einzuhalten um die Sicherheit der Zivilisten zu gewähren und werden von der Polizei kontrolliert.<br/><br/>
+				Die folgenden Geschwindigkeitsregelungen sind einzuhalten und von der Polizei su überwachen:<br/><br/>
 				
-				Innerhalb der Hauptstädte:<br/>
-				Kleine Straßen: 50km/h<br/>
-				Hauptstraßen: 50km/h<br/>
-				Außerhalb der Hauptstädte:<br/>
-				Kleine Straßen: 100km/h<br/>
-				Hauptstraßen: 130km/h<br/><br/>
+				In Städten darf nicht schneller als 50km/h gefahren werden.<br/>
+				Am Marktplatz in Kavala darf nicht schneller als 30km/h gefahren werden.<br/>
+				Außerhalb von Städten gibt es keine Geschwindigkeitsbergrenzungen<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Stadt Protokoll", 
+			"Stadt-Patrouillie", 
 				"
-				1. In den Hauptstädten dürfen Patrouillen von der Polizei durchgeführt werden - Kavala, Athira, Pyrgos und Sofia.<br/>
-				2. Polizisten dürfen am Autohändler halten um sicherzustellen, dass keine Fahrzeuge beschlagnahmt werden müssen.<br/>
-				3. Polizisten dürfen nicht Grundlos im Stadtzentrum herumstehen.<br/>
-				4. Die Polizei darf die Stadt während einer Rebellion mit einer großen Zahl an Einsatzkräften stürmen. Nach der Rebellion muss die Stadt wieder geräumt werden.<br/>
-				5. Die Polizei darf keinen Krieg erklären.<br/>
-				6. Zivilisten dürfen das Polizei HQ nur mit Genehmigung betreten, es ist nicht illegal sich in der Nähe aufzuhalten.<br/><br/>
+				1. Polizisten sollten immer in Kavala, Athira, Pyrgos und Sofia patrouillieren.<br/>
+				2. Polizei HQ's sind illegal für Zivilisten, nicht aber der Aufenthalt in der Nähe des Polizei HQ's.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Verhaftung und Strafzettel",
+			"Gefängnisstrafe und Tickets",
 				"
-				Zivilisten sollten verhaftet werden, wenn sie sich oder andere gefährden.<br/><br/>
+				Gefängnisstrafen sollten nur an Kriminelle vergeben werden die sich selbst oder Andere gefährden.<br/><br/>
 
-				1. Man sollte niemanden verhaften, der seinen Strafzettel bezahlt hat.<br/>
-				2. Man muss dem Betroffenen erklären warum er verhaftet wird/wurde.<br/>
-				3. Wenn ein Zivilist gesucht ist, darf man ihn verhaften. Versuche ihn nicht zu töten.<br/><br/>
+				1. Du sollst niemanden inhaftieren der bereits ein Ticket für die Straftat bezahlt hat.<br/>
+				2. Du musst dem Kriminellen erklären warum er inhaftiert wird.<br/>
+				3. Falls ein Zivilist gesucht wird solltest du ihn nicht töten sondern festnehmen, es sei denn es sind Umstände gegeben in denen der gebrauch von tödlicher Gewalt unumgehbar ist.<br/><br/>
 
 
-				Ein Strafzettel wird als Warnung für den Zivilisten angesehen. Wenn ein Zivilist ein Gesetz bricht aber dabei niemanden gefährdet, solltest du ihm einen Strafzettel geben.<br/><br/>
+				Tickets sollten nur an Kriminelle vergeben werden die ein Gesetz verletzt haben.<br/><br/>
 
-				1. Ein Strafzettel muss einer begründbaren höhe entsprechen.<br/>
-				2. Die Höhe des Strafzettel muss auf den begangenen Straftaten basieren.<br/>
-				3. Das Verweiger eines Strafzettels ist ein Grund um verhaftet zu werden.<br/>
-				4. Viel zu hohe Strafzettel sind ein Grund um aus dem Amt als Polizist gestrichen zu werden.<br/><br/>
+				1. Die Weigerung ein Ticket zu bezahlen hat eine Gefängnisstrafe zur Folge und das Geld für das Ticket wird von der Bank abgebucht.<br/>
+				2. Das Ausstellen eines Tickets, das nicht unter die Norm des Bußgeldkatalogs fällt hat die Entlassung aus dem Polizeidienst zur Folge.<br/><br/>
 				
-				Eine vollständige Liste von angebrachten Strafen wird während der Ausbildung beigebracht. Frage im Zweifelsfall einen höherrangigen Polizisten.<br/><br/>
-				
-				
+				Die Höhe der Tickets können im Bußgeldkatalog nachgeschlagen werden.<br/><br/>
 				"
 		]
 	];
@@ -360,191 +298,106 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Waffen", 
 				"
-				Ein Polizist darf Zivilisten KEINE Waffen geben. Dies ist ein Ban-Grund.<br/><br/>
+				Ein Polizist darf niemals einen Zivilist mit Waffen versorgen. Tut er es doch wird er aus dem Polizeidienst entlassen oder schlimmeres.<br/><br/>
 
-				Legale Waffen für Zivilisten:<br/>
-				1. P07<br/>
+				Legale Waffen für Zivilisten die einen Waffenschein besitzen sind:<br/><br/>
+				
+				1. P07 (ohne Schalldämpfer)<br/>
 				2. Rook<br/>
 				3. ACP-C2<br/>
 				4. Zubr<br/>
-				5. 4-five<br/>
-				6. PDW2000<br/><br/>
+				5. PDW2000<br/><br/>
 
-				Alle anderen Waffen sind illegal.<br/><br/>
+				Alle anderen Waffen(auch P07 + Schalldämpfer(Polizeiwaffe)) sind illegal.<br/><br/>
 
-				1. Zivilisten dürfen nicht mit gezogener Waffen durch die Stadt laufen.<br/>
-				2. Zivilisten dürfen die Waffe gezogen haben, wenn sie außerhalb der Stadt sind. Sie sollten aber Lizenzduchruchungen zustimmen und dabei die Waffe runternehmen (2x Strg).<br/><br/>
+				1. Zivilisten sollten ihre Waffen innerhalb von Städten wegstecken.<br/>
+				2. Zivilisten sollten ihre Waffen außerhalb von Städten in der Nähe von Polizisten runterhalten(2x Strg).<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Gebrauch von nicht tödliche Waffen",
+			"Nutzung von nicht tödlicher Gewalt",
 				"
-				Der Taser (Silenced P07) ist die einzige nicht tödliche Waffe.<br/><br/>
+				Die Taser-Pistole ist die einzige Form von nicht tödlicher Gewalt.<br/><br/>
 
-				1. Der Taser darf genutzt werden um Zivilisten vor der Flucht zu hindern.<br/>
-				2. Entlade deinen Taser nicht, wenn du nicht sicher gehen kannst ob du die Person kampfunfähig gemacht hast.<br/>
-				3. Benutze deinen Taser nur nach dem Gesetz.<br/><br/>
+				1. Taser sollten genutzt werden um Zivilisten außer Gefecht zu setzen und zu verhaften.<br/>
+				2. Sinnloses herumgeschieße mit dem Taser kann eine Suspension zur Folge haben.<br/>
+				3. Benutzen sie den Taser nicht nur um ihren Willen durchzusetzen sondern beachten sie die geltenden Gesetze.<br/><br/>
 				"
 		]
 	];
 
 	player createDiaryRecord ["policerules",
 		[
-			"Raiding/Camping",
+			"Razzien",
 				"
-				Razzia ist die Bezeichnung für eine planmäßig vorbereitete, innerhalb einer abgesperrten Örtlichkeit bei einem unbestimmten Personenkreis überraschend durchgeführte Suche nach Personen oder Sachen zum Zweck der Gefahrenabwehr oder der Strafverfolgung.<br/><br/>
+				Bei Razzien betritt die Polizei Bereiche in welchen sie kriminelle Aktivitäten vermutet.<br/><br/>
 
-				1. Bei einer Razzia müssen mindestens 4 Polizisten beteiligt sein, von welchen mindestens einer Oberkommissar sein muss.<br/>
-				2. Alle Zivilisten in diesem Gebiet dürfen festgenommen werden. Jedoch müssen sie freigelassen werden, fall nichts illegales bei ihnen gefunden werden sollte.<br/>
-				3. Wenn etwas illegales gefunden wird, wird wie bei anderen Straftaten vorgegangen.<br/>
-				5. Waffengewalt ist unter dem Punkt 'Gebrauch von Waffen' geregelt.<br/>
-				6. Nach der Sicherung des Gebietes muss sich die Polizei zurückziehen.<br/>
-				7. Es kann erst nach 20min kann im selben Gebiet wieder eine Razzia durchgeführt werden.<br/>
-				8. Bei einem Fehlschlag gilt die Zeitsperre auch für die getöteten Polizisten.<br/>
-				9. Es darf Verstärkung gerufen werden, diese darf aber nicht aus vorher gefallenen Polizisten bestehen.<br/><br/>
+				1. Razzien müssen von einem hochrangigen Polizeimitglied durchgeführt werden.<br/>
+				2. Alle Zivilisten im Bereich der Razzia werden gefesselt und durchsucht. Wenn nichts illegales gefunden wurde musst du sie frei lassen.<br/>
+				3. Wenn etwas illegales gefunden wurde wird mit der üblichen Prozedur(Gefängnisstrafe oder Ticket) fortgefahren.<br/>
+				4. Nachdem der Bereich sicher ist müssen alle Beamten den Ort verlassen.<br/>
 
-				Campen ist ein überlanges Aufhalten eines Polizisten in einem Gebiet.<br/><br/>
+				Beim Camping betritt die Polizei einen Bereich und wartet dort auf Kriminelle.<br/><br/>
 
-				1. Checkpoints werden nicht als campen eingestuft. Siehe 'Checkpoints' für eine genaue Definition.<br/>
-				2. Als campen wird eingestuft, wenn man sich länger an einem illegalen Gebiet aufhält und eine Razzia antäuscht, diese aber nicht durchführt.<br/><br/>
-				"
-		]
-	];
-	player createDiaryRecord ["policerules",
-		[
-			"Bußgeldkatalog",
-				"
-
-    Fahren ohne Führerschein: 1500$<br/><br/>
-    Fliegen ohne Fluglizenz: 30000$<br/><br/>
-    Versuchter Diebstahl eines zivilen fremden Fahrzeuges: 2500$<br/><br/>
-    Diebstahl / Führen eines gestohlenen Fahrzeuges: 5000$<br/><br/>
-    Fahren ohne Licht bei Dunkelheit oder Dämmerung: wird durch Polizisten festgelegt / max.1.000$<br/><br/>
-    Überhöhte Geschwindigkeiten:<br/><br/>
-    10-30 km/h zu schnell: 2500$<br/><br/>
-    Schneller als 30 km/h über Geschwindigkeitsbegrenzung: 3500$<br/><br/>
-    Fahren auf der falschen Straßenseite: wird durch Polizisten festgelegt / max.1.000$<br/><br/>
-    Diebstahl von Polizeifahrzeugen: 50000$ + Inhaftierung<br/><br/>
-    Versuchter Diebstahl von Polizeifahrzeugen: 25.000$ <br/><br/>
-    Landen in einer Flugverbotszone: 50.000$ + Fahrzeugbeschlagnahmung<br/><br/>
-    Versuchte Landung in einer Flugverbotszone: 20.000$<br/><br/>
-    Fliegen/Schweben unterhalb v. 500m einer Stadt: 25.000$<br/><br/>
-    Fahren von illegalen Fahrzeugen: 50.000$ + Beschlagnahme des Fahrzeuges<br/><br/>
-    Fahrerflucht bei Unfall: 10000$<br/><br/>
-    Fahrerflucht vor der Polizei: 15000$<br/><br/>
-    Überfahren eines anderen Spielers:5000$<br/><br/>
-    Illegale Straßensperren aufstellen: jeder Beteiligte der vor gefunden wird zahlt 10.000$<br/><br/>
-
-Umgang mit der Polizei:<br/><br/>
-    Widerstand gegen die Staatsgewalt: 10.000$<br/><br/>
-    Nicht befolgen einer polizeilichen Anordnung: 5000$ beim 2.mal Inhaftierung<br/><br/>
-    Beamtenbeleidigung (Spielerisch): 5.000$ bei Wiederholung kann der Polizist eine beliebige Summe festlegen<br/><br/>
-    Beamtenbeleidigung (Real): 3 x Kick anschließend Permanenter Ban vom Server<br/><br/>
-    Belästigung  eines Polizeibeamten: min.1.500$ / max. 5.000$ + Inhaftierung<br/><br/>
-    Betreten der polizeilichen Sperrzone: Einmalige Verwarnung, anschließend 2.500$ Bußgeld + Gefängnis<br/><br/>
-    Töten eines Polizisten:100.000$ pro Polizist + Inhaftierung<br/><br/>
-    Beschuss auf Polizeibeamte/ Fahrzeuge/ Hubschrauber: 10.000$<br/><br/>
-    Zerstörung von Polizeieigentum: (Erstattung des entstandenen Schadens)<br/><br/>
-    Sich als Polizist aus zu geben:  10.000$  + Inhaftierung<br/><br/>
-
-Drogendelikte(Illegale Waren)<br/><br/>
-
-    Der Wert der mit geführten Drogen oder illegalen Waren im Fahrzeug oder am Körper wird zusammen gezählt und als Bußgeld verhängt. Zusätzlich gibt es eine Gefängnisstrafe.<br/><br/>
-    Spieler die wegen Drogendelikten auf der Wantediiste stehen, haben ein Bußgeld zwischen 10.000$ bis max.250.000$ (höchster Cop entscheidet)<br/><br/>
-
-Waffendelikte (wird immer mit Gefängnis bestraft)<br/><br/>
-
-    Waffenbesitz ohne Lizenz: 10.000$<br/><br/>
-    mit gezogener Waffe durch Stadt laufen: 5.000$ (keine Inhaftierung)<br/><br/>
-    Besitz einer verbotenen Waffe: 15.000$<br/><br/>
-    Schusswaffengebrauch innerhalb von Städten: 10000$<br/><br/>
-    Geiselnahme:100.000$ je Geiselnehmer<br/><br/>
-    Überfall/Übergriff auf Person oder Fahrzeug: 10.000$<br/><br/>
-    Bankraub (erfolglos): 60.000$ pro fest genommener Person bei misslungenem Bankraub<br/><br/>
-    Bankraub (erfolgreich) die Höhe der Beute wird auf jeden Bankräuber als Ticket verhängt<br/><br/>
-
-Sonstige Delikte<br/><br/>
-
-    Mord:20.000$ pro Mord + Inhaftierung oder Hinrichtung auf Befehl eines Kommandeures<br/><br/>
-    Ernst gemeinte Beleidigung anderer Spieler: Kick als einmalige Verwarnung. Bei Wiederholung Bann<br/><br/>
-    Aufstand: Inhaftierung aller Beteiligten so wie ein Bußgeld das vom Ranghöchsten Beamten im Dienst verhängt wird + Beschlagnahme von Fahrzeugen und Waffen<br/><br/>
-    Angriff durch Rebellen: Inhaftierung aller Beteiligten so wie ein Bußgeld das vom Ranghöchsten Beamten im Dienst verhängt wird + Beschlagnahme bzw. Zerstörung von Fahrzeugen & Waffen<br/><br/>
-    Illegales Straßenrennen: 50.000$<br/><br/>
-
-
-
-Alle Polizisten können die Höhe des Bußgeldes selbst bestimmen wenn ein minimaler und ein maximaler Wert vorhanden ist. In geringfügigen Vergehen kann man es bei einer Verwarnung belassen. Dies gilt nur bei Taten bei denen nicht automatisch eine Haftstrafe angeordnet wird.<br/><br/>
-				"
-		]
-	];
-	player createDiaryRecord ["policerules",
-		[
-			"Rang-Kette",
-				"
-				Der höchstrangige Polizist ist für die Polizei verantwortlich wenn kein Admin online ist. Dieser Polizist muss den Regeln seines Ranges folgen und muss sich an einen Admin wenden wenn dies nötig ist.<br/><br/>
-
-				Polizeiränge:<br/>
-				1. Leitender Polizeidirektor (Ltd.PD)<br/>
-				2. Hauptkommissar (PHK)<br/>
-				3. Oberkommissar (POK)<br/>
-				5. Kommissar (PK)<br/>
-				4. Kommissaranwärter (PKA)<br/>
-				6. Polizeihauptmeister (PHM)<br/>
-				7. Polizeianwärter (PA)<br/><br/>
+				1. Polizisten dürfen in der Staatsbank campen wenn sie einen Überfall vermuten.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Gebrauch von Waffen",
+			"Kommandokette",
 				"
-				1. Waffengewalt darf nur zum Schutz des eigen Lebens und des von Polizisten/Zivilist/Blackwatermitarbeitern genutzt werden oder wenn nicht tödliche Waffen nicht effektiv wären.<br/>
-				2. Du darfst nur schießen wenn du in Gefahr oder im Training bist.<br/>
-				3. Missachten der Regeln zum Gebrauch von Waffen führt zu einer Entlassung aus der Polizei.<br/><br/>
+				Der Chef der Polizei ist ein Server Admin. Der Polizist mit dem höchsten Rang der online ist vergibt die Befehle. Die Verweigerung eines Befehls kann eine Degradierung, Suspendierung oder Entlassung zur Folge haben.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["policerules",
 		[
-			"Teamspeak-Regeln",
+			"Nutzung von tödlicher Gewalt",
 				"
-				1. Alle Polizisten müssen auf dem Teamspeak-Server und in den vorgesehenen Polizei-Räumen sein. Missachten dieser Regel führt zu einer Entlassung aus der Polizei.<br/>
-				2. Bitte betrete den Teamspeak bevor du als Polizist spawnst.<br/><br/>
+				1. Die Nutzung von tödlicher gewalt ist nur erlaubt wenn Leben in Gefahr sind.<br/>
+				2. Sinnloses herumgeschieße mit scharfer Munition kann eine Entlassung zur Folge haben.<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["policerules",
+		[
+			"Teamspeak Regel",
+				"
+				1. Alle Polizisten müssen auf unserem Teamspeak in den Polizei Channels sein. Wenn dies nicht der Fall ist kann es eine Degradierung, Suspendierung oder Entlassung zur Folge haben. <br/><br/>
 				"
 		]
 	];
 	
 	
 	
-// Illegale Items Section
+// Illegal Items Section
 	player createDiaryRecord ["illegalitems",
 		[
-			"Rebellen-Regeln",
+			"Rebellen Regeln",
 				"
-				Ein Rebell bezeichnet jemanden, der an einem individuellen oder kollektiven Aufstand (Rebellion) beteiligt ist oder diesen in Gang zu setzen versucht.<br/><br/>
-				1. Ein Rebell muss erst eine Gang gründen und seine Intentionen darlegen.<br/>
-				2. Widerstand entschuldigt kein RDMing (Siehe RDMing)<br/>
-				3. Widerstand sollte auch auf andere Arten als die Bank auszurauben und Polizisten zu erschießen ausgeübt werden.<br/>
-				4. Widerstand muss geplant sein.<br/>
-				5. Es muss hinter jedem Angriff ein sinnvoller Grund stehen.<br/><br/>
+				Ein Rebel erhebt sich mit Waffengewalt gegen die Regierung, in diesem Fall gegen die Polizei. Trotzdem gelten für diese alle anderen RP-Regeln.<br/><br/>
+				
+				1. Widerstand ist keine Entschuldigung für Random Deathmatching.<br/>
+				2. Eine plausible RP Handlung soll hinter jeder Attacke stecken.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["illegalitems",
 		[
-			"Gang-Regeln",
+			"Gang Regeln",
 				"
-				1. Mitglied einer Gang zu sein ist nicht illegal. Nur wenn illegale Straftaten begangenen werden.<br/>
-				2. In einem Gang-Gebiet zu sein ist nicht illegal. Nur wenn man an illegalen Aktivitäten teilnimmt.<br/>
-				3. Gangs dürfen Gang-Gebiete halten und kontrollieren. Andere Gangs dürfen diese Gebiete angreifen.<br/>
-				4. Um einer anderen Gang Krieg zu erklären muss dies im Sidechat bekannt gegeben werden und alle Mitglieder beider Gangs benachrichtigt werden.<br/>
-				5. Gang-Mitglieder dürfen keine unbewaffneten Zivilisten töten, außer diese gehören der gegnerischen Gang an oder sind im Gang-Gebiet.<br/>
-				6. Gang-Mitglieder dürfen Zivilisten nur töten wenn sie in Gefahr sind. Das Töten von unbewaffneten Zivilisten fällt unter RDMing.<br/><br/>
+				1. Mitglied einer Gang zu sein ist nicht illegal.<br/>
+				2. Sich ein Ganggebiet aufzuhalten ist nicht illegal, außer wenn man dort illegale Aktivitäten ausübt.<br/>
+				3. Gangs können Ganggebiete halten und kontrollieren. Andere Gangs können diese einnehemen.<br/>
+				4. Um einer anderen Gang den Krieg zu erklären muss der eine Leader dem Anderem global den Krieg erklären. Außerdem müssen die Mitglieder beider Gangs genannt werden.<br/>
+				5. Gangs dürfen keine unbeteiligten oder unbewaffneten Zivilisten töten.<br/><br/>
 				"
 		]
 	];
@@ -552,13 +405,12 @@ Alle Polizisten können die Höhe des Bußgeldes selbst bestimmen wenn ein minim
 		[
 			"Illegale Fahrzeuge",
 				"
-				Ein Zivilist, der eines der folgenden Fahrzeuge besitzt verstößt gegen das Gesetz und kann dafür von der Polizei zur Rechenschaft gezogen werden.<br/><br/>
+				Illegale Fahrzeuge sind:<br/><br/>
 
-				1. Ifrit(Blackwater hat eine Sondergenehmigung vorausgesetzt ist die Firmenlackierung)<br/>
-				2. Speedboat<br/>
-				3. Hunter<br/>
-				4. Police Offroad<br/>
-                5. Kart<br/>
+				1. alle Polizeifahrzeuge<br/>
+				2. alle gepanzerten Fahrzeuge<br/>
+				3. alle bewaffneten Fahrzeuge<br/>
+				4. Karts (dürfen nur auf der Rennstercke gefahren werden)<br/><br/>
 				"
 		]
 	];
@@ -566,20 +418,17 @@ Alle Polizisten können die Höhe des Bußgeldes selbst bestimmen wenn ein minim
 		[
 			"Illegale Waffen",
 				"
-				Ein Zivilist mit einer der folgenden Waffen verstößt gegen das Waffen-Gesetz und kann dafür von der Polizei zur Rechenschaft gezogen werden.<br/><br/>
-				Blackwater hat eine Sondergenehmigung für Sturmgewehre, DMRs und Pistolen, darf sie jedoch nur zum Schutz von sich und den zu beschützenden Personen einsetzten,<br/>
-				falls dies nicht eingehalten wird dürfen die Waffen der Personen beschlagnahmt werden und die Person zur Rechenschaft gezogen werden, welche die Regel gebrochen hat.
-				
-				1. MX Series<br/>
-				2. Katiba Series<br/>
-				3. TRG Series<br/>
-				4. Mk.20 Series<br/>
+				Illegale Waffen sind:<br/><br/>
+
+				1. alle Polizeiwaffen (MX Series, P07 + Schalldämpfer)<br/>
+				2. Katiba Serien<br/>
+				3. TRG Serien<br/>
+				4. Mk.20 Serien<br/>
 				5. Mk.18 ABR<br/>
-				6. SDAR Rifle<br/>
-				7. Sting SMG<br/>
-				8. Silenced P07 (Taser)<br/>
-				9. Alle Sturmgewehre,SMGs und DMRs<br/>
-				10. Jede Art von Sprengstoff<br/><br/>
+				6. SDAR<br/>
+				7. Rahim
+				8. Granaten<br/>
+				9. Rucksackladungen<br/><br/>
 				"
 		]
 	];
@@ -587,31 +436,285 @@ Alle Polizisten können die Höhe des Bußgeldes selbst bestimmen wenn ein minim
 		[
 			"Illegale Items",
 				"
-				Die Folgenden Items sind illegal:<br/><br/>
+				Illegale Items sind:<br/><br/>
+				
 				1. Schildkröten<br/>
-				2. Kokain<br/>
+				2. unverarbeites Kokain und verarbeitetes Kokain<br/>
 				3. Heroin<br/>
-				4. Cannabis<br/>
-				5. Marijuana<br/><br/>
+				4. Marihuana und Cannabis<br/><br/>
+				
+				Der Besitz dieser Items und der Gebrauch sind strafbar.<br/><br/>
 				"
 		]
 	];
-
-	
-// Controls Section
-
+	player createDiaryRecord["fine",
+		[
+			"Zivilisten:",
+			"
+				Waffen: (Wird immer mit Gefängnis bestraft)<br/><br/>
+				- Mit gezogener Waffe durch die Stadt laufen: 5.000$ (keine Inhaftierung)<br/>
+				- Besitz von verbotenen Waffen: 20.000$<br/>
+				- Besitz von Polizei-Waffen: 35.000$<br/>
+				- Schusswaffengebrauch innerhalb von Städten: 10.000$<br/>
+				
+				Personen & Gegenstände:<br/>
+				- Verursachen von Sachschäden: 5.000$ + Entschädigung<br/>
+				- Sich als Polizist aus geben: 10.000$ + 5min. Inhaftierung<br/>
+				- Anschießen von Personen: 25.000$<br/>
+				- Überfall auf Personen:: 20.000$<br/>
+				- Mord einer Person: 50.000$ + Inhaftierung 10Min<br/><br/>
+				
+				Schwere Straftaten:<br/>
+				- Beteiligung illegaler Straßensperren: 10.000$<br/>
+				- Fahren von Illegale Fahrzeuge: 50.000$ + Beschlagnahmung<br/>
+				- Geiselnahme je Teilnehmer: 125.000$ pro Geisel + 10min. Inhaftierung<br/>
+				- Bankraub (erfolglos): 65.000$ je Teilnehmer + 10min. Inhaftierung<br/>
+				- Bankraub (erfolgreich): Beute + 200.000$<br/><br/>
+				
+				Illegale Waren: (Das Fahrzeug wird vom ADAC abgeschleppt)<br/>
+				- Besitz von Haschisch jeder Art: 1/2 des Marktwertes der Drogen + Inhaftierung 10Min<br/>
+				- Besitz von Kokain jeder Art: 1/2 des Marktwertes der Drogen + Inhaftierung 10Min<br/>
+				- Besitz von Heroin jeder Art: 1/2 des Marktwertes der Drogen + Inhaftierung 10Min<br/>
+				- Besitz von Schildkröten: 1/2 des Marktwertes der Ware + Inhaftierung 10Min<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Wasserfahrzeuge:",
+			"
+				- Boote grundlos schieben: 3.000$<br/>
+				- Schwimmende Leute behindern: 8.000$<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Luftverkehrs Ordnung (LuftVO):",
+			"
+				- Landung in einer Landeverbotszone: 50.000$<br/>
+				- Fliegen in einer Flugverbotszone: 50.000$<br/>
+				- Landen auf einer Straße (ohne Aufforderung): 10.000$<br/>
+				- Fliegen ohne Kollisionslichter: 6.000$<br/>
+				- Fliegen unter 150m über einer Stadt: 10.000$<br/>
+				- Schweben über einer Stadt: 50.000$ + 10min. Inhaftierung<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Straßenverkehrs-Ordnung (StVO):",
+			"
+				Ordnungswidrigkeiten:<br/>
+				- Falsches abstellen vom Fahrzeug: 500$ + Abschleppen des Fahrzeuges<br/>
+				- Fahren ohne Licht bei Dunkelheit oder Dämmerung: 550$<br/>
+				- Fahren auf der falschen Straßenseite: 1.000$<br/>
+				- Fahren abseits der Straße: 1.000$<br/>
+				- Missachtung der Straßenschilder (außer Km/h-Begrenzungen): 750$<br/>
+				- Missachtung Rechts vor Links: 750$<br/><br/>
+				
+				Straftaten:<br/>
+				- Verursachen eines Unfalles: 5.000$ + Begleichung des Schadens<br/>
+				- Unfallflucht: 10.000$<br/>
+				- Anfahren von Personen: 2.500$<br/>
+				- Überfahren von Personen: 25.000$<br/>
+				
+				Geschwindigkeitsübertrettung:<br/>
+				- 10-20 km/h zu schnell: 1.200$ (gefahren: 60-70km/h)<br/>
+				- 21-30 km/h zu schnell: 2.500$ (gefahren: 71-80km/h)<br/>
+				- 31-50 km/h zu schnell: 15.000$ (gefahren: 81-100kmh)<br/>
+				- 51+km/h zu schnell: 30.000$ (gefahren: 101-Max km/h)<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Polizeibeamten:",
+			"
+				- Missachtung polizeilicher Anordnung: 5.000$<br/>
+				- Wiederholte Missachtung Anordnung: 5.000$ + Inhaftierung 5min.<br/>
+				- Betreten von Polizei-Gelände: 2.500$<br/>
+				- Wiederholtes betreten von Polizei-Gelände: 5min. Inhaftierung<br/>
+				- Belästigung eines Polizeibeamten: 2.500$<br/>
+				- Wiederholte belästigung eines Polizeibeamten: 5min. Inhaftierung<br/>
+				- Beamtenbeleidigung (Spielerisch): 5.000$<br/>
+				- Widerstand gegen die Staatsgewalt: 10.000$<br/>
+				- Beschuss eines Polizeibeamten: 40.000$<br/>
+				- Töten eines Polizeibeamten: 100.000+Inhaftierung 30min<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Lizenzen & Scheine:",
+			"
+				- PKW Führerschein: 1.500$<br/>
+				- LKW Führerschein: 30.000$<br/>
+				- Bootsschein: 25.000$<br/>
+				- Flugschein: 50.000<br/>
+				- Waffenbesitz ohne Lizenz: 30.000$<br/><br/>
+			"
+		]
+	];
+	player createDiaryRecord["fine",
+		[
+			"Diebstahl:",
+			"
+				- (Versuchter) Taschendiebstahl: 1.500$<br/>
+				- Wiederholten Taschendiebstahl: 5min. Inhaftierung<br/>
+				- Versuchter Diebstahl eines zivilen Fahrzeuges: 2.500$<br/>
+				- Diebstahl eines zivilen Fahrzeuges: 5.000$<br/>
+				- Versuchter Diebstahl Polizei Fahrzeuges: 25.000$<br/>
+				- Diebstahl Polizei Fahrzeuges: 50.000$<br/><br/>
+			"
+		]
+	];
 	player createDiaryRecord ["controls",
 		[
-			"",
+			"controls",
 				"
-				Z: Spielermenü öffnen<br/>
-				U: Auf- und Abschließen von Fahrzeugen<br/>				
-				T: Kofferraum<br/>				
-				Links Shift + G: Umschlagen / stunnen (Nur zum überfallen benutzen)<br/>
-				Links Windows: Haupt Interaktions-Taste um Items/Geld aufzuheben, interagieren mit Autos (reparieren) und um als Polizist mit Zivilisten zu interagieren. Diese Taste kann umgeändert werden:  ESC->Configure->Controls->Custom->Use Action 10<br/>
-				Links Shift + L: Sirenen-Lichter (nur als Polizist)<br/>
-				Links Shift + R: Gefangen nehmen (nur als Polizist)<br/>
-				F: Sirene (nur als Polizist)<br/>
+				Z: öffnet Spielermeü<br/>
+				U: aufschließen und zuschließen von Autos<br/>
+				F: Polizeisirene (nur Polizist)<br/>
+				T: Fahrzeugkofferraum<br/>
+				Linkes Shift + R: fesseln (nur Polizist)<br/>
+				Linkes Shift + G: umschlagen (nur Zivilist, um auszurauben)<br/>
+				Linkes Shift + L: aktiviert Blaulicht (nur Polizist)<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["saves",
+		[
+			"Was genau gespeichert wird:",
+				"
+					Auf unserem Server werden i.d.R. alle Items gespeichert. Das heißt:<br/><br/>
+					
+					Gear von Polizisten <br/>
+					Gear von Zivilisten <br/>
+					Inventar (Z-Menü) - Unbedingt synchronisieren!<br/>
+					Hausinventar (Synchronisiert, wenn man auf 'Schließen' drückt)<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["house",
+		[
+			"Haussystem: Vorteile",
+				"
+					Du kannst hier ein Haus kaufen, wenn du dir vorher eine Hausbesitzerlizenz beim Lizenzhändler besorgt hast.
+					Suche nach einem Schild mit dem Haussysmbol und öffne im Scroll-Menü die Haussteuerung.<br/><br/><br/>
+					
+					
+					Ein eigenes Haus bringt dir folgende Vorteile:<br/><br/>
+					
+					* Du kannst in deinem Haus respawnen.<br/>
+					* Du kannst beliebige virtuelle Items (vom Z-Inventar) in deinem Haus speichern. Es fasst standardmäßig 100 Gewichtsplätze.<br/>
+					* Wenn du mehr Inventarplatz für dein Haus willst, dann kaufe dir 1 Kiste und benutze sie in der Nähe deines Hauses.<br/>
+					* Niemand weiß wo du wohnst, außer er beobachtet dich oder du erzählst es ihm.<br/>
+					* Direkter Zugriff auf die Autogarage, wenn du eine Garage kaufst.<br/><br/>
+
+					Aber Vorsicht! Die Polizei kann das Haus durchsuchen!<br/><br/>
+				"
+		]
+	];
+	
+///////////////////////////////////////////// ADAC ///////////////////////////////////////////////
+	
+	player createDiaryRecord["adacrules",
+		[
+			"Voraussetzungen", 
+				"
+				1. Spielzeiten auf dem Server nicht eingeschränkt.<br/><br/>
+				2. Sauberes und erwachsenes Verhalten<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["adacrules",
+		[
+			"Sonstige Voraussetzungen", 
+				"
+				1. Gebildete und gute Aussprache.<br/><br/>
+				2. Ruhiges gemüht und Geduld.<br/><br/>
+				3. Höflichkeit<br/><br/>
+				4. Häufige Anwesenheit wenn möglich<br/><br/>
+				5. Einhaltung der gesamten Regeln<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["adacrules",
+		[
+			"Ausbildungsziele", 
+				"
+				1. Fahrprüfung SUV/Offroader.<br/><br/>
+				2. Fahrprüfung LKW / Abschleppprüfung.<br/><br/>
+				3. Flugprüfung<br><br/>
+				4. Unfallsicherung<br/><br/>
+				5. Zeitprüfung zum Unfallort<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["adacrules",
+		[
+			"Verbote", 
+				"
+				1. Waffen<br/><br/>
+				2. Illegale Items<br/><br/>
+				3. RDM<br/><br/>
+				4. Missachtung von Nachrichten<br/><br/>
+				5. Nichteinhaltung der Regeln<br/><br/>
+				6. Taxifahrten<br/><br/>
+				7. Begleitschutz<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["adacrules",
+		[
+			"Aufgaben",
+				"
+				1. Der ADAC ist für die Fahrzeuge und deren Insassen in Not (Unfall) einzusetzen.<br/><br/>
+				
+				2. Abschleppen von Fahrzeugen an Verkehrsbehinderungen und Unfallstellen (Hinzuziehung der Polizei).<br/><br/>
+				3. Der ADAC kann über das Handy mit einer Nachricht (Information: Koordinaten, Name, Grund) angefordert werden.<br/><br/>
+				4. Sobald der ADAC gefordert wird, muss dieser eine Rechnung für Anfahrt, Reparatur, Transport und/oder Reserve Tank Befüllung erstellen.<br/><br/>
+				   Die Kosten belaufen sich folgend:<br/><br/>
+				   - Anfahrt: Kilometer x 500$ == (15KM x 500$ = 7500$)<br/><br/>
+				   - Reparatur: Toolkit = 500$<br/><br/>
+				   - Reserve Tankfüllung: Reservekanister = 400$<br/><br/>
+				   - Abschleppkosten = 1500$<br/><br/>
+
+					
+					Die Kosten mit einer ADAC-Clubmitgliedschaft belaufen sich wie folgend:<br/><br/>
+				   - Anfahrt: Kilometer x 375$ == (15KM x 375$ = 5625$)<br/><br/>
+				   - Reparatur: Toolkit = 300$<br/><br/>
+				   - Reserve Tankfüllung: Reservekanister = 300$<br/><br/>
+				   - Abschleppkosten = 1000$<br/><br/>
+				"
+		]
+	];	
+
+	player createDiaryRecord ["adacrules",
+		[
+			"Fahrzeug Nutzung",
+				"
+				1. Alle Fahrer des ADAC´s haben sich nach den Straßenverkehrsregeln zu richten.<br/><br/>
+				2. Missbrauch eines Einsatzfahrzeuges für Zivile zwecke sind untersagt.<br/><br/>
+				3. Der Helikopter des ADAC kann ausschließlich nur von der Polizei und ADAC-Leitern geordert werden.<br/><br/>
+				4. Jeder ADAC-Mitarbeiter hat dafür sorge zu tragen, das seine Ausrüstung (ToolKit, etc.) vollständig ist.<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["adacrules",
+		[
+			"Teamspeak Regeln",
+				"
+				1. Alle ADAC-Mitarbeiter haben sich während Ihrer Dienstzeit im Teamspeak(g-e-unicorns.de) einzufinden<br/>
+				2. Jeder ADAC-Mitarbeiter muss vor seinem einstieg auf den Server sich im Teamspeak eingefunden haben.<br/><br/>
 				"
 		]
 	];

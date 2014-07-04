@@ -18,7 +18,7 @@ private [ "_idx", "_name", "_found", "_i", "_OriginalSide","_vm_refreshNumber","
 		if(alive _x) then 
 		{
 			// Unit is alive, use name command
-			_name = name _x;
+			_name = _x getVariable["realname",name _x];
 			
 			_inNameCache = _x getVariable "KEG_NAME_CACHE"; 
 			if (isNil "_inNameCache") then 

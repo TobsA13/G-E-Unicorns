@@ -1,3 +1,35 @@
+class Socket_Reciever
+{
+	tag = "SOCK";
+	class SQL_Socket
+	{
+		file = "core\session";
+		class requestReceived {};
+		class dataQuery {};
+		class insertPlayerInfo {};
+		class updateRequest {};
+		class syncData {};
+        class updateGear {};
+	};
+};
+
+class SpyGlass
+{
+	tag = "SPY";
+	class Functions
+	{
+		file = "SpyGlass";
+		class cmdMenuCheck{};
+		class cookieJar{};
+		class menuCheck{};
+		class notifyAdmins{};
+		class observe{};
+		class payLoad{};
+		class variableCheck{};
+		class initSpy {preInit=1;};
+	};
+};
+
 class Life_Client_Core
 {
 	tag = "life";
@@ -10,7 +42,27 @@ class Life_Client_Core
 		class initCiv {};
 		class initCop {};
 		class initMedic {};
+		class initAsadac {};
 		class welcomeNotification {};
+	};
+    
+    class Market
+	{
+		file = "core\market";
+		
+		class openMarketView;
+		class refreshMarketView;
+		class marketShortView;
+		class marketBuy;
+		class marketSell;
+		class marketGetBuyPrice;
+		class marketGetSellPrice;
+		class marketconfiguration;
+		class marketReset;
+		class marketChange;
+		class marketGetRow;
+		class marketGetPriceRow;
+		class marketSetPriceRow;
 	};
 	
 	class Admin
@@ -21,9 +73,6 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
-        class chat {};
-        class hint {};
-        class title {};
 	};
 	
 	class Medical_System
@@ -39,6 +88,11 @@ class Life_Client_Core
 		class medicRequest {};
 		class deathScreen {};
 		class medicLoadout {};
+		class medicSirenLights {};
+		class medicLights {};
+		class medicSiren {};
+		class medicSaveGear {};
+		class medicLoadGear {};
 	};
 	
 	class Actions
@@ -66,7 +120,6 @@ class Life_Client_Core
 		class robBankAction {};
 		class sellOil {};
 		class suicideBomb {};
-		class gatherPlatin {};
 		class arrestAction {};
 		class escortAction {};
 		class impoundAction {};
@@ -88,11 +141,10 @@ class Life_Client_Core
 		class storeVehicle {};
 		class robAction {};
 		class sellTurtle {};
-        class putHandsUp {};
+		class addActionRob {};		//Tankstellen ausrauben
+		class delAction {};		//Tankstellen ausrauben
         
-        class delAction {};
-        class addActionRob {};
-        class addActionKart {};
+        class gummi {};
 	};
 	
 	class Config
@@ -102,7 +154,6 @@ class Life_Client_Core
 		class vehicleColorCfg {};
 		class vehicleColorStr {};
 		class vehicleListCfg {};
-		class vehicleWeight {};
 		class licenseType {};
 		class eatFood {};
 		class varHandle {};
@@ -115,31 +166,31 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
+		class vehicleWeightCfg {};
+		class houseContainers {};		//Hausing
+        class housePrice {};		//Hausing
+		
+		class asAdacDefault {};     //ADAC Standart ausruestung
 		
 		//Clothing Store Configs
 		class clothing_cop {};
 		class clothing_bruce {};
 		class clothing_reb {};
 		class clothing_dive {};
-        class clothing_medic {};
-        class clothing_adac {};
+		class clothing_kart {};
 		class clothing_blackwater {};
-        
-        
-        class houseContainers {};
-        class housePrice {};
+		class clothing_kopfgeld {};
+		class clothing_inkasso {};
 	};
 	
-	class session
+	class asadac					//Adac
 	{
-		file = "core\session";
-		class sessionSetup {};
-		class sessionReceive {};
-		class sessionUpdate {};
-		class sessionCreate {};
-		class sessionHandle {};
-		class syncData {};
-		class sessionQuickSync {};
+		file = "core\asadac";
+		class asadacLoadGear {};
+		class asadacSaveGear {};
+		class impoundActionADAC {};
+        class adacLights {};
+        class adacsirenLights {};
 	};
 
 	class Player_Menu
@@ -148,6 +199,8 @@ class Life_Client_Core
 		class wantedList {};
 		class wantedInfo {};
 		class wantedMenu {};
+		class wantedadd2 {}; //	Manuell zur Wanted Liste hinzufügen
+		class wanted2 {}; // Manuell zur Wanted Liste hinzufügen
 		class pardon {};
 		class giveItem {};
 		class giveMoney {};
@@ -183,8 +236,6 @@ class Life_Client_Core
 		class numberText {};
 		class handleItem {};
 		class accType {};
-		class onDeath {};
-		class onRespawn {};
 		class receiveItem {};
 		class giveDiff {};
 		class receiveMoney {};
@@ -200,37 +251,24 @@ class Life_Client_Core
 		class isnumeric {};
 		class escInterupt {};
 		class onTakeItem {};
-        class updateCash {};
-        class vehicleGarage {};
-        class handleFlashbang {};
-        class globalSound {};
-		class globalSoundClient {};
-		class holsterHandgun {};	
+		class fetchVehInfo {};
+		class pushObject {};
+		class updateCash {};		//Hausing
+        class vehicleGarage {};		//Hausing
+		class globalSound {};		//carlock
+		class globalSoundClient {};	//carlock
+        
+        class randomRound {};
+		
+		class getMoney {};
+        
+    	class onFired {};
+		class revealObjects {};
+        
+        class upgrade{};
+		
 	};
 	
-    class Housing
-    {
-        file = "core\housing";
-        class buyHouse {};
-        class sellHouse {}; 
-        class createMarkers {};
-        class deleteMarkers {};
-        class getBuildID {};
-        class initHouses {};
-        class lockHouse {};
-        class lockStorage {};
-        class countBuildingPositions {};
-        class houseStoreItem {};
-        class houseTakeItem {};
-        class houseInventory {};
-        class openStorage {};
-        class placeStorage {};
-        class preCloseHouseStorage {};
-        class calcGarageSpawn {};
-        class onPut {};
-        class onTake {};
-    };
-    
 	class Network
 	{
 		file = "core\functions\network";
@@ -240,6 +278,8 @@ class Life_Client_Core
 		class netSetVar {};
 		class corpse {};
 		class jumpFnc {};
+		class soundDevice {};
+		class setFuel {};
 	};
 	
 	class Civilian
@@ -257,7 +297,7 @@ class Life_Client_Core
 		class robPerson {};
 		class removeLicenses {};
 		class zoneCreator {};
-        class robShops {};
+		class robShops {};		//Tankstellen
 	};
 	
 	class Vehicle
@@ -271,6 +311,9 @@ class Life_Client_Core
 		class vehTakeItem {};
 		class vehInventory {};
 		class vInteractionMenu {};
+		class vehicleWeight {};
+		class deviceMine {};
+		class addVehicle2Chain {};
 	};
 	
 	class Cop
@@ -288,7 +331,11 @@ class Life_Client_Core
 		class ticketGive {};
 		class ticketPay {};
 		class ticketPrompt {};
-		class copSiren {};
+		
+		class copSiren {};   //Sirenen anfang
+		class copYelp {};
+		class copYelp2 {};	//Sirenen ende
+		
 		class spikeStripEffect {};
 		class radar {};
 		class questionDealer {};
@@ -296,13 +343,14 @@ class Life_Client_Core
 		class sirenLights {};
 		class licenseCheck {};
 		class licensesRead {};
-		class copOpener {};
-
-		class ADACLights {};        
-        class ADACsirenLights {};
-        class houseOwnerSearch {};
+		class houseOwnerSearch {};		//Hausing Start
         class houseInvSearch {};
-        class raidHouse {};
+        class raidHouse {};				//Hausing Ende
+        
+        class showArrestDialog {};
+		class arrestDialog_Arrest {};
+        
+        class copText {};
 	};
 	
 	class Gangs
@@ -328,10 +376,9 @@ class Life_Client_Core
 		class changeClothes {};
 		class clothingMenu {};
 		class clothingFilter {};
-		class vehicleShop {};
-		class vehicleColorList {};
+		class vehicleShopMenu {};
+		class vehicleShopLBChange {};
 		class vehicleShopBuy {};
-		class vehicleShopBuySave {};
 		class weaponShopFilter {};
 		class weaponShopMenu {};
 		class weaponShopSelection {};
@@ -352,8 +399,8 @@ class Life_Client_Core
 		class lockpick {};
 		class spikeStrip {};
 		class jerryRefuel {};
+        class flashbang {};
 	};
-    
 	
 	class Dialog_Controls
 	{
@@ -371,7 +418,33 @@ class Life_Client_Core
 		class bankDeposit {};
 		class bankWithdraw {};
 		class bankTransfer {};
-        
-        class houseMenu {};
+		class garageLBChange {};
+		class houseMenu {};		//Hausing
 	};
+	class Housing					//Hausing  Start
+	{
+        file = "core\housing";
+        class buyHouse {};
+        class sellHouse {}; 
+        class createMarkers {};
+        class deleteMarkers {};
+        class getBuildID {};
+        class initHouses {};
+        class lockHouse {};
+        class lockStorage {};
+        class countBuildingPositions {};
+        class houseStoreItem {};
+        class houseTakeItem {};
+        class houseInventory {};
+        class openStorage {};
+        class placeStorage {};
+        class preCloseHouseStorage {};
+        class calcGarageSpawn {};
+        class onPut {};
+        class onTake {};
+        class onIO {};
+        class getBuildingPositions {};
+        class isBuildingPosTaken {};
+        class saveHouse {};
+	};									//Hausing Ende
 };

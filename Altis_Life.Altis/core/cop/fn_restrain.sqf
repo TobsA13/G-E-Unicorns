@@ -26,8 +26,7 @@ if(isNull _cop) exitWith {};
 	};
 };
 
-titleText[format["You have been restrained by %1",name _cop],"PLAIN"];
-[player,"cuff"] call life_fnc_globalSound;
+titleText[format["You have been restrained by %1",_cop getVariable["realname",name _cop]],"PLAIN"];
 				
 while {player getVariable "restrained"} do
 {
@@ -55,5 +54,5 @@ while {player getVariable "restrained"} do
 		
 if(alive player) then
 {
-	titleText["You have been released, press V to get out of restrainment.","PLAIN"];
+	player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
 };

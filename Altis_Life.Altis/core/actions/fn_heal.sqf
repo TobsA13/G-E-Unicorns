@@ -6,5 +6,4 @@ if(!("FirstAidKit" in (items player))) exitWith {};
 player removeItem "FirstAidKit";
 player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 sleep 3;
-[player,"bandage"] call life_fnc_globalSound;
 player setDamage 0.25; //Heal to 75

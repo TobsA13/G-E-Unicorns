@@ -22,11 +22,14 @@
 		<Key ID="STR_Global_Settings">
 			<Original>Einstellungen</Original>
 		</Key>
-		<Key ID="STR_Global_BuyPerm">
-			<Original>Permanent kaufen</Original>
+		<Key ID="STR_Global_RentVeh">
+			<Original>Ausleihen</Original>
+		</Key>
+		<Key ID="STR_Global_Retrieve">
+			<Original>Abrufen</Original>
 		</Key>
 		<Key ID="STR_Global_NoSelection">
-			<Original>Du hast nichts ausgewählt.</Original>
+			<Original>Du hast nichts ausgewählt</Original>
 		</Key>
 	</Package>
 	<Package name="Admin_Menu">
@@ -50,33 +53,42 @@
 		<Key ID="STR_ATM_Transfer">
 			<Original>Überweisen</Original>
 		</Key>
+		<Key ID="STR_ATM_GreaterThan">
+			<Original>Sie können nicht mehr als $999,999 gleichzeitig einzahlen !</Original>
+		</Key>
+		<Key ID="STR_ATM_notnumeric">
+			<Original>Nur Zahlen eingeben</Original>
+		</Key>
 	</Package>
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
-			<Original>Aldi-Talk</Original>
+			<Original>Altis Mobile</Original>
 		</Key>
 		<Key ID="STR_CELL_TextToSend">
-			<Original>Textnachricht:</Original>
+			<Original>Text Nachricht:</Original>
 		</Key>
 		<Key ID="STR_CELL_TextMSGBtn">
 			<Original>Senden an:</Original>
 		</Key>
 		<Key ID="STR_CELL_TextPolice">
-			<Original>An Polizei senden</Original>
+			<Original>An Polizei</Original>
 		</Key>
 		<Key ID="STR_CELL_TextAdmins">
-			<Original>An Admins senden</Original>
+			<Original>An Admins</Original>
 		</Key>
 		<Key ID="STR_CELL_AdminMsg">
-			<Original>A-Nachricht</Original>
+			<Original>Admin an</Original>
 		</Key>
 		<Key ID="STR_CELL_AdminMSGAll">
-			<Original>A an alle</Original>
+			<Original>A-Msg alle</Original>
+		</Key>
+		<Key ID="STR_CELL_EMSRequest">
+			<Original>ADAC</Original>
 		</Key>
 	</Package>
 	<Package name="Chop_Shop">
 		<Key ID="STR_ChopShop_Title">
-			<Original>Schwarzmarkt</Original>
+			<Original>Lokaler Chop Shop</Original>
 		</Key>
 	</Package>
 	<Package name="Gang_Menu">
@@ -84,7 +96,7 @@
 			<Original>Gang Management</Original>
 		</Key>
 		<Key ID="STR_Gang_Title2">
-			<Original>Gang Management - Bestehende Gangs</Original>
+			<Original>Gang Management - Aktuelle Gangs</Original>
 		</Key>
 		<Key ID="STR_Gang_Join">
 			<Original>Beitreten</Original>
@@ -93,36 +105,36 @@
 			<Original>Verlassen</Original>
 		</Key>
 		<Key ID="STR_Gang_Lock">
-			<Original>Schließen</Original>
+			<Original>Sperren</Original>
 		</Key>
 		<Key ID="STR_Gang_Unlock">
-			<Original>Öffnen</Original>
+			<Original>Entsperren</Original>
 		</Key>
 		<Key ID="STR_Gang_Kick">
-			<Original>Kicken</Original>
+			<Original>Kick</Original>
 		</Key>
 		<Key ID="STR_Gang_SetLeader">
-			<Original>Zum Anführer ernennen</Original>
+			<Original>Zum Führer machen</Original>
 		</Key>
 		<Key ID="STR_Gang_PriceTxt">
-			<Original>Eine Gang zu erstellen kostet 10.000$</Original>
+			<Original>Eine Gang zu Gründen kostet $10,000</Original>
 		</Key>
 		<Key ID="STR_Gang_Create">
-			<Original>Erstellen</Original>
+			<Original>Erzeugen</Original>
 		</Key>
 		<Key ID="STR_Gang_YGN">
-			<Original>Gang-Name</Original>
+			<Original>Dein Gang Name</Original>
 		</Key>
 		<Key ID="STR_Gang_MainMenu">
-			<Original>Du bist in keiner Gang, was willst du tun?</Original>
+			<Original>Sie sind nicht in einer Gang, Was möchten Sie tun ?</Original>
 		</Key>
 		<Key ID="STR_Gang_Browse">
-			<Original>Suchen</Original>
+			<Original>Durchsuchen</Original>
 		</Key>
 	</Package>
 	<Package name="Garage_Menu">
 		<Key ID="STR_Garage_Title">
-			<Original>Fahrzeug-Garage</Original>
+			<Original>Fahrzeug Garage</Original>
 		</Key>
 		<Key ID="STR_Garage_GetVehicle">
 			<Original>Liefern</Original>
@@ -137,24 +149,42 @@
 			<Original>Lagergebühr</Original>
 		</Key>
 		<Key ID="STR_Garage_NoVehicles">
-			<Original>Keine Fahrzeuge vorhanden</Original>
-		</Key>
-		<Key ID="STR_Garage_GoodConnection">
-			<Original>Fahzeuge vorhanden</Original>
+			<Original>Keine Fahrzeuge in der Garage gefunden</Original>
 		</Key>
 		<Key ID="STR_Garage_CashError">
-			<Original>Du hast keine $%1 auf deinem Konto</Original>
+			<Original>Sie haben keine $%1 auf dem Bankkonto</Original>
 		</Key>
 		<Key ID="STR_Garage_SpawningVeh">
-			<Original>Fahrzeug wird geliefert bitte warten...</Original>
+			<Original>Spawning Fahrzeug bitte warten...</Original>
+		</Key>
+		<Key ID="STR_Garage_SQLError_Destroyed">
+			<Original>Sorry aber %1 wurde als zerstörtes Fahrzeug eingestuft und zum Schrottplatz gebracht</Original>
+		</Key>
+		<Key ID="STR_Garage_SQLError_Active">
+			<Original>Sorry aber %1 Fahrzeug existiert bereits und kann nicht gespawnt werden</Original>
+		</Key>
+		<Key ID="STR_Garage_SpawnPointError">
+			<Original>Es gibt bereits ein Fahrzeug auf dem Spawn-Punkt. Sie werden die Kosten erstattet bekommen.</Original>
+		</Key>
+		<Key ID="STR_Garage_SoldCar">
+			<Original>Sie haben das Fahrzeug für $%1 verkauft</Original>
+		</Key>
+		<Key ID="STR_Garage_Store_NotPersistent">
+			<Original>Das Fahrzeug ist geliehen und kann nicht in der Garage geparkt werden</Original>
+		</Key>
+		<Key ID="STR_Garage_Store_NoOwnership">
+			<Original>Dieses Fahrzeug gehört Ihnen nicht, deshalb kannst du es nicht in der Garage parken</Original>
+		</Key>
+		<Key ID="STR_Garage_Store_Success">
+			<Original>Das Fahrzeug wurde in der Garage geparkt</Original>
 		</Key>
 	</Package>
 	<Package name="Key_Chain">
 		<Key ID="STR_Keys_Title">
-			<Original>Schlüsselbund - Liste deiner Aktuellen Schlüssel</Original>
+			<Original>Schlüsselbund - Liste aktueller Schlüssel</Original>
 		</Key>
 		<Key ID="STR_Keys_DropKey">
-			<Original>Schlüssel wegwerfen</Original>
+			<Original>Wegwerfen</Original>
 		</Key>
 		<Key ID="STR_Keys_GiveKey">
 			<Original>Geben</Original>
@@ -162,10 +192,10 @@
 	</Package>
 	<Package name="Player_Menu">
 		<Key ID="STR_PM_Title">
-			<Original>Spieler Menü</Original>
+			<Original>Player Menu</Original>
 		</Key>
 		<Key ID="STR_PM_cItems">
-			<Original>Aktuelle Gegenstände</Original>
+			<Original>Current Items</Original>
 		</Key>
 		<Key ID="STR_PM_Licenses">
 			<Original>Lizenzen</Original>
@@ -203,48 +233,48 @@
 			<Original>Im Auto:</Original>
 		</Key>
 		<Key ID="STR_SM_inAir">
-			<Original>In der Luft:</Original>
+			<Original>Im Heli:</Original>
 		</Key>
 		<Key ID="STR_SM_ToolTip1">
-			<Original>Sichtweite zu Fuß</Original>
+			<Original>Zeige Distanz zu Fuß</Original>
 		</Key>
 		<Key ID="STR_SM_ToolTip2">
-			<Original>Sichtweite in einem Fahrzeug</Original>
+			<Original>Zeige Distanz aus Fahrzeug</Original>
 		</Key>
 		<Key ID="STR_SM_ToolTip3">
-			<Original>Sichtweite in einem Flugzeug</Original>
+			<Original>Zeige Distanz aus Hubschrauber</Original>
 		</Key>
 		<Key ID="STR_SM_PlayerTags">
-			<Original>Spielernamen</Original>
+			<Original>Spieler Anzeige</Original>
 		</Key>
 		<Key ID="STR_SM_TagsON">
-			<Original>Sichtbar</Original>
+			<Original>Namen AN</Original>
 		</Key>
 		<Key ID="STR_SM_TagsOFF">
-			<Original>Unsichtbar</Original>
+			<Original>Namen AUS</Original>
 		</Key>
 		<Key ID="STR_SM_SC">
 			<Original>Sidechat Einstellungen</Original>
 		</Key>
 		<Key ID="STR_SM_SCOFF">
-			<Original>Sidechat aus</Original>
+			<Original>Sidechat AUS</Original>
 		</Key>
 		<Key ID="STR_SM_SCON">
-			<Original>Sidechat an</Original>
+			<Original>Sidechat AN</Original>
 		</Key>
 	</Package>
 	<Package name="Virt_Shop">
 		<Key ID="STR_VS_SI">
-			<Original>Ladeninventar</Original>
+			<Original>Shop Inventar</Original>
 		</Key>
 		<Key ID="STR_VS_PI">
-			<Original>Dein Inventar</Original>
+			<Original>Mein Inventar</Original>
 		</Key>
 		<Key ID="STR_VS_BuyItem">
-			<Original>Kaufen</Original>
+			<Original>Kaufe Gegenstand</Original>
 		</Key>
 		<Key ID="STR_VS_SellItem">
-			<Original>Verkaufen</Original>
+			<Original>Verkaufe Gegenstand</Original>
 		</Key>
 	</Package>
 	<Package name="Spawn_Menu">
@@ -258,18 +288,18 @@
 			<Original>Aktueller Spawn Point</Original>
 		</Key>
 		<Key ID="STR_Spawn_Spawned">
-			<Original>Dein Spawnort:</Original>
+			<Original>Sie sind gespawnt in</Original>
 		</Key>
 	</Package>
 	<Package name="Ticket_Menu">
 		<Key ID="STR_Ticket_GiveTicket">
-			<Original>Strafzettle geben</Original>
+			<Original>Gebe Ticket</Original>
 		</Key>
 		<Key ID="STR_Ticket_PayTicket">
-			<Original>bezahlen</Original>
+			<Original>Bezahlen</Original>
 		</Key>
 		<Key ID="STR_Ticket_RefuseTicket">
-			<Original>ablehnen</Original>
+			<Original>Ablehnen</Original>
 		</Key>
 	</Package>
 	<Package name="Trunk_Menu">
@@ -277,13 +307,13 @@
 			<Original>Kofferraum</Original>
 		</Key>
 		<Key ID="STR_Trunk_PInventory">
-			<Original>Spielerinventar</Original>
+			<Original>Spieler Inventar</Original>
 		</Key>
 		<Key ID="STR_Trunk_Take">
 			<Original>Nehmen</Original>
 		</Key>
 		<Key ID="STR_Trunk_Store">
-			<Original>Einlagern</Original>
+			<Original>Verstauen</Original>
 		</Key>
 	</Package>
 	<Package name="Wanted_Menu">
@@ -291,7 +321,7 @@
 			<Original>Fahndungsliste</Original>
 		</Key>
 		<Key ID="STR_Wanted_Pardon">
-			<Original>Pardon</Original>
+			<Original>Begnadigen</Original>
 		</Key>
 	</Package>
 	<Package name="Animals">
@@ -299,16 +329,16 @@
 			<Original>Salema</Original>
 		</Key>
 		<Key ID="STR_ANIM_Ornate">
-			<Original>Forelle</Original>
+			<Original>Ornate</Original>
 		</Key>
 		<Key ID="STR_ANIM_Mackerel">
-			<Original>Makrele</Original>
+			<Original>Mackerel</Original>
 		</Key>
 		<Key ID="STR_ANIM_Tuna">
 			<Original>Tunfisch</Original>
 		</Key>
 		<Key ID="STR_ANIM_Mullet">
-			<Original>Meeräsche</Original>
+			<Original>Mullet</Original>
 		</Key>
 		<Key ID="STR_ANIM_Catshark">
 			<Original>Katzenhai</Original>
@@ -319,94 +349,654 @@
 	</Package>
 	<Package name="Notifications">
 		<Key ID="STR_NOTF_NE_1">
-			<Original>Du hast keine $%1 um %2 zu kaufen</Original>
+			<Original>Sie haben keine $%1 für a %2</Original>
 		</Key>
 		<Key ID="STR_NOTF_B_1">
-			<Original>Du hast %1 für $%2 gekauft</Original>
+			<Original>Sie haben %1 für $%2 gekauft</Original>
 		</Key>
 		<Key ID="STR_NOTF_Arrested_1">
-			<Original>%1 wurde von %2 eingesperrt</Original>
+			<Original>%1 wurde von %2 inhaftiert</Original>
 		</Key>
 		<Key ID="STR_NOTF_Fishing">
-			<Original>Du hast eine/n %1 gefangen</Original>
+			<Original>Du hast ein %1 gefangen</Original>
 		</Key>
 		<Key ID="STR_NOTF_CaughtTurtle">
-			<Original>Du hast Schildkrötenfleisch aufgehoben</Original>
+			<Original>Sie haben Schildkötenfleisch aufgesammlt</Original>
 		</Key>
 		<Key ID="STR_NOTF_Earned_1">
-			<Original>Du hast $%1 verdient</Original>
+			<Original>Sie haben $%1 verdient</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetDrop">
-			<Original>Fischernetz auswerfen...</Original>
+			<Original>Fischernetz ausgeworfen...</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetDropFail">
-			<Original>Du hast keinen Fisch gefangen...</Original>
+			<Original>Kein Fisch gefangen</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetUp">
-			<Original>Fischernetz eingeholt.</Original>
+			<Original>Fischernetz eingeholt</Original>
 		</Key>
 		<Key ID="STR_NOTF_InvFull">
-			<Original>Dein Inventar ist voll.</Original>
+			<Original>Dein Inventar ist voll</Original>
 		</Key>
 		<Key ID="STR_NOTF_Gathering">
-			<Original>Sammeln %1...</Original>
+			<Original>Farme %1...</Original>
+		</Key>
+		<Key ID="STR_NOTF_ChopSoldCar">
+			<Original>Du hast %1 für $%2 verkauft</Original>
+		</Key>
+		<Key ID="STR_NOTF_Picked">
+			<Original>Du hast %1 %2 aufgesammlt</Original>
+		</Key>
+		<Key ID="STR_NOTF_Collected">
+			<Original>Du hast %1 gesammelt</Original>
+		</Key>
+		<Key ID="STR_NOTF_DPStart">
+			<Original>Du bist dabei das Packet nach %1 zu befördern</Original>
+		</Key>
+		<Key ID="STR_NOTF_DPTask">
+			<Original>Bring das Packet nach %1</Original>
+		</Key>
+		<Key ID="STR_NOTF_DPFailed">
+			<Original>Zustellung fehlgeschlagen, weil du gestorben bist</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_NoCash">
+			<Original>Du hast keine $%1 um geheilt zu werden</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_Healing">
+			<Original>Bitte stehen bleiben</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_ToFar">
+			<Original>Du musst in 5m Reichweite bleiben um geheilt zu werden</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_Healed">
+			<Original>Du bist voll geheilt</Original>
+		</Key>
+		<Key ID="STR_NOTF_BeingImpounded">
+			<Original>%1 dein %2 wird gerade von der Polizei beschlagnahmt</Original>
+		</Key>
+		<Key ID="STR_NOTF_Impounding">
+			<Original>Beschlagnahmen</Original>
+		</Key>
+		<Key ID="STR_NOTF_ImpoundingCancelled">
+			<Original>Beschlagnahmen wurde abgebrochen</Original>
+		</Key>
+		<Key ID="STR_NOTF_Impounded">
+			<Original>Du hast einen %1 beschlagnahmt \n\n Du hast $%2 für das säubern der Strasse verdient!</Original>
+		</Key>
+		<Key ID="STR_NOTF_HasImpounded">
+			<Original>%1 hat Fahrzeug beschlagnahmt von %2's %3</Original>
+		</Key>
+		<Key ID="STR_NOTF_AbortESC">
+			<Original>Verfügbar in %1</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceIsMining">
+			<Original>Das Fahrzeug ist bereits am farmen</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceFull">
+			<Original>Das Fahrzeug ist voll</Original>
+		</Key>
+		<Key ID="STR_NOTF_notNearResource">
+			<Original>Du bist nicht in der nähe eines Feldes</Original>
+		</Key>
+		<Key ID="STR_NOTF_MiningStopped">
+			<Original>Du kannst beim farmen das Fahrzeug nicht starten</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceMining">
+			<Original>Das Fahrzeug farmt gerade...</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceMined">
+			<Original>Zyklus beendet das Fahrzeug hat %1 gefarmt</Original>
+		</Key>
+		<Key ID="STR_NOTF_OutOfFuel">
+			<Original>Kein Benzin mehr</Original>
+		</Key>
+	</Package>
+	<Package name="Life_Items">
+		<Key ID="STR_Item_Cannabis">
+			<Original>Cannabis</Original>
+		</Key>
+		<Key ID="STR_Item_Apple">
+			<Original>Apfel</Original>
+		</Key>
+		<Key ID="STR_Item_Apples">
+			<Original>Äpfel</Original>
+		</Key>
+		<Key ID="STR_Item_Cocaine">
+			<Original>Kokain</Original>
+		</Key>
+		<Key ID="STR_Item_Heroin">
+			<Original>Heroin</Original>
+		</Key>
+		<Key ID="STR_Item_Oil">
+			<Original>Öl</Original>
+		</Key>
+		<Key ID="STR_Item_Peach">
+			<Original>Pfirsich</Original>
+		</Key>
+		<Key ID="STR_Item_Peaches">
+			<Original>Pfirsiche</Original>
+		</Key>
+	</Package>
+	<Package name="Federal_Reserve">
+		<Key ID="STR_NOTF_FRRobbery_fail">
+			<Original>Überfall aus unbekanntem Grund fehlgeschlagen</Original>
+		</Key>
+		<Key ID="STR_NOTF_FRRobbery_Success">
+			<Original>$%1 wurden beim Bankraub gestohlen</Original>
+		</Key>
+		<Key ID="STR_FEDR_VInUse">
+			<Original>Der Safe wird bereits von jemandem anderen ausgraubt</Original>
+		</Key>
+		<Key ID="STR_FEDR_VRecently">
+			<Original>Der Safe wurde vor kurzem erst ausgeraubt</Original>
 		</Key>
 	</Package>
 	<Package name="Player_Interaction">
 		<Key ID="STR_pInAct_Title">
-			<Original>Interaktionsmenü</Original>
+			<Original>Spieler Interaktions Menu</Original>
 		</Key>
 		<Key ID="STR_pInAct_PutInCar">
-			<Original>In das Fahrzeug setzen</Original>
+			<Original>Ins Fahrzeug</Original>
 		</Key>
 		<Key ID="STR_pInAct_Unrestrain">
 			<Original>Entfesseln</Original>
 		</Key>
 		<Key ID="STR_pInAct_checkLicenses">
-			<Original>Lizenzen überprüfen</Original>
+			<Original>Führerschein prüfen</Original>
 		</Key>
 		<Key ID="STR_pInAct_SearchPlayer">
 			<Original>Durchsuchen</Original>
 		</Key>
 		<Key ID="STR_pInAct_StopEscort">
-			<Original>Freilassen</Original>
+			<Original>Loslassen</Original>
 		</Key>
 		<Key ID="STR_pInAct_Escort">
 			<Original>Abführen</Original>
 		</Key>
 		<Key ID="STR_pInAct_TicketBtn">
-			<Original>Strafzettel ausstellen</Original>
+			<Original>Strafzettel</Original>
 		</Key>
 		<Key ID="STR_pInAct_Arrest">
-			<Original>Inhaftieren</Original>
+			<Original>Verhaften</Original>
 		</Key>
 	</Package>
 	<Package name="Vehicle_Interaction">
 		<Key ID="STR_vInAct_Title">
-			<Original>Fahrzeug-Interaktionsmenü</Original>
+			<Original>Fahrzeug Interaktions Menu</Original>
+		</Key>
+		<Key ID="STR_vInAct_Unflip">
+			<Original>Aufstellen</Original>
+		</Key>
+		<Key ID="STR_vInAct_GetInKart">
+			<Original>In das Kart einsteigen</Original>
+		</Key>
+		<Key ID="STR_vInAct_PushBoat">
+			<Original>Boot drücken</Original>
 		</Key>
 		<Key ID="STR_vInAct_Repair">
 			<Original>Reparieren</Original>
 		</Key>
 		<Key ID="STR_vInAct_Registration">
-			<Original>Fahrzeughalter</Original>
+			<Original>Fahrzeuginhaber</Original>
 		</Key>
 		<Key ID="STR_vInAct_SearchVehicle">
 			<Original>Durchsuchen</Original>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
-			<Original>Rausziehen</Original>
+			<Original>Herausziehen</Original>
 		</Key>
 		<Key ID="STR_vInAct_Impound">
 			<Original>Beschlagnahmen</Original>
 		</Key>
-	</Package>
-    <Package name="Player_Actions">
-		<Key ID="STR_holsterHandgun_np1">
-			<Original>Du kannst nur deine Pistole holstern. Nehme deine Pistole dazu in die Hand ..</Original>
+		<Key ID="STR_vInAct_DeviceMine">
+			<Original>Aus Fahzeug farmen</Original>
 		</Key>
-		<Key ID="STR_holsterHandgun_ziehe">
-			<Original>Ziehe Pistole</Original>
+	</Package>
+    <Package name="Main">
+		<Key ID="STR_VAS_Main_Weapons">
+			<Original>Weapons</Original>
+			<German>Waffen</German>
+			<French>Armes</French> 
+			<Polish>Broń</Polish>
+			<Portuguese>Armas</Portuguese>
+			<Italian>Armi</Italian>
+			<Czech>Zbrane</Czech>
+			<Russian>Оружие</Russian>
+			<Spanish>Armas</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Magazines">
+			<Original>Magazines</Original>
+			<German>Magazine</German>
+			<French>Chargeurs</French>
+			<Polish>Amunicja</Polish>
+			<Portuguese>Munições</Portuguese>
+			<Italian>Munizioni</Italian>
+			<Czech>Munice</Czech>
+			<Russian>Патроны</Russian>
+			<Spanish>Cargadores</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Items">
+			<Original>Items</Original>
+			<German>Gegenstände</German>
+			<French>Objets</French>
+			<Polish>Przedmioty</Polish>
+			<Portuguese>Items</Portuguese>
+			<Italian>Oggetti</Italian>
+			<Czech>Predmety</Czech>
+			<Russian>Вещи</Russian>
+			<Spanish>Articulos</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Backpacks">
+			<Original>Backpacks</Original>
+			<German>Rucksäcke</German>
+			<French>Sacs à dos</French>
+			<Polish>Plecaki</Polish>
+			<Portuguese>Mochilas</Portuguese>
+			<Italian>Zaini</Italian>
+			<Czech>Batohy</Czech>
+			<Russian>Рюкзаки</Russian>
+			<Spanish>Mochilas</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Goggles">
+			<Original>Goggles</Original>
+			<German>Brillen</German>
+			<French>Lunettes</French>
+			<Polish>Gogle</Polish>
+			<Portuguese>Óculos</Portuguese>
+			<Italian>Occhiali</Italian>
+			<Czech>Bryle</Czech>
+			<Russian>Очки</Russian>
+			<Spanish>Gafas</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Uniforms">
+			<Original>Uniforms</Original>
+			<German>Uniformen</German>
+			<French>Uniformes</French>
+			<Polish>Mundury</Polish>
+			<Portuguese>Uniformes</Portuguese>
+			<Italian>Uniformi</Italian>
+			<Czech>Uniformy</Czech>
+			<Russian>Униформа</Russian>
+			<Spanish>Uniformes</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Vests">
+			<Original>Vests</Original>
+			<German>Westen</German>
+			<French>Gilets Tac.</French>
+			<Polish>Kamizelki</Polish>
+			<Portuguese>Coletes</Portuguese>
+			<Italian>Gibernaggio</Italian>
+			<Czech>Vesty</Czech>
+			<Russian>Разгрузка</Russian>
+			<Spanish>Ropa</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Headgear">
+			<Original>Headgear</Original>
+			<German>Kopfbekleidung</German>
+			<French>Casques</French>
+			<Polish>Nakrycia głowy</Polish>
+			<Portuguese>Capacetes</Portuguese>
+			<Italian>Elmetto</Italian>
+			<Czech>Pokryvky Hlavy</Czech>
+			<Russian>Шлемы</Russian>
+			<Spanish>Cascos</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Attachments">
+			<Original>Attachments</Original>
+			<German>Anbauteile</German>
+			<French>Objets Attachés</French>
+			<Polish>Dodatki</Polish>
+			<Portuguese>Acessórios</Portuguese>
+			<Italian>Accessori</Italian>
+			<Czech>Doplnky</Czech>
+			<Russian>Приспособления</Russian>
+			<Spanish>Accesorios</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_Misc">
+			<Original>Misc</Original>
+			<German>Diverses</German>
+			<French>Objets Divers</French>
+			<Polish>Inne</Polish>
+			<Portuguese>Diversos</Portuguese>
+			<Italian>Varie</Italian>
+			<Czech>Ostatni</Czech>
+			<Russian>Разное</Russian>
+			<Spanish>Diversos</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnAdd">
+			<Original>Add Item</Original>
+			<German>Zufügen</German>
+			<French>Ajouter Arme/Obj.</French>
+			<Polish>Dodaj przedmiot</Polish>
+			<Portuguese>Acrescemtar Item</Portuguese>
+			<Italian>Aggiungi oggetto</Italian>
+			<Czech>Pridat predmet</Czech>
+			<Russian>Добавить</Russian>
+			<Spanish>Equipar Articulo</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnRemove">
+			<Original>Remove Item</Original>
+			<German>Entfernen</German>
+			<French>Retirer Arme/Obj.</French>
+			<Polish>Usuń przedmiot</Polish>
+			<Portuguese>Remover Item</Portuguese>
+			<Italian>Rimuovi oggetto</Italian>
+			<Czech>Odebrat Predmet</Czech>
+			<Russian>Убрать</Russian>
+			<Spanish>Eliminar Articulo</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnClose">
+			<Original>Close</Original>
+			<German>Schließen</German>
+			<French>Fermer</French>
+			<Polish>Zamknij</Polish>
+			<Portuguese>Fechar</Portuguese>
+			<Italian>Chiudi</Italian>
+			<Czech>Zavrit</Czech>
+			<Russian>Закрыть</Russian>
+			<Spanish>Cerrar</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnLoad">
+			<Original>Load Gear</Original>
+			<German>Laden</German>
+			<French>Charger</French>
+			<Polish>Załaduj wyposażenie</Polish>
+			<Portuguese>Carregar Equipamento</Portuguese>
+			<Italian>Carica equipaggiamento</Italian>
+			<Czech>Nahrat Vybaveni</Czech>
+			<Russian>Загрузить</Russian>
+			<Spanish>Cargar</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnSave">
+			<Original>Save Gear</Original>
+			<German>Speichern</German>
+			<French>Sauver</French>
+			<Polish>Zapisz wyposażenie</Polish>
+			<Portuguese>Gravar Equipamento</Portuguese>
+			<Italian>Salva equipaggiamento</Italian>
+			<Czech>Ulozit Vybaveni</Czech>
+			<Russian>Сохранить</Russian>
+			<Spanish>Guardar</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_btnRemoveAll">
+			<Original>Remove All</Original>
+			<German>Alles Entfernen</German>
+			<French>Retir.Tout</French>
+			<Polish>Usuń wszystko</Polish>
+			<Portuguese>Retirar Tudo</Portuguese>
+			<Italian>Rimuovi tutto</Italian>
+			<Czech>Odebrat Vse</Czech>
+			<Russian>Очистить</Russian>
+			<Spanish>Eliminar Todo</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Main_VirtGear">
+			<Original>Virtual Ammobox</Original>
+			<German>Interaktive Waffenkiste</German>
+			<Portuguese>Caixa de Munições Virtual</Portuguese>
+			<Russian>Виртуальный ящик</Russian>
+		</Key>
+		<Key ID="STR_VAS_Main_YCG">
+			<Original>Your Current Gear</Original>
+			<German>Aktuelle Ausrüstung</German>
+			<French>Votre équipement actuel</French>
+			<Polish>Twoje Aktualne Wyposażenie</Polish>
+			<Portuguese>Equipamento Actual</Portuguese>
+			<Italian>Equipaggiamento attuale</Italian>
+			<Czech>Vase soucasne vybaveni</Czech>
+			<Russian>Ваше снаряжение</Russian>
+			<Spanish>Equipamiento Actual</Spanish>
+		</Key>
+		<Key ID="STR_Vas_Main_CL">
+			<Original>Custom Loadout</Original>
+			<German>Angepasste Ausrüstung</German>
+			<French>Emplacement perso</French>
+			<Polish>Niestandardowe wyposażenie</Polish>
+			<Portuguese>Equipamento Customizado</Portuguese>
+			<Italian>Equip. personalizzato</Italian>
+			<Czech>Vlastni Vybava</Czech>
+			<Russian>Особый набор</Russian>
+			<Spanish>Equipamiento Customizado</Spanish>
+		</Key>
+		<Key ID="STR_Vas_Main_Rifles">
+			<Original>Rifles</Original>
+			<German>Gewehre</German>
+			<French>Fusils (Tous)</French>
+			<Polish>Karabiny</Polish>
+			<Portuguese>Espingardas</Portuguese>
+			<Italian>Fucili</Italian>
+			<Czech>Pusky</Czech>
+			<Russian>Винтовки</Russian>
+			<Spanish>Fusiles</Spanish>
+		</Key>
+		<Key ID="STR_Vas_Main_Scoped">
+			<Original>Scoped</Original>
+			<German>Fernkampf</German>
+			<French>Fusils (Longs)</French>
+			<Polish>Bron Ciężka</Polish>
+			<Portuguese>Telescópicas</Portuguese>
+			<Italian>Fucili (ottica)</Italian>
+			<Czech>Odstrelovacky</Czech>
+			<Russian>С оптикой</Russian>
+			<Spanish>Fusiles Largos</Spanish>
+		</Key>
+		<Key ID="STR_Vas_Main_Heavy">
+			<Original>Heavy</Original>
+			<German>Schwere Waffen</German>
+			<French>Lourds</French>
+			<Polish>Wyrzutnie</Polish>
+			<Portuguese>Pesadas</Portuguese>
+			<Italian>Pesanti</Italian>
+			<Czech>Tezke Zbrane</Czech>
+			<Russian>Тяжелое</Russian>
+			<Spanish>Pesadas</Spanish>
+		</Key>
+		<Key ID="STR_Vas_Main_Launcher">
+			<Original>Launcher</Original>
+			<German>Raketenwerfer</German>
+			<French>Lanceurs</French>
+			<Portuguese>Lança-Misseis</Portuguese>
+			<Italian>Lanciamissili</Italian>
+			<Czech>Odpalovace</Czech>
+			<Russian>Гранатометы</Russian>
+			<Spanish>Lanzamisiles</Spanish>	
+		</Key>
+		<Key ID="STR_Vas_Main_Pistols">
+			<Original>Pistols</Original>
+			<German>Pistolen</German>
+			<French>Pistolets</French>
+			<Polish>Pistolety</Polish>
+			<Portuguese>Pistolas</Portuguese>
+			<Italian>Pistole</Italian>
+			<Czech>Pistole</Czech>
+			<Russian>Пистолеты</Russian>
+			<Spanish>Pistolas</Spanish>
+		</Key>
+		<Key ID="STR_VAS_restricted">
+			<Original>is a restricted item and will not be added to your inventory.</Original>
+			<Italian>è un oggetto bloccato e non sarà aggiunto al tuo inventario</Italian>
+		</Key>
+	</Package>
+	<Package name="LoadGear">
+		<Key ID="STR_VAS_Load_Title">
+			<Original>Virtual Ammobox System - Load Gear</Original>
+			<German>Virtual Ammobox System - Ausrüstung Laden</German>
+			<French>Caisse Virtuelle - Charger</French>
+			<Portuguese>Caixa de Munições Virtual - Carregar</Portuguese>
+			<Italian>Virtual Ammobox System - Carica equipaggiamento</Italian>
+			<Czech>Virtual Ammobox System - Nahrat Vybaveni</Czech>
+			<Russian>Виртуальный ящик - Загрузка снаряжения</Russian>
+			<Spanish>Virtual Ammobox System - Cargar Equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Load_LOR">
+			<Original>Load On Respawn</Original>
+			<German>Beim Respawn Laden</German>
+			<French>Charg. à la réap</French>
+			<Polish>Załaduj przy respawnie</Polish>
+			<Portuguese>Carregar em Respawn</Portuguese>
+			<Italian>Carica al respawn</Italian>
+			<Czech>Vybava-respawn</Czech>
+			<Russian>Загрузить при появлении</Russian>
+			<Spanish>Equipar En Respawn</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Load_TransferBtn">
+			<Original>Transfer</Original>
+			<Russian>Передать</Russian>
+		</Key>
+		<Key ID="STR_VAS_Load_btnLoad">
+			<Original>Load</Original>
+			<German>Laden</German>
+			<French>Charger</French>
+			<Polish>Załaduj</Polish>
+			<Portuguese>Carregar</Portuguese>
+			<Italian>Carica</Italian>
+			<Czech>Nahrat</Czech>
+			<Russian>Загрузить</Russian>
+			<Spanish>Cargar</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Load_btnDelete">
+			<Original>Delete</Original>
+			<German>Löschen</German>
+			<French>Supprimer</French>
+			<Polish>Usuń</Polish>
+			<Portuguese>Apagar</Portuguese>
+			<Italian>Cancella</Italian>
+			<Czech>Smazat</Czech>
+			<Russian>Удалить</Russian>
+			<Spanish>Eliminar</Spanish>
+		</Key>
+	</Package>
+	<Package name="SaveGear">
+		<Key ID="STR_VAS_Save_Title">
+			<Original>Virtual Ammobox System - Save Gear</Original>
+			<German>Virtual Ammobox System - Ausrüstung Speichern</German>
+			<French>Caisse Virtuelle - Sauver</French>
+			<Portuguese>Caixa de Munições Virtual - Gravar</Portuguese>
+			<Italian>Virtual Ammobox System - Salva equipaggiamento</Italian>
+			<Czech>Virtual Ammobox System - Ulozit Vybaveni</Czech>
+			<Russian>Виртуальный ящик - Сохранение снаряжения</Russian>
+			<Spanish>Virtual Ammobox System - Guardar Equipamiento</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Save_btnSave">
+			<Original>Save</Original>
+			<German>Speichern</German>
+			<French>Sauver</French>
+			<Polish>Zapisz</Polish>
+			<Portuguese>Gravar</Portuguese>
+			<Italian>Salva</Italian>
+			<Czech>Uloz</Czech>
+			<Russian>Сохранить</Russian>
+			<Spanish>Guardar</Spanish>
+		</Key>
+		<Key ID="STR_VAS_Save_CLN">
+			<Original>Custom Loadout Name</Original>
+			<German>Angepasste Ausrüstung</German>
+			<French>Nom de l'emplacement perso</French>
+			<Portuguese>Nome da Selecção</Portuguese>
+			<Italian>Nome equipaggiamento</Italian>
+			<Czech>Nazev Vybavy</Czech>
+			<Russian>Название набора</Russian>
+			<Spanish>Nombre De Equipamiento Customizado</Spanish>
+		</Key>
+	</Package>
+	<Package name="VASTransferMenu">
+		<Key ID="STR_VAS_Transfer_MainMenu">
+			<Original>Virtual Ammobox System - Transfer Menu</Original>
+			<Russian>Виртуальный Ящик - Меню Передачи</Russian>
+		</Key>
+		<Key ID="STR_VAS_Transfer_SaveMenu">
+			<Original>Virtual Ammobox System - Save Transfer</Original>
+		</Key>
+		<Key ID="STR_VAS_Transfer_Request">
+			<Original>wants to transfer you their saved loadout.</Original>
+		</Key>
+		<Key ID="STR_VAS_Transfer_Request2">
+			<Original>Would you like to receive this request and save it?</Original>
+		</Key>
+		<Key ID="STR_VAS_Transfer_NoSlotSelection">
+			<Original>You either did not select a slot that you wanted to transfer to another user or the slot had no information.</Original>
+			<Russian>Вы либо не выбрали слот, который вы хотели передать другому пользователю или в слоте не было никакой информации.</Russian>
+		</Key>
+		<Key ID="STR_VAS_Transfer_BadUnit">
+			<Original>The selected user either doesn't exist.</Original>
+		</Key>
+	</Package>
+	<Package name="VASPrompts">
+		<Key ID="STR_VAS_Prompt_selectSlotFail">
+			<Original>You didn't select a slot to delete!</Original>
+			<Italian>Non hai selezionato uno slot da cancellare</Italian>
+			<French>Aucun emplacement choisi pour être supprimé!</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteSlotNoInfo">
+			<Original>You can't delete that slot, it has no information!</Original>
+			<Italian>Non puoi cancellare questo slot, è già vuoto</Italian>
+			<French>Vous ne pouvez pas supprimer cette emplacement, aucun enregistrement détecté!</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteSlotWarning">
+			<Original>You are about to delete slot</Original>
+			<Italian>Stai per cancellare lo slot</Italian>
+			<French>Vous êtes sur le point de supprimer cet emplacement</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteCanelled">
+			<Original>You cancelled deleting slot</Original>
+			<Italian>Hai cancellato lo slot cancellandolo</Italian>
+			<French>Vous avez annulé la suppression de l'emplacement</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteSuccess">
+			<Original>You deleted slot</Original>
+			<Italian>Hai cancellato lo slot</Italian>
+			<French>Vous avez supprimé cet emplacement</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteYes">
+			<Original>Yes</Original>
+			<Italian>Sì</Italian>
+			<Spanish>Sì</Spanish>
+			<French>Oui</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_deleteNo">
+			<Original>No</Original>
+			<Italian>No</Italian>
+			<Spanish>No</Spanish>
+			<French>Non</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_slotNoInfo">
+			<Original>You didn't select a slot!</Original>
+			<Italian>Non hai selezionato uno slot!</Italian>
+			<French>Vous n'avez pas choisi d'emplacement!</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_onRespawnFail">
+			<Original>No slot was selected to be loaded upon respawn!</Original>
+			<Italian>Non hai selezionato nessuno slot da caricare al respawn!</Italian>
+			<French>Aucun emplacement n'a été sélectionné pour être chargé lors de la réapparition!</French>
+			<Russian>Не выбран слот, который нужно загрузить</Russian>
+		</Key>
+		<Key ID="STR_VAS_Prompt_slotSelFail">
+			<Original>You didn't select a slot!</Original>
+			<Italian>Non hai selezionato uno slot</Italian>
+			<French>Vous n'avez pas choisi d'emplacement!</French>
+		</Key>
+		<Key ID="STR_VAS_Prompt_addToWeapon">
+			<Original>Weapon</Original>
+			<Italian>Armi</Italian>
+			<French>Armes</French>
+			<Russian>Оружие</Russian>
+		</Key>
+		<Key ID="STR_VAS_Prompt_addToInv">
+			<Original>Inventory</Original>
+			<Italian>Inventario</Italian>
+			<French>Inventaire</French>
+			<Russian>Инвентарь</Russian>
+		</Key>
+		<Key ID="STR_VAS_Prompt_acc1">
+			<Original>What do you want to do with that attachment?</Original>
+			<Italian>Cosa vuoi fare con questo accessorio?</Italian>
+			<French>Que voulez-vous faire avec cet emplacement?</French>
+			<Russian>Что вы хотите сделать с этим креплением?</Russian>
+		</Key>
+		<Key ID="STR_VAS_Prompt_acc2">
+			<Original>Please know that if you choose to add it to your weapon your current existing attachment in that slot will be lost.</Original>
+			<Italian>Attenzione, se attacchi l'accessorio alla tua arma, l'accessorio attaccato attualmente sarà sostituito.</Italian>
+			<French>Si vous choisissez de placer cette objet sur votre arme, sachez que l'objet actuellement placé sur l'arme sera automatiquement supprimé</French>
+			<Russian>Пожалуйста, знайте, что если вы прикрепите его к своему оружию, то ваше текущее крепление в этом слоте будет потеряно.</Russian>
 		</Key>
 	</Package>
 </Project>

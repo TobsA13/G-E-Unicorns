@@ -15,17 +15,36 @@ switch(playerSide) do
 	case west: 
 	{
 		ctrlShow[2011,false];
+        ctrlShow[2024,false];
 	};
 	
 	case civilian:
 	{
 		ctrlShow[2012,false];
+		ctrlShow[9800,false];	// Manuell zur Wanted Liste hinzufügen
 	};
-    
-    case resistance:
-    	{
+	
+	case east:
+	{
 		ctrlShow[2012,false];
+		ctrlShow[9800,false];	// Manuell zur Wanted Liste hinzufügen
+		ctrlShow[2011,false];	// denke mal das der gruppen fenster ist
+        ctrlShow[2024,false];
 	};
+	
+	case resistance:
+    {
+        ctrlShow[2012,false];
+		ctrlShow[2011,false];
+		ctrlShow[9800,false];	// Manuell zur Wanted Liste hinzufügen
+        ctrlShow[2024,false];
+    };
+};
+
+if("ItemRadio" in assignedItems player) then{
+    ctrlEnable[2014,true];
+}else{
+    ctrlEnable[2014,false];
 };
 
 if(__GETC__(life_adminlevel) < 1) then

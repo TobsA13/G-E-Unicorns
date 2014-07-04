@@ -1,1 +1,0 @@
-if(isNull medic_1) then{hint "null";} else {hint "lol";};

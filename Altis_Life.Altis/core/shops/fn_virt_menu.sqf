@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_virt_menu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -10,9 +11,9 @@ _shop = _this select 3;
 if(isNil {_shop}) exitWith {};
 life_shop_type = _shop;
 life_shop_npc = _this select 0;
-if(_shop == "cop" && playerSide != west) exitWith {hint "Du bist kein Polizist."};
-if((!(str(player) in ["medic_1","medic_2","medic_3","medic_4"]))&&_shop == "medic") exitWith {hint "Du bist kein Arzt."};
-if((!(str(player) in ["adac_1","adac_2"]))&&_shop == "adac") exitWith {hint "Du bist keiner vom ADAC."};
+if(_shop == "cop" && playerSide != west) exitWith {hint "You are not a cop."};
+if(_shop == "donator" && playerSide != civilian) exitWith {hint "You are not a Donator."};
+if(_shop == "donator" && __GETC__(life_donator) == 0) exitWith {hint "You are not a Donator."};
 createDialog "shops_menu";
 
 [] call life_fnc_virt_update;

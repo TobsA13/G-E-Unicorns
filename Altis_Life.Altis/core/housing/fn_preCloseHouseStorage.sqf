@@ -11,4 +11,4 @@ _house = cursorTarget;
 _containers = _house getVariable ["containers", []];
 _trunk = _house getVariable ["Trunk", [[],0]];
 
-[[_house, _containers, playerSide, _trunk],"BRUUUDIS_fnc_updateHouseStorage",false,false] spawn BIS_fnc_MP;
+[[_house, _containers, playerSide, _trunk],"BRUUUDIS_fnc_updateHouseStorage",false,false] spawn life_fnc_MP;

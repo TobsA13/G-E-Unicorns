@@ -37,31 +37,6 @@
 				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.445;
 				w = 0.02; h = 0.03;
 			};
-            class ggIcon : life_RscPicture
-			{
-				
-				idc = -1;
-				text = "icons\gg.paa";
-				x = -50/*safeZoneX+0.055*/; y = -50/*safeZoneY+safeZoneH-0.055*/;
-				w = 0.05; h = 0.05;
-			};
-            class serverde
-			{
-				type=0;
-				idc=-1;
-				style=0;
-				x=safeZoneX+0.055;
-				y=safeZoneY+safeZoneH-0.055;
-				w=1.3;
-				h=0.05;
-				sizeEx=0.03;
-				size=1;
-				font="PuristaSemibold";
-				colorBackground[]={0,0,0,0};
-				colorText[] = { 1 , 1 , 1 , 1 };
-				shadow=true;
-				text="Unser Forum: forum.g-e-unicorns.de Unser TS: g-e-unicorns.de | Serverneustarts: 1Uhr, 7Uhr, 13Uhr, 19Uhr Ohne Ankündigung!";
-			};
 		};
 		
 		class controls

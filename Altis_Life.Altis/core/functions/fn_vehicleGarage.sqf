@@ -16,7 +16,7 @@ if (cursorTarget isKindOf "House") then
 	{
 		_position = [10, position cursorTarget, direction cursorTarget, 270] call life_fnc_calcGarageSpawn;
 		_marker = createMarker [_marker, _position];
-		_markerstr setMarkerShape "ICON";
+		_marker setMarkerShape "ICON";
 		_marker setMarkerType "hd_arrow";
 		_marker setMarkerDir (direction cursorTarget);
 		_marker setMarkerAlpha 0;
@@ -32,4 +32,4 @@ life_garage_type = "Car";
 [[getPlayerUID player,playerSide,life_garage_type,player],"TON_fnc_getVehicles",false,false] spawn life_fnc_MP;
 createDialog "Life_impound_menu";
 disableSerialization;
-ctrlSetText[2802,"Lade Fahrzeuge...."];
+ctrlSetText[2802,"Fetching Vehicles...."];

@@ -35,7 +35,7 @@ closeDialog 0;
 
 _j = 0;	
 {	
-	if((typeName _x) == "ARRAY") then {
+	if((type_x getVariable["realname",name _x]) == "ARRAY") then {
 		_house2 = nearestObject [_x select 0, "House_F"];
 		//diag_log format ["position _house  : %1 (%2), %3 (%4)", (position _house) select 0, typeName ((position _house) select 0), (position _house) select 1, typeName ((position _house) select 1)];
 		//diag_log format ["_x select 0  : %1 (%2), %3 (%4)", (_x select 0), typeName (_x select 0), (_x select 1), typeName (_x select 1)];
@@ -58,12 +58,12 @@ _j = 0;
 
 _house = cursorTarget;
 _house setVariable ["life_locked", 1, true];
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5]; 
+_boxes = _house getVariable ["boxes", nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"],20]]; 
 
 {
 	deleteVehicle _x;
 }forEach _boxes;
 	
 [[_buildingID, position _house],"BRUUUDIS_fnc_deleteHouse",false,false] spawn BIS_fnc_MP;
-[] call life_fnc_sessionUpdate;
+_handle = [] spawn SOCK_fnc_updateRequest;
 

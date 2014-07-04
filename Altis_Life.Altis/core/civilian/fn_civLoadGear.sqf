@@ -1,13 +1,7 @@
-/*
-    File: fn_civLoadGear.sqf
-    Author: Bryan "Tonic" Boardwine
-    
-    Description:
-    Loads saved civilian gear, this is limited for a reason and that's balance.
-*/
 private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
 _itemArray = civ_gear;
 waitUntil {!(isNull (findDisplay 46))};
+
 if(count _itemArray == 0) exitWith
 {
     if(headGear player != "") then {removeHeadgear player;};
@@ -26,6 +20,7 @@ removeHeadGear player;
     player unassignItem _x;
     player removeItem _x;
 } foreach (assignedItems player);
+
 
 _uniform = [_itemArray,0,"",[""]] call BIS_fnc_param;
 _vest = [_itemArray,1,"",[""]] call BIS_fnc_param;
@@ -52,6 +47,7 @@ if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn lif
 if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+
 {_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
 {
     if (_x != "") then {

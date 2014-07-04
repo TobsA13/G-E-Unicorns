@@ -14,7 +14,7 @@ if((_vehicle isKindOf "Car") && (currentWeapon player) == "hgun_P07_snds_F") the
 {
 	switch (true) do 
 	{
-		case ((_speed > 7 && _speed <= 80)) : 
+		case ((_speed > 33 && _speed <= 80)) : 
 		{	
 			hint parseText format ["<t color='#ffffff'><t size='2'><t align='center'>Radar<br/><t color='#33CC33'><t align='center'><t size='1'>Vehicle Speed %1 km/h",round  _speed];
 		};

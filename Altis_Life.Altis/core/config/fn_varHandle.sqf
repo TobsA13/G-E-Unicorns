@@ -43,8 +43,6 @@ switch (_mode) do
 			case "copperore": {"life_inv_copperore"};
 			case "ironore": {"life_inv_ironore"};
 			case "iron_r": {"life_inv_ironr"};
-			case "platinu": {"life_inv_platinu"};
-			case "platinp": {"life_inv_platinp"};
 			case "copper_r": {"life_inv_copperr"};
 			case "salt": {"life_inv_salt"};
 			case "salt_r": {"life_inv_saltr"};
@@ -62,12 +60,21 @@ switch (_mode) do
 			case "cement": {"life_inv_cement"};
 			case "rock": {"life_inv_rock"};
 			case "goldbar": {"life_inv_goldbar"};
-            case "storage1": {"life_inv_storage1"};
-            case "storage2": {"life_inv_storage2"};
-			case "meth_kit": {"life_inv_meth_kit"};
-			case "sodium_hydroxide": {"life_inv_sodium_hydroxide"};
-			case "crystal_meth": {"life_inv_crystal_meth"};
-			case "crystal_meth_pure": {"life_inv_crystal_meth_pure"};
+			case "storage1": {"life_inv_storage1"};		
+			case "storage2": {"life_inv_storage2"};		
+            case "gummi": {"life_inv_gummi"};	
+            case "uturbo1": {"life_inv_uturbo1"};	
+            case "uturbo2": {"life_inv_uturbo2"};	
+            case "uturbo3": {"life_inv_uturbo3"};	
+            case "ustorage1": {"life_inv_ustorage1"};	
+            case "ustorage2": {"life_inv_ustorage2"};	
+            case "ustorage3": {"life_inv_ustorage3"};	
+            case "uspeed1": {"life_inv_uspeed1"};	
+            case "uspeed2": {"life_inv_uspeed2"};	
+            case "uspeed3": {"life_inv_uspeed3"};
+            case "udown1": {"life_inv_udown1"}; 
+            case "udown2": {"life_inv_udown2"}; 
+            case "udown3": {"life_inv_udown3"};             
 		};
 	};
 	
@@ -119,14 +126,21 @@ switch (_mode) do
 			case "life_inv_cement": {"cement"};
 			case "life_inv_rock": {"rock"};
 			case "life_inv_goldbar": {"goldbar"};
-            case "life_inv_storage1": {"storage1"};
-			case "life_inv_platinu": {"platinu"};
-			case "life_inv_platinp": {"platinp"};
-            case "life_inv_storage2": {"storage2"};
-			case "life_inv_meth_kit": {"meth_kit"};
-			case "life_inv_sodium_hydroxide": {"sodium_hydroxide"};
-			case "life_inv_crystal_meth": {"crystal_meth"};
-			case "life_inv_crystal_meth_pure": {"crystal_meth_pure"};
+			case "life_inv_storage1": {"storage1"};		//Hausing
+			case "life_inv_storage2": {"storage2"};		//Hausing
+            case "life_inv_gummi": {"gummi"};	              
+            case "life_inv_uturbo1": {"uturbo1"};	              
+            case "life_inv_uturbo2": {"uturbo2"};	              
+            case "life_inv_uturbo3": {"uturbo3"};	              
+            case "life_inv_ustorage1": {"ustorage1"};	          
+            case "life_inv_ustorage2": {"ustorage2"};	          
+            case "life_inv_ustorage3": {"ustorage3"};	          
+            case "life_inv_uspeed1": {"uspeed1"};	              
+            case "life_inv_uspeed2": {"uspeed2"};	              
+            case "life_inv_uspeed3": {"uspeed3"};        
+            case "life_inv_udown1": {"udown1"}; 
+            case "life_inv_udown2": {"udown2"}; 
+            case "life_inv_udown3": {"udown3"}; 
 		};
 	};
 };

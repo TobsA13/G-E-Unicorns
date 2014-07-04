@@ -1,16 +1,16 @@
 /*
-	File: fn_clothing_blackwater.sqf
+	File: fn_clothing_reb.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	Master configuration file for Blackwater shop.
+	Master configuration file for Reb shop.
 */
 private["_filter"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 //Classname, Custom Display name (use nil for Cfg->DisplayName, price
 
 //Shop Title Name
-ctrlSetText[3103,"Blackwater Kleidungsshop"];
+ctrlSetText[3103,"Blackwater Kleidungs Shop"];
 
 switch (_filter) do
 {
@@ -18,7 +18,12 @@ switch (_filter) do
 	case 0:
 	{
 		[
-			["U_B_SpecopsUniform_sgg",nil,5000],
+			["U_IG_Guerilla1_1",nil,5000],
+			["U_I_G_Story_Protagonist_F",nil,7500],
+			["U_I_G_resistanceLeader_F",nil,11500],
+			["U_O_SpecopsUniform_ocamo",nil,17500],
+			["U_O_PilotCoveralls",nil,15610],
+			["U_IG_leader","Guerilla Leader",15340],
 			["U_O_GhillieSuit",nil,50000]
 		];
 	};

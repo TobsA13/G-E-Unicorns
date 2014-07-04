@@ -15,7 +15,7 @@ if(__GETC__(life_adminlevel) < 1) then
 	ctrlShow[2021,false];
 };
 
-_side = switch(playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"medic"};};
+_side = switch(playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"med"}; case east:{"asadac"};};
 
 _dialog = findDisplay 2001;
 _inv = _dialog displayCtrl 2005;
@@ -34,9 +34,9 @@ _near_units = [];
 {
 	if(!isNull _x && alive _x && player distance _x < 10 && _x != player) then
 	{
-		_near lbAdd format["%1 - %2",name _x, side _x];
+		_near lbAdd format["%1 - %2",_x getVariable["realname",name _x], side _x];
 		_near lbSetData [(lbSize _near)-1,str(_x)];
-		_near_i lbAdd format["%1 - %2",name _x, side _x];
+		_near_i lbAdd format["%1 - %2",_x getVariable["realname",name _x], side _x];
 		_near_i lbSetData [(lbSize _near)-1,str(_x)];
 	};
 } foreach _near_units;

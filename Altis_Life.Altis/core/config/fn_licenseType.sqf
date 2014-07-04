@@ -37,13 +37,13 @@ switch (_mode) do
 			case "sand": {_var = "license_civ_sand"};
 			case "iron": {_var = "license_civ_iron"};
 			case "copper": {_var = "license_civ_copper"};
-			case "platin": {_var = "license_civ_platin"};
 			case "cement": {_var = "license_civ_cement"};
-            case "home": {_var = "license_civ_home"}; 
-			case "meth": {_var = "license_civ_meth"};
-			case "meth1": {_var = "license_civ_meth"};
-			case "meth2": {_var = "license_civ_meth"};
-			case "blackwater": {_var = "license_civ_blackwater"}; 
+			case "mair": {_var = "license_med_air"};
+			case "home": {_var = "license_civ_home"};		//Hausing
+			case "adacair": {_var = "license_adac_air"};
+			case "blackwater": {_var = "license_civ_blackwater"};
+			case "kopfgeld": {_var = "license_civ_kopfgeld"};
+			case "inkasso": {_var = "license_civ_inkasso"};
 			default {_var = ""};
 		};
 	};
@@ -73,13 +73,13 @@ switch (_mode) do
 			case "license_civ_sand": {_var = "sand"};
 			case "license_civ_iron": {_var = "iron"};
 			case "license_civ_copper": {_var = "copper"};
-			case "license_civ_platin": {_var = "platin"};
 			case "license_civ_cement": {_var = "cement"};
-            case "license_civ_home": {_var = "home"};
-			case "license_civ_meth": {_var = "meth"};
-			case "license_civ_meth": {_var = "meth1"};
-			case "license_civ_meth": {_var = "meth2"};
+			case "license_med_air": {_var = "mair"};
+			case "license_civ_home": {_var = "home"};		//Hausing
+			case "license_adac_air": {_var = "adacair"}; //adac Pilot License 
 			case "license_civ_blackwater": {_var = "blackwater"};
+			case "license_civ_kopfgeld": {_var = "kopfgeld"};
+			case "license_civ_inkasso": {_var = "inkasso"};
 			default {_var = ""};
 		};
 	};

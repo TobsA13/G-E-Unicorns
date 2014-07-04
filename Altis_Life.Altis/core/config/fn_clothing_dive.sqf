@@ -49,6 +49,7 @@ switch (_filter) do
 	case 4:
 	{
 		[
+            ["B_FieldPack_blk",nil,3500]
 		];
 	};
 };

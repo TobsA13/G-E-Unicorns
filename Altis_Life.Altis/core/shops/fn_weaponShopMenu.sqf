@@ -19,7 +19,8 @@ ctrlSetText[38401,_config select 0];
 _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
-_filters lbAdd "Shop";
-_filters lbAdd "Inventar";
+_filters lbAdd "Shop Inventory";
+_filters lbAdd "Your Inventory";
 
 _filters lbSetCurSel 0;
+

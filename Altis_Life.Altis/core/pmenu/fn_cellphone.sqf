@@ -21,21 +21,19 @@ if((__GETC__(life_adminlevel) < 1)) then
 	ctrlShow[3020,false];
 	ctrlShow[3021,false];
 };
+
 {
 	if(alive _x && _x != player) then
-	{   
-        switch (side _x) do
-        {
-            case west: {_type = "Cop"};
-            case civilian: {_type = "Civ"};
-            default{_type = "Err"};
-        };
-        if(str(_x) in ["medic_1","medic_2","medic_3","medic_4"]) then {_type = "Medic";};
-        if(str(_x) in ["adac_1","adac_2"]) then {_type = "ADAC";};
-        _units lbAdd format["%1 (%2)",name _x,_type];
-        _units lbSetData [(lbSize _units)-1,str(_x)];
-                   
-           
+	{
+		switch (side _x) do
+		{
+			case west: {_type = "Cop"};
+			case civilian: {_type = "Civ"};
+			case independent: {_type = "Arzt"};
+			case east: {_type = "ADAC"};
+		};
+		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
+		_units lbSetData [(lbSize _units)-1,str(_x)];
 	};
 } foreach playableUnits;
 

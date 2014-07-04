@@ -1,15 +1,15 @@
 /*
-	File: fn_placeStorage.sqf
-	Author: Mario2002
-	
-	Description:
-	place a storage container in a house
+File: fn_placeStorage.sqf
+Author: Mario2002
+
+Description:
+place a storage container in a house
 */
 
 private["_item", "_house", "_houseId", "_owners", "_uid", "_maxCount", "_count", "_handle", "_box", "_containers", "_containerId", "_pos", "_storageData"];
 
 _item = [_this,0,"",[""]] call BIS_fnc_param;
-_house = getPos player nearestObject "House_F"; 
+_house = getPos player nearestObject "House_F";
 _owners = _house getVariable["life_homeOwners", []];
 _uid = getPlayerUID player;
 
@@ -27,8 +27,13 @@ _containers = _house getVariable ["containers", []];
 _count = count _containers;
 if (_count >= _maxCount) exitWith { hint "You cannot place any more containers at this time."; };
 
-_pos = position _house;
-_pos = [(_pos select 0), (_pos select 1), (_pos select 2) + 1];
+_buildingPositions = [_house] call life_fnc_getBuildingPositions;
+_pos = [];
+{
+	if(!([_x] call life_fnc_isBuildingPosTaken)) exitWith {_pos = _x;};
+} foreach _buildingPositions;
+
+if(count _pos == 0) exitWith {hint "You can't install anymore storage boxes! House is full!"};
 
 switch (_item) do {
 	case "storage1" : {
@@ -36,12 +41,12 @@ switch (_item) do {
 		_box setPosATL _pos;
 	};
 	case "storage2" : {
-		_box = "B_supplyCrate_F" createVehicle _pos;		
+		_box = "B_supplyCrate_F" createVehicle _pos;
 		_box setPosATL _pos;
 	};
 };
 
-clearWeaponCargoGlobal _box; 
+clearWeaponCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearItemCargoGlobal _box;
 clearBackpackCargoGlobal _box;
@@ -52,10 +57,11 @@ _storageData = [_containerId, _item, typeOf _box];
 _containers set [count _containers, _storageData];
 _house setVariable ["containers", _containers, true];
 _box setVariable["owner", getPlayerUID player, true];
+_box allowDamage false;
 hint "Placing storage container...";
 
 [false,_item,1] call life_fnc_handleInv;
-_handle = [] spawn life_fnc_sessionUpdate;
+_handle = [] spawn SOCK_fnc_updateRequest;
 //sleep 0.5;
 
-[[_house, _containers, playerSide, [[],0]],"BRUUUDIS_fnc_updateHouseStorage",false,false] spawn BIS_fnc_MP;
+[[_house, _containers, playerSide, [[],0]],"BRUUUDIS_fnc_updateHouseStorage",false,false] spawn life_fnc_MP;

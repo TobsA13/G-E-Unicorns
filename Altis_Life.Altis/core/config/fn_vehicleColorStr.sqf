@@ -27,6 +27,8 @@ switch (_vehicle) do
 			case 8: {_color = "Taxi"};
             case 9: {_color = "ADAC"};
             case 10: {_color = "Unicorn"};
+            case 11: {_color = "Rockstar Gelb";};
+            case 12: {_color = "Rockstar Lila";};
 		};
 	};
 	
@@ -42,6 +44,9 @@ switch (_vehicle) do
 			case 5: {_color = "White"};
 			case 6: {_color = "Grey"};
 			case 7: {_color = "Black"};
+			case 8: {_color = "Opa"};
+			case 9: {_color = "Sunset"};
+			case 10: {_color = "Wave"};          
 		};
 	};
 	
@@ -56,6 +61,9 @@ switch (_vehicle) do
 			case 4: {_color = "Tan"};
 			case 5: {_color = "Green"};
 			case 6: {_color = "Cop"};
+            case 7: {_color = "Fire"};
+            case 8: {_color = "Tuning"};
+			case 9: {_color = "Blue Smile"};
 		};
 	};
 	
@@ -73,6 +81,14 @@ switch (_vehicle) do
 			case 7: {_color = "Redline";};
             case 8: {_color = "Carbon";};
             case 9: {_color = "Superman";};
+            case 10: {_color = "Bimbo";};
+            case 11: {_color = "Opa";};
+            case 12: {_color = "Toxic";};
+            case 13: {_color = "O2";};
+            case 14: {_color = "Sunset";};
+            case 15: {_color = "Ghostrider";};
+            case 16: {_color = "Monster";};
+            case 17: {_color = "ADAC";};
 		};
 	};
 	
@@ -107,6 +123,7 @@ switch (_vehicle) do
 			case 6: {_color = "Digi Green"};
 			case 7: {_color = "Hunter Camo"};
 			case 8: {_color = "Rebel Camo"};
+            case 9: {_color = "Camo"};
 		};
 	};
 	
@@ -131,6 +148,7 @@ switch (_vehicle) do
             case 14: {_color = "Digital"};
             case 15: {_color = "Schwarz"};
             case 16: {_color = "Hello Kitty"};
+            case 17: {_color = "Monster"};
 		};
 	};
 	
@@ -257,21 +275,11 @@ switch (_vehicle) do
 		};
 	};
 	
-	case "O_Truck_03_covered_F":
+	case "B_Truck_01_transport_F":
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Regular"};
-		};
-	};
-    case "C_Kart_01_F":
-    {
-		switch (_index) do
-		{
-			case 0: {_color = "Bluking"};
-            case 1: {_color = "Fuel"};
-            case 2: {_color = "Redstone"};
-            case 3: {_color = "Vrana"};
+			case 0: {_color = "ADAC"};
 		};
 	};
 };
