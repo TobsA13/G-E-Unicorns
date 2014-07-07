@@ -7,7 +7,8 @@
 */
 private["_uid","_side","_cash","_bank","_licenses","_gear","_name","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
-_gear = [_this,1,[],[[]]] call BIS_fnc_param;
+_side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
+_gear = [_this,2,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
 if(_uid == "") exitWith {};
@@ -23,6 +24,5 @@ switch (_side) do {
 	case east: {_query = format["UPDATE players SET asadac_gear='%1'  WHERE playerid='%2'",_gear,_uid];};
 };
 
-waitUntil {!DB_Async_Active};
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
+waitUntil {sleep (random 0.3); !DB_Async_Active};
+_thread = [_query,false] call DB_fnc_asyncCall;

@@ -2,7 +2,7 @@
 	File:
 */
 private["_packet"];
-_packet = [getPlayerUID player];
+_packet = [getPlayerUID player,playerSide];
 
 switch (playerSide) do {
 	case west: {

@@ -19,13 +19,11 @@ _unit = owner _unit;
 if(_vid == -1 OR _pid == "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use set[count serv_sv_use,_vid];
-diag_log "###--------------------------------###";
 _query = format["SELECT * FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 private["_handler","_queryResult","_thread"];
 _handler = {
 	private["_thread"];
 	_thread = [_this select 0,true,_this select 1,true] spawn DB_fnc_asyncCall;
-    diag_log "###Handler 1";
 	waitUntil {scriptDone _thread};
 };
 
@@ -36,14 +34,13 @@ _exitLoop = false;
 while {true} do {
 	waitUntil{!DB_Async_Active}; //Wait again to make SURE the caller is ready.
 	_queryResult = [_query,true,_pid,true] call DB_fnc_asyncCall;
-	if(typeName _queryResult == "STRING") exitWith {diag_log "###ISSTRING!";}; //Bad
-    diag_log "###COUNT:";
+	if(typeName _queryResult == "STRING") exitWith {}; //Bad
     diag_log count _queryResult;
     diag_log _queryResult select 4;
 	if(count _queryResult == 11) then {
 		if((_queryResult select 4) == _pid) exitWith {_exitLoop = true;};
 	};
-	if(_exitLoop) exitWith {diag_log "###EXIT:";};
+	if(_exitLoop) exitWith {};
 };
 
 diag_log "------------- Get Vehicles Request -------------";
@@ -51,7 +48,6 @@ diag_log format["QUERY: %1",_query];
 diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
 diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
-diag_log "###--------------------------------###";
 if(typeName _queryResult == "STRING") exitWith {};
 
 _vInfo = _queryResult;
