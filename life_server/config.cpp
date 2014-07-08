@@ -115,18 +115,18 @@ class CfgFunctions
 			class cleanupRequest {};
 			class vehicleDeleteCOP {};
 		};
-	};
-    class Housing
- 	{
- 		file = "\life_server\Functions\Housing";
- 		class addHouse {};
- 		class fetchPlayerHouses {};
- 		class initHouses {};
- 		class sellHouse {};
- 		class updateHouseContainers {};
- 		class updateHouseTrunk {};
- 		class houseCleanup {};
- 	};
+        class Housing
+        {
+            file = "\life_server\Functions\Housing";
+            class addHouse {};
+            class fetchPlayerHouses {};
+            class initHouses {};
+            class sellHouse {};
+            class updateHouseContainers {};
+            class updateHouseTrunk {};
+            class houseCleanup {};
+        };
+    };
 };
 
 class CfgVehicles
