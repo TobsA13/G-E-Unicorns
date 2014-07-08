@@ -7,6 +7,7 @@
 	the server to check for player information.
 */
 private["_uid","_side","_sender"];
+if(life_session_completed) exitWith {}; 
 _sender = player;
 _uid = getPlayerUID _sender;
 _side = playerSide;

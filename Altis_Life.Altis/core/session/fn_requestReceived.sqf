@@ -9,6 +9,7 @@
 	set the client up.
 */
 life_session_tries = life_session_tries + 1;
+if(life_session_completed) exitWith {}; 
 if(life_session_tries > 3) exitWith {cutText["There was an error in trying to setup your client.","BLACK FADED"]; 0 cutFadeOut 999999999;};
 
 cutText ["Received request from server... Validating...","BLACK FADED"];
@@ -47,9 +48,13 @@ switch(playerSide) do {
 		life_is_arrested = call compile format["%1", _this select 7];
 		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
-		[] spawn life_fnc_civLoadGear;		
-        life_houses = _this select 9;		// Housing initialization
-        life_houses_markers = [];
+		[] spawn life_fnc_civLoadGear;
+		life_houses = _this select 9;
+		{
+			_house = nearestBuilding (call compile format["%1", _x select 0]);
+			life_vehicles set[count life_vehicles,_house];
+		} foreach life_houses;
+		[] spawn life_fnc_initHouses;
         life_ses_last_pos = (_this select 10);
 	};
 	

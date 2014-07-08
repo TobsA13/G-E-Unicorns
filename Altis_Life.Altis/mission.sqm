@@ -26428,7 +26428,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=265;
+		items=266;
 		class Item0
 		{
 			position[]={8431.834,82.538895,25225.303};
@@ -28527,6 +28527,12 @@ class Mission
 			type="Empty";
 			angle=113.273;
 		};
+        class Item265
+ 		{
+ 			position[]={1139.6908,-185.77206,20417.156};
+ 			name="house_marker";
+ 			type="loc_Lighthouse";
+ 		};
 	};
 	class Sensors
 	{

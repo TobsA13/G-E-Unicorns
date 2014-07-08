@@ -89,10 +89,9 @@ switch (true) do
 		[] spawn life_fnc_pickAxeUse;
 	};
 	
-	case (_item in ["storage1","storage2"]):
-    {
-		[_item] call life_fnc_placeStorage;
-    };	
+    case (_item in ["storagesmall","storagebig"]): {
+		[_item] call life_fnc_storageBox;
+	};
     case (_item in ["uturbo1","uturbo2","uturbo3","ustorage1","ustorage2","ustorage3","uspeed1","uspeed2","uspeed3","udown1","udown2","udown3"]):
     {
         [_item] call life_fnc_upgrade;

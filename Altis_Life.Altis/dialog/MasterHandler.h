@@ -23,8 +23,6 @@
 #include "pInteraction.h"
 #include "deathScreen.h"
 #include "vehicleShop.h"
-#include "trunkHouse.hpp"		//Hausing
-#include "house.hpp"			//Hausing
 #include "wantedadd2.hpp"		//manuell-zur-wanted-liste-hinzuf
 
 #include "common_EditorWrapper.hpp"   //Marktsystem

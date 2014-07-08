@@ -41,7 +41,7 @@ switch (_className) do
 	case "O_Truck_03_transport_F": {285};
 	case "O_Truck_03_covered_F": {300};
 	case "O_Truck_03_device_F": {350};
-	case "Land_Box_AmmoOld_F": {700};		//HAusing
-    case "B_supplyCrate_F": {1000};			//Hausing
+	case "Box_IND_Grenades_F": {350};
+ 	case "B_supplyCrate_F": {700};
 	default {-1};
 };

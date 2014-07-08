@@ -56,8 +56,6 @@ switch (_var) do
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
-	case "life_inv_storage1": {"House Storage"};		//Hausing
-    case "life_inv_storage2": {"House Storage Large"};	//Hausing
     case "life_inv_gummi": {"Gummibaerensaft"};	              
     case "life_inv_uturbo1": {"NOS Level: 1"};	              
     case "life_inv_uturbo2": {"NOS Level: 2"};	              
@@ -71,6 +69,8 @@ switch (_var) do
     case "life_inv_udown1": {"Sportfahrwerk"};	              
     case "life_inv_udown2": {"Heckspolier"};	              
     case "life_inv_udown3": {"Frontspolier"};      
+    case "life_inv_storagesmall": {"Small Storage Box"};
+ 	case "life_inv_storagebig": {"Large Storage Box"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -102,4 +102,5 @@ switch (_var) do
 	case "license_civ_inkasso": {"Inkasso GmbH"};
     case "license_civ_sparkasse": {"Sparkasse Altis Sued/West"};
     case "license_civ_asa": {"Altis Security Agency"};
+    case "license_civ_home": {"Home Owners License"};
 };

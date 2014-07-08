@@ -7,6 +7,10 @@
 ****** Backend Variables *****
 *****************************
 */
+
+//House Limit
+__CONST__(life_houseLimit,10); //Maximum amount of houses a player can buy (TODO: Make Tiered licenses).
+ 
 life_query_time = time;
 life_action_delay = time;
 life_trunk_vehicle = Objnull;
@@ -186,8 +190,8 @@ life_inv_items =
 	"life_inv_rock",
 	"life_inv_cement",
 	"life_inv_goldbar",
-	"life_inv_storage1",
-	"life_inv_storage2",
+	"life_inv_storagesmall",
+	"life_inv_storagebig",
 	"life_inv_gummi",
 	"life_inv_uturbo1",
 	"life_inv_uturbo2",
@@ -316,8 +320,8 @@ buy_array =
 	["fuelF",850],
 	["peach",68],
 	["spikeStrip",2500],
-	["storage1",100000],
-    ["storage2",250000],
+	["storagesmall",100000],
+    ["storagebig",250000],
     ["gummi",55000],
     ["uturbo1",190000],
     ["uturbo2",280000],

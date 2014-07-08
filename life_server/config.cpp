@@ -86,21 +86,6 @@ class CfgFunctions
 			class safeStore {};
 		};
 	};
-	
-	class BRUUUDIS_System 
-    {    tag = "BRUUUDIS";       
-        class Bruuudis
-        {
-            file = "\life_server\Functions\bruuudis";
-            class deleteHouse {};
-            class insertHouse {};
-            class queryHouses {};
-            class queryPlayerHouses {};
-            class updateHouseStorage {};
-            class updateHouseWeaponStorage {};
-        };
-    };
-	
 	class TON_System
 	{
 		tag = "TON";
@@ -124,7 +109,6 @@ class CfgFunctions
 			class robberyState {};
 			class logIt {};
 			class federalUpdate {};
-			class isUIDActive {};
 			class chopShopSell {};
 			class silentSync {};
 			class clientDisconnect {};
@@ -132,6 +116,17 @@ class CfgFunctions
 			class vehicleDeleteCOP {};
 		};
 	};
+    class Housing
+ 	{
+ 		file = "\life_server\Functions\Housing";
+ 		class addHouse {};
+ 		class fetchPlayerHouses {};
+ 		class initHouses {};
+ 		class sellHouse {};
+ 		class updateHouseContainers {};
+ 		class updateHouseTrunk {};
+ 		class houseCleanup {};
+ 	};
 };
 
 class CfgVehicles

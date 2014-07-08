@@ -5,6 +5,7 @@
 	Description:
 	Read the file name... Explains it.
 */
+if(life_session_completed) exitWith {};
 cutText["The server didn't find any player information matching your UID, attempting to add player to system.","BLACK FADED"];
 0 cutFadeOut 9999999;
 

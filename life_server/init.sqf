@@ -1,7 +1,37 @@
 #define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 DB_Async_Active = false;
-__CONST__(LIFE_SCHEMA_NAME,"'s573069'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
-publicVariable "LIFE_SCHEMA_NAME";
+DB_Async_ExtraLock = false;
+life_server_isReady = false;
+publicVariable "life_server_isReady";
+
+//__CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
+
+[] execVM "\life_server\functions.sqf";
+[] execVM "\life_server\eventhandlers.sqf";
+
+//I am aiming to confuse people including myself, ignore the ui checks it's because I test locally.
+if(isNil {uiNamespace getVariable "life_sql_id"}) then {
+	life_sql_id = round(random(9999));
+	__CONST__(life_sql_id,life_sql_id);
+	uiNamespace setVariable ["life_sql_id",life_sql_id];
+} else {
+	life_sql_id = uiNamespace getVariable "life_sql_id";
+	__CONST__(life_sql_id,life_sql_id);
+};
+
+_version = "extDB" callExtension "9:VERSION";
+if(_version == "") exitWith {life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+ 
+//Initialize the database
+"extDB" callExtension "9:DATABASE:Database2";
+"extDB" callExtension format["9:ADD:DB_RAW:%1",(call life_sql_id)];
+"extDB" callExtension "9:LOCK";
+
+//Run procedures for SQL cleanup on mission start.
+["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
+["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
+
+["DELETE FROM houses WHERE owned='0'",1] spawn DB_fnc_asyncCall;
 
 life_adminlevel = 0;
 life_medicLevel = 0;
@@ -25,17 +55,12 @@ serv_sv_use = [];
 fed_bank setVariable["fed_rob_ip",false,true];
 fed_bank setVariable["fed_locked",false,true];
 
-//Run procedures for SQL cleanup on mission start.
-"Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.
-"Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL deleteDeadVehicles();",(call LIFE_SCHEMA_NAME)]; //Delete dead / non-usable vehicles for cleanup.
 
 life_federal_funds = (count playableUnits) * 750; //Amount the federal reserve is funded.
 life_animals_spawned = false;
 life_animals_array = [];
 
-[] execVM "\life_server\functions.sqf";
-[] execVM "\life_server\eventhandlers.sqf";
-[] execVM "\life_server\initHousing.sqf";		//Hausing
+
 //[] call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf"; Not currently used
 
 _tempID = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
@@ -96,6 +121,11 @@ publicVariable "life_fnc_fedSuccess";
 	};
 } foreach allUnits;
 
+[] spawn TON_fnc_initHouses;
+
+life_server_isReady = true;
+publicVariable "life_server_isReady";
+
 if (isServer) then {														//Maping start
 call compile preProcessFileLineNumbers "\life_server\map\map1.sqf";
 };
@@ -110,4 +140,5 @@ call compile preProcessFileLineNumbers "\life_server\map\map1_carspawn.sqf";
 
 if (isServer) then {
 call compile preProcessFileLineNumbers "\life_server\map\cop.sqf";
-};																		//Maping Ende
+};				//Maping Ende
+                                                        

@@ -45,7 +45,23 @@ class Life_Client_Core
 		class initAsadac {};
 		class welcomeNotification {};
 	};
-    
+    class Housing
+	{
+		file = "core\housing";
+		class buyHouse {};
+		class getBuildingPositions {};
+		class houseMenu {};
+		class isBuildingPosTaken {};
+		class lightHouse {};
+		class lightHouseAction {};
+		class sellHouse {};
+		class initHouses {};
+		class copBreakDoor {};
+		class raidHouse {};
+		class lockupHouse {};
+		class copHouseOwner {};
+        class lockHouse {};
+	};
     class Market
 	{
 		file = "core\market";
@@ -167,8 +183,6 @@ class Life_Client_Core
 		class vehicleAnimate {};
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
-		class houseContainers {};		//Hausing
-        class housePrice {};		//Hausing
 		
 		class asAdacDefault {};     //ADAC Standart ausruestung
 		
@@ -181,6 +195,8 @@ class Life_Client_Core
 		class clothing_blackwater {};
 		class clothing_kopfgeld {};
 		class clothing_inkasso {};
+        
+        class houseConfig {};
 	};
 	
 	class asadac					//Adac
@@ -253,8 +269,6 @@ class Life_Client_Core
 		class onTakeItem {};
 		class fetchVehInfo {};
 		class pushObject {};
-		class updateCash {};		//Hausing
-        class vehicleGarage {};		//Hausing
 		class globalSound {};		//carlock
 		class globalSoundClient {};	//carlock
         
@@ -266,6 +280,11 @@ class Life_Client_Core
 		class revealObjects {};
         
         class upgrade{};
+        
+        class nearestDoor {};
+		class inventoryClosed {};
+		class inventoryOpened {};
+		class isUIDActive {};
 		
 	};
 	
@@ -342,10 +361,7 @@ class Life_Client_Core
 		class copInteractionMenu {};
 		class sirenLights {};
 		class licenseCheck {};
-		class licensesRead {};
-		class houseOwnerSearch {};		//Hausing Start
-        class houseInvSearch {};
-        class raidHouse {};				//Hausing Ende
+		class licensesRead {};		
         
         class showArrestDialog {};
 		class arrestDialog_Arrest {};
@@ -400,6 +416,7 @@ class Life_Client_Core
 		class spikeStrip {};
 		class jerryRefuel {};
         class flashbang {};
+        class storageBox {};
 	};
 	
 	class Dialog_Controls
@@ -419,32 +436,7 @@ class Life_Client_Core
 		class bankWithdraw {};
 		class bankTransfer {};
 		class garageLBChange {};
-		class houseMenu {};		//Hausing
+        class vehicleGarage {};
 	};
-	class Housing					//Hausing  Start
-	{
-        file = "core\housing";
-        class buyHouse {};
-        class sellHouse {}; 
-        class createMarkers {};
-        class deleteMarkers {};
-        class getBuildID {};
-        class initHouses {};
-        class lockHouse {};
-        class lockStorage {};
-        class countBuildingPositions {};
-        class houseStoreItem {};
-        class houseTakeItem {};
-        class houseInventory {};
-        class openStorage {};
-        class placeStorage {};
-        class preCloseHouseStorage {};
-        class calcGarageSpawn {};
-        class onPut {};
-        class onTake {};
-        class onIO {};
-        class getBuildingPositions {};
-        class isBuildingPosTaken {};
-        class saveHouse {};
-	};									//Hausing Ende
+
 };

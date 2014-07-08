@@ -40,6 +40,7 @@ ModToolsMenu =
         ["Teleport Me To...", [5], "", -5, [["expression", format[_EXECscript1, "MEtoTP.sqf"]]], "1", "1"],
 		//["ESP", [6], "", -5, [["expression", format[_EXECscript1, "ESP.sqf"]]], "1", "1"],
 		["Teleport", [7], "", -5, [["expression", format[_EXECscript1, "Tele.sqf"]]], "1", "1"],
+        ["Admin Tag", [8], "", -5, [["expression", format[_EXECscript1, "admintag.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -54,6 +55,7 @@ AdminToolsMenu =
         ["Teleport Me To...", [5], "", -5, [["expression", format[_EXECscript1, "MEtoTP.sqf"]]], "1", "1"],
 		["ESP", [6], "", -5, [["expression", format[_EXECscript1, "ESP.sqf"]]], "1", "1"],
 		["Teleport", [7], "", -5, [["expression", format[_EXECscript1, "Tele.sqf"]]], "1", "1"],
+        ["Admin Tag", [8], "", -5, [["expression", format[_EXECscript1, "admintag.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -63,11 +65,12 @@ ToolsMenu =
 		["God Mode", [2],  "", -5, [["expression", format[_EXECscript1,"Godmode.sqf"]]], "1", "1"],
 		//["Car God", [3],  "", -5, [["expression", format[_EXECscript1,"cargod.sqf"]]], "1", "1"],
 		//["Spectate Player", [4],  "", -5, [["expression", format[_EXECscript1,"spectate.sqf"]]], "1", "1"],
-		["Teleport To Me", [5], "", -5, [["expression", format[_EXECscript1, "TPtoME.sqf"]]], "1", "1"],
-        ["Teleport Me To...", [5], "", -5, [["expression", format[_EXECscript1, "MEtoTP.sqf"]]], "1", "1"],
-		["ESP", [6], "", -5, [["expression", format[_EXECscript1, "ESP.sqf"]]], "1", "1"],
-		["Teleport", [7], "", -5, [["expression", format[_EXECscript1, "Tele.sqf"]]], "1", "1"],
-        ["Event Msg", [8], "", -5, [["expression", format[_EXECscript1, "eventmsg.sqf"]]], "1", "1"],
+		["Teleport To Me", [3], "", -5, [["expression", format[_EXECscript1, "TPtoME.sqf"]]], "1", "1"],
+        ["Teleport Me To...", [4], "", -5, [["expression", format[_EXECscript1, "MEtoTP.sqf"]]], "1", "1"],
+		["ESP", [5], "", -5, [["expression", format[_EXECscript1, "ESP.sqf"]]], "1", "1"],
+		["Teleport", [6], "", -5, [["expression", format[_EXECscript1, "Tele.sqf"]]], "1", "1"],
+        ["Event Msg", [7], "", -5, [["expression", format[_EXECscript1, "eventmsg.sqf"]]], "1", "1"],
+        ["Admin Tag", [8], "", -5, [["expression", format[_EXECscript1, "admintag.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];

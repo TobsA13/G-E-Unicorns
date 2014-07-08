@@ -6,7 +6,7 @@
 	Gummibaeren huepfen hier und dort und ueberall
 */
 private["_item"];
-if(isNil "life_gummi_time") then {life_house_time = false;};
+if(isNil "life_gummi_time") then {life_gummi_time = false;};
 if(life_gummi_time) exitWith {hint "Du bist schon ein Gummibear!";};
 
 _item = [_this,0,"",[""]] call BIS_fnc_param;

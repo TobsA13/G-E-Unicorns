@@ -31,18 +31,7 @@ _query = switch(_side) do {
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-
-private["_exitLoop"];
-_exitLoop = false;
-while {true} do {
-	waitUntil{!DB_Async_Active}; //Wait again to make SURE the caller is ready.
-	_queryResult = [_query,true,_uid] call DB_fnc_asyncCall;
-	if(typeName _queryResult == "STRING" && {_queryResult == format["_NO_ENTRY_CQ_%1",_uid]}) exitWith {}; //Bad
-	if(count _queryResult == _returnCount) then {
-		if((_queryResult select 0) == _uid) exitWith {_exitLoop = true;}; //The data matched so send it back.
-	};
-	if(_exitLoop) exitWith {};
-};
+_queryResult = [_query,2] call DB_fnc_asyncCall;
 
 diag_log "------------- Client Query Request -------------";
 diag_log format["QUERY: %1",_query];
@@ -53,6 +42,11 @@ diag_log "------------------------------------------------";
 if(typeName _queryResult == "STRING") exitWith {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
+
+if(count _queryResult == 0) exitWith {
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
+};
+
 
 //Parse licenses (Always index 6)
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
@@ -74,20 +68,21 @@ switch (_side) do {
 		_new = [(_queryResult select 8)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[8,_new];
+        _queryResult set[9,([_queryResult select 9,1] call DB_fnc_bool)];
 	};
 
 	case civilian: {
 		_new = [(_queryResult select 8)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[8,_new];
-        
+        _queryResult set[7,([_queryResult select 7,1] call DB_fnc_bool)]; 
         _new = [(_queryResult select 9)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
         _queryResult set[10,_new];
-        
-		_ret = [_uid, _side] call BRUUUDIS_fnc_queryPlayerHouses;		//Hausing
-        _queryResult set [9, _ret];										//Hausing
-        
+        _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
+		waitUntil {scriptDone _houseData};
+		_queryResult set[9,(missionNamespace getVariable[format["houses_%1",_uid],[]])];
+        								
 
 	};
 	case east: {

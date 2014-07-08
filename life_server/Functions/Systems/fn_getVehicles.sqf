@@ -46,7 +46,7 @@ _query = format["SELECT * FROM vehicles WHERE pid='%1' AND alive='1' AND active=
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-_queryResult = [_query,true,_pid,false] call DB_fnc_asyncCall;
+_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 diag_log "------------- Get Vehicles Request -------------";
 diag_log format["QUERY: %1",_query];
