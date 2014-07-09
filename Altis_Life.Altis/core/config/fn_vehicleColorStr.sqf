@@ -279,7 +279,15 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "ADAC"};
+            case 0: {_color = "Ziv"};
+			case 1: {_color = "ADAC"};
+		};
+	};
+	case "B_Truck_01_box_F":
+	{
+		switch (_index) do
+		{
+            case 0: {_color = "Ziv"};
 		};
 	};
 };

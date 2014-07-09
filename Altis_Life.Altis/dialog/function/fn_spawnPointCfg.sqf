@@ -34,13 +34,13 @@ switch (_side) do
     
     case civilian:
     {   
-        if(!life_respawned2) then {
-            if(count life_ses_last_pos > 2) then {
-                _mkName = "last_spawnpos_marker";
-                createMarkerLocal [_mkName, life_ses_last_pos];
-                _markers set [count _markers, [_mkName, format ["Letzter Ort"], "\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-            };
-        };
+        //if(!life_respawned2) then {
+        //    if(count life_ses_last_pos > 2) then {
+        //        _mkName = "last_spawnpos_marker";
+        //        createMarkerLocal [_mkName, life_ses_last_pos];
+        //        _markers set [count _markers, [_mkName, format ["Letzter Ort"], "\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+        //    };
+        //};
         
         _markers = _markers + [
             ["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],

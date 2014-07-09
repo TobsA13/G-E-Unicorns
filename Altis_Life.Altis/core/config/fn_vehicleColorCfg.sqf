@@ -289,7 +289,16 @@ switch (_vehicle) do
 	{
 		_ret = 
 		[
+            ["\a3\soft_f_beta\truck_01\data\truck_01_ext_01_co.paa","civ","\a3\soft_f_beta\truck_01\data\truck_01_ext_02_co.paa"],
 		    ["textures\brumbrums\adac\adac_hemett_01.jpg","adac","textures\brumbrums\adac\adac_hemett_02.jpg"]
+		];   
+	};
+    case "B_Truck_01_box_F":
+	{
+		_ret = 
+		[
+            
+		    ["\a3\soft_f_beta\truck_01\data\truck_01_ext_01_co.paa","civ","\a3\soft_f_beta\truck_01\data\truck_01_ext_02_co.paa"]
 		];   
 	};
 };

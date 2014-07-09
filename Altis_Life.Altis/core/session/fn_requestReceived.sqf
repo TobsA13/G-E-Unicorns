@@ -55,7 +55,7 @@ switch(playerSide) do {
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
 		[] spawn life_fnc_initHouses;
-        life_ses_last_pos = (_this select 10);
+        life_ses_last_pos = [0,0,0];//(_this select 10);
 	};
 	
 	case independent: {
