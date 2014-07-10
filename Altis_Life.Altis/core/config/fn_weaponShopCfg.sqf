@@ -60,7 +60,8 @@ switch(_shop) do
 						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
 						["10Rnd_762x51_Mag",nil,500],
-						["30Rnd_65x39_caseless_green",nil,275]
+						["30Rnd_65x39_caseless_green",nil,275],
+						["NVGoggles",nil,1200]
 					]
 				];
 			};

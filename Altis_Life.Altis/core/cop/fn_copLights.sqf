@@ -9,7 +9,7 @@
 Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRed"];
 _vehicle = _this select 0;
 if(!(_vehicle isKindOf "Car")) exitWith {};
-if(isNil "_vehicle" OR isNull _vehicle) exitWith {};
+if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lightson")) exitWith {};
 
 _lightfleft = "#lightpoint" createVehicle getpos _vehicle; 
 _lightbleft = "#lightpoint" createVehicle getpos _vehicle;  

@@ -35,7 +35,7 @@ _licenses = [_licenses] call DB_fnc_mresArray;
 
 switch (_side) do {
 	case west: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5' WHERE playerid='%6'",_name,_cash,_bank,_gear,_licenses,_uid];};
-	case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7', lastposition='%8' WHERE playerid='%5'",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 8] call DB_fnc_bool,_position];};
+	case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7' WHERE playerid='%5'",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 8] call DB_fnc_bool];}; //	case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7', lastposition='%8' WHERE playerid='%5'",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 8] call DB_fnc_bool,_position];};
 	case independent: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4' , medic_gear='%5' WHERE playerid='%6'",_name,_cash,_bank,_licenses,_gear,_uid];};
 	case east: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', asadac_licenses='%4', asadac_gear='%5' WHERE playerid='%6'",_name,_cash,_bank,_licenses,_gear,_uid];};
 };

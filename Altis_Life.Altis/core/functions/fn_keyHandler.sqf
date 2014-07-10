@@ -151,22 +151,23 @@ switch (_code) do
 	case 38: 
 	{
 		//If cop run checks for turning lights on.
-		if(!isNil {vehicle player getVariable "lightsS"}) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
-					if(vehicle player getVariable "lightsS" == west) then {
-						[vehicle player] call life_fnc_sirenLights;
-					};
-                    if(vehicle player getVariable "lightsS" == independent) then {
-						[vehicle player] call life_fnc_sirenLights;
-					};
-                    if(vehicle player getVariable "lightsS" == east) then {
-						[vehicle player] call life_fnc_adacsirenLights;
-					};
-					_handled = true;
-			};
+		if(_shift) then {
+            if(!isNil {vehicle player getVariable "lightsS"}) then {
+                if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
+                        if(vehicle player getVariable "lightsS" == west) then {
+                            [vehicle player] call life_fnc_sirenLights;
+                        };
+                        if(vehicle player getVariable "lightsS" == independent) then {
+                            [vehicle player] call life_fnc_sirenLights;
+                        };
+                        if(vehicle player getVariable "lightsS" == east) then {
+                            [vehicle player] call life_fnc_adacsirenLights;
+                        };
+                        _handled = true;
+                };
+            };
 		};
-		
-		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
+		if(!_alt && !_ctrlKey && !_shift) then { [] call life_fnc_radar; };
 	};
 	//Y Player Menu
 	case 21:
@@ -216,6 +217,7 @@ case 81:
                 sleep 5;
                 life_siren4_active = false;
             };
+            titleText["Legen sie die Waffe auf den Boden und nehmen sie die Hände hoch!","PLAIN"];
             ["Legen sie die Waffe auf den Boden und nehmen sie die Hände hoch!"] call life_fnc_copText;
      };
 	

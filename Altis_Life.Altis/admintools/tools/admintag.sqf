@@ -1,3 +1,5 @@
+#include <macro.h>
+
 if(player getVariable ["admintag",TRUE]) then {
 player setVariable["donatortag",FALSE,TRUE];
 player setVariable["admintag",FALSE,TRUE];

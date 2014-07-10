@@ -51,6 +51,15 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
     _position
 ];
 
+/*_query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, asadac_licenses, civ_gear, cop_gear, asadac_gear, medic_gear, lastposition) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','%6')",
+	_uid,
+	_name,
+	_money,
+	_bank,
+	_alias,
+    _position
+];*/
+
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
 [[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;

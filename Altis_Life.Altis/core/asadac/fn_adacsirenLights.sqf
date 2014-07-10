@@ -9,9 +9,9 @@
 private["_vehicle"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vehicle) exitWith {}; //Bad entry!
-if(!(typeOf _vehicle in ["C_Offroad_01_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
+if(!(typeOf _vehicle in ["C_Offroad_01_F","B_Truck_01_transport_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
 
-_trueorfalse = _vehicle getVariable["lights",FALSE];
+_trueorfalse = _vehicle getVariable["lightson",FALSE];
 
 if(_trueorfalse) then {
 	_vehicle setVariable["lightson",FALSE,TRUE];

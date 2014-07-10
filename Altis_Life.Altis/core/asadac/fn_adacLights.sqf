@@ -9,7 +9,7 @@
 Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRed"];
 _vehicle = _this select 0;
 if(!(_vehicle isKindOf "Car")) exitWith {};
-if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lights")) exitWith {};
+if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lightson")) exitWith {};
 
 _lightfleft = "#lightpoint" createVehicle getpos _vehicle; 
 _lightbleft = "#lightpoint" createVehicle getpos _vehicle;  
@@ -60,11 +60,24 @@ _lightbright setLightFlareMaxDistance 150;
 _lightbright setLightUseFlare true;
 _lightbright setLightDayLight true;
 
-
-_lightfleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
-_lightbright lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
-_lightfright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
-_lightbleft lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+switch (typeOf _vehicle) do
+{
+	case "C_Offroad_01_F":
+	{
+		_lightfleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        _lightbright lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        _lightfright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+        _lightbleft lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+	};
+    
+    case "B_Truck_01_transport_F":
+	{
+		_lightfleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        _lightbright lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        _lightfright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+        _lightbleft lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+	};
+};
 
 
 _leftRed = true; 

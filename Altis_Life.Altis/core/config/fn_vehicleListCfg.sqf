@@ -229,11 +229,11 @@ switch (_shop) do
 		[
 			["B_Quadbike_01_F",500],
 			["C_Offroad_01_F",2500],
-			["C_Hatchback_01_sport_F",10000],
+			["C_Hatchback_01_sport_F",75000],
 			["C_SUV_01_F",20000],
 			["C_Van_01_fuel_F",7500],
 			["O_Truck_03_device_F",450000],
-			["B_Truck_01_box_F",750000]
+			["B_Truck_01_box_F",750000],
             ["I_Heli_Transport_02_F",1200000]
 		];	
 	};
