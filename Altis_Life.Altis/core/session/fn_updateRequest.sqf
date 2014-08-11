@@ -15,6 +15,7 @@ _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case 
 _packet set[count _packet,_array];
 switch (playerSide) do {
 	case west: {
+    [] call life_fnc_saveGear;
         _packet set[count _packet,cop_gear];
     };
 	case civilian: {

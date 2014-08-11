@@ -1,20 +1,4 @@
-/*
-	File: randomize_civ1.sqf
-	Author: pettka
-	Modified by Tonic for Altis Life.
 
-	Description:
-	Randomizes a headgear form _headgear array and puts it to civilian's headgear slot upon startup of mission.
-	_rnd1 is used to have some civilians without any headgear
-	_rnd2 is used to determine particular headgear from array
-	
-
-	Parameter(s):
-	None
-
-	Returns:
-	Nothing
-*/
 private["_headgear","_headCount","_clothes","_uniform"];
 _headgear = ["H_Cap_tan", "H_Cap_blk", "H_Cap_blk_CMMG", "H_Cap_brn_SPECOPS",  "H_Cap_tan_specops_US", "H_Cap_khaki_specops_UK", "H_Cap_red", "H_Cap_grn", 
 			 "H_Cap_blu", "H_Cap_grn_BI", "H_Cap_blk_Raven", "H_Cap_blk_ION", "H_Bandanna_khk", "H_Bandanna_sgg", "H_Bandanna_cbr", "H_Bandanna_gry", "H_Bandanna_camo", "H_Bandanna_mcamo", 

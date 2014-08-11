@@ -1,7 +1,4 @@
-/*  Select a random position from an area defined by a marker.
-     In: [marker,water,blacklist,emptySpace]
-    Out: position
-*/
+
 private ["_area","_water","_blist","_pos","_empty"];
 _area = _this select 0;
 _water = if (count _this > 1) then {_this select 1} else {0};

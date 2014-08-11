@@ -1,10 +1,4 @@
-/*
-	File: fn_huntingZone.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Main functionality for the hunting zone.
-*/
+
 private["_bool","_total","_animals"];
 _bool = [_this,0,false,[false]] call BIS_fnc_param;
 if(!_bool && count life_animals_array == 0) exitWith {};

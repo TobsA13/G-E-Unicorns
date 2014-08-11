@@ -1,10 +1,4 @@
-/*
-	File: fn_wantedBounty.sqf
-	Author: Bryan "Tonic" Boardwine"
-	
-	Description:
-	Checks if the person is on the bounty list and awards the cop for killing them.
-*/
+
 private["_civ","_cop","_id","_half"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _cop = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;

@@ -1,10 +1,4 @@
-/*
-	File: fn_safeInventory.sqf
-	Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Fills up the safes inventory.
-*/
 private["_safe","_tInv","_pInv","_safeInfo","_str","_shrt"];
 _safe = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _safe) exitWith {closeDialog 0;};

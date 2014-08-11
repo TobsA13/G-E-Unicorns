@@ -14,7 +14,9 @@ _display = findDisplay 2400;
 _list = _display displayctrl 2401;
 _units = [];
 {
-	_units set[count _units, _x getVariable["realname",name _x]];
+    if( side _x in ["civilian","east"]) then {
+	    _units set[count _units, _x getVariable["realname",name _x]];
+    };
 } foreach playableUnits;
 
 {

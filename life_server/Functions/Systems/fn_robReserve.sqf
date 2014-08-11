@@ -1,11 +1,4 @@
-/*
-	File: fn_robReserve.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Server-side part of the robbing process, runs checks and makes sure that
-	two people aren't trying to both rob the same safe at the same time.
-*/
+
 private["_vault","_unit"];
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _unit = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;

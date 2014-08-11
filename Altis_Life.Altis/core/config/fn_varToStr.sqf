@@ -27,7 +27,7 @@ switch (_var) do
 	case "life_inv_tuna": {"Tuna Meat"};
 	case "life_inv_mullet": {"Mullet Meat"};
 	case "life_inv_catshark": {"Cat Shark Meat"};
-	case "life_inv_turtle": {"Turtle Meat"};
+	case "life_inv_turtle": {"Breitrandschildkröten"};
 	case "life_inv_fishingpoles": {"Fishing Pole"};
 	case "life_inv_water": {"Water Bottle"};
 	case "life_inv_coffee": {"Coffee"};
@@ -71,6 +71,11 @@ switch (_var) do
     case "life_inv_udown3": {"Frontspolier"};      
     case "life_inv_storagesmall": {"Small Storage Box"};
  	case "life_inv_storagebig": {"Large Storage Box"};
+    case "life_inv_blackr": {"Schwefel"};
+    case "life_inv_black": {"Schwarzpulver"};
+    case "life_inv_platinr": {"Platinerz"};
+    case "life_inv_platin": {"Platinbarren"};
+    case "life_inv_turtleb": {"Schnappschildkröte"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -97,10 +102,12 @@ switch (_var) do
 	case "license_med_air": {"Pilot License"};
 	case "license_civ_home": {"Home Owner License"};		//Hausing
 	case "license_adac_air": {"Pilot License"};
-	case "license_civ_blackwater": {"Blackwater Limited & Co.KG"};
-	case "license_civ_kopfgeld": {"Kopfgeld Limited & Co.KG"};
+	case "license_civ_blackwater": {"Blackwater Limited and Co.KG"};
+	case "license_civ_kopfgeld": {"Kopfgeld Limited and Co.KG"};
 	case "license_civ_inkasso": {"Inkasso GmbH"};
     case "license_civ_sparkasse": {"Sparkasse Altis Sued/West"};
     case "license_civ_asa": {"Altis Security Agency"};
     case "license_civ_home": {"Home Owners License"};
+    case "license_civ_black": {"Schwarzpulver Rezept"};
+    case "license_civ_platin": {"Platin License"};
 };

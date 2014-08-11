@@ -39,4 +39,6 @@ switch (_type) do
 	case "blackwater": {0};
 	case "kopfgeld": {0};
 	case "inkasso": {0};
+    case "black": {55000};
+	case "platin": {19000};	
 };

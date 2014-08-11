@@ -1,7 +1,4 @@
-/*  Select a random position based on anchor position, direction and distance.
-     In: [position,distance,direction,water,road,emptySpace]
-    Out: position
-*/
+
 private ["_org","_dst","_dir","_pos","_water","_road","_empty"];
 _org = _this select 0;
 _dst = _this select 1;

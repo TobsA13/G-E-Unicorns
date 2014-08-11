@@ -1,10 +1,4 @@
-/*
-	File: fn_updateRequest.sqf
-	Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Ain't got time to describe it, READ THE FILE NAME!
-*/
 private["_uid","_side","_cash","_bank","_licenses","_gear","_name","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;

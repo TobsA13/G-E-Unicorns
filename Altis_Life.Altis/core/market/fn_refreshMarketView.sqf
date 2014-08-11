@@ -11,6 +11,7 @@ if(!dialog) exitWith {hint "Could not find dialog.";}; //cancel if no dlg
 
 _display = findDisplay 39500;
 
+
 if(isNull _display) exitWith {hint "Dialog not open!"; };
 
 //Selected index
@@ -22,11 +23,21 @@ if(_selectedindex == -1) then
 	lbSetCurSel [1500, 0];
 	
 	lbClear 1500;
-
+    hint str(life_drog);
 	//Recreate listbox items
 	{
-		_index = lbAdd [1500, [ [_x select 0, 0] call life_fnc_varHandle ] call life_fnc_varToStr ];
-		lbSetData [1500, _index, _x select 0];
+    if(life_drog) then {
+        if(!(_x select 0 in life_illegal_items2)) then {
+		 _index = lbAdd [1500, [ [_x select 0, 0] call life_fnc_varHandle ] call life_fnc_varToStr ];
+		 lbSetData [1500, _index, _x select 0];
+        };
+    } else {
+        if(_x select 0 in life_illegal_items2) then {
+		 _index = lbAdd [1500, [ [_x select 0, 0] call life_fnc_varHandle ] call life_fnc_varToStr ];
+		 lbSetData [1500, _index, _x select 0];
+        };
+    };
+        
 	}
 	foreach life_market_resources;
 }

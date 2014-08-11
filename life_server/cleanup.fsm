@@ -110,7 +110,7 @@ class FSM
        "				_thread = [_this,1] spawn DB_fnc_asyncCall;" \n
        "			};" \n
        "		};" \n
-       "		if(!isNil ""_x"" && {!isNull _x}) then {" \n
+       "		if(!isNil ""_x"" && {!isNull _x} && typeOf _x != ""I_Plane_Fighter_03_AA_F"") then {" \n
        "			deleteVehicle _x;" \n
        "		};" \n
        "	};" \n

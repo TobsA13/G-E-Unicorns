@@ -39,8 +39,13 @@ if(isDedicated && isNil("life_market_prices")) then
 	{
 		diag_log format["Market prices updated! %1", _this select 1];
 	};
-};    
-    
+}; 
+
+if(isServer) then {
+[["rwall2L" , "rwall1L"],5,0] execVM "core\borderline.sqf";
+[["rwall2" , "rwall2_1","rwall1_2","rwall1"],4,0] execVM "core\borderline.sqf";
+[["jailL"],5,1] execVM "core\borderline.sqf";
+};
 
 if(!StartProgress) then
 {
@@ -51,5 +56,4 @@ StartProgress = true;
 
 _igiload = execVM "IgiLoad\IgiLoadInit.sqf";		//IgiLoad
 
-[] execVM "scripts\transport\init.sqf";     //Lift
-[] execVM "scripts\player\init.sqf";
+[[],[]] execVM "scripts\lift_init.sqf";

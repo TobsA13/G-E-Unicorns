@@ -25,6 +25,8 @@ _itemInfo = switch (_type) do
 	case "marijuana": {["cannabis","marijuana",500,"Processing Marijuana"]};
 	case "heroin": {["heroinu","heroinp",1720,"Processing Heroin"]};
 	case "cement": {["rock","cement",350,"Mixing Cement"]};
+    case "platin": {["platinr","platin",650,"Schmelze Platin"]};
+    case "black": {["blackr","black",950,"Mixe Schwarzpulver"]};
 	default {[]};
 };
 

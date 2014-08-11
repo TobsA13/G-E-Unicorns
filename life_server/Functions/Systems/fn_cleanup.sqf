@@ -1,11 +1,4 @@
-/*
-	File: fn_cleanup.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Server-side cleanup script on vehicles using Arma2Net DateTime function.
-	Sort of a lame way but whatever.
-*/
+
 private["_deleted"];
 _deleted = false;
 while {true} do

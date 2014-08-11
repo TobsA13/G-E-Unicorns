@@ -157,6 +157,7 @@ class Life_Client_Core
 		class storeVehicle {};
 		class robAction {};
 		class sellTurtle {};
+        class sellTurtleB {};
 		class addActionRob {};		//Tankstellen ausrauben
 		class delAction {};		//Tankstellen ausrauben
         
@@ -367,6 +368,8 @@ class Life_Client_Core
 		class arrestDialog_Arrest {};
         
         class copText {};
+        
+        class copOpener {};
 	};
 	
 	class Gangs

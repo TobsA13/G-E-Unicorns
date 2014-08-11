@@ -1,9 +1,4 @@
-/*
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Cleans up containers inside the house.
-*/
+
 private["_query","_houses"];
 _query = format["SELECT pid, pos, inventory, containers FROM houses WHERE pid='%1' AND owned='1'",_this];
 waitUntil{!DB_Async_Active};

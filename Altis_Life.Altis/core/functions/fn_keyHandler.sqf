@@ -137,7 +137,7 @@ switch (_code) do
 			}
 				else
 			{
-				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
+				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
 					if(cursorTarget in life_vehicles) then
 					{
@@ -153,15 +153,15 @@ switch (_code) do
 		//If cop run checks for turning lights on.
 		if(_shift) then {
             if(!isNil {vehicle player getVariable "lightsS"}) then {
-                if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
+                if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","O_MRAP_02_F","I_Truck_02_box_F","C_Van_01_box_F"]) then {
                         if(vehicle player getVariable "lightsS" == west) then {
-                            [vehicle player] call life_fnc_sirenLights;
+                            [vehicle player,[0.1,0.4,0.63]] call life_fnc_sirenLights;
                         };
                         if(vehicle player getVariable "lightsS" == independent) then {
-                            [vehicle player] call life_fnc_sirenLights;
+                            [vehicle player,[0.1,0.4,0.63]] call life_fnc_sirenLights;
                         };
                         if(vehicle player getVariable "lightsS" == east) then {
-                            [vehicle player] call life_fnc_adacsirenLights;
+                            [vehicle player,[0.95,0.96,0.1]] call life_fnc_sirenLights;
                         };
                         _handled = true;
                 };
@@ -227,22 +227,27 @@ case 33:
 
     if((!isNil {vehicle player getVariable "sirenall"}) && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
     {
+        _veh = vehicle player;
         [] spawn
         {
             life_siren_active = true;
-            sleep 4.7;
+            sleep 1.51;
             life_siren_active = false;
         };
-        if((vehicle player getVariable "sirenall")) then
+        if((_veh getVariable "sirenall")) then
         {
             titleText ["Sirens Off","PLAIN"];
-            vehicle player setVariable["sirenall",false,true];
+            _veh setVariable["sirenall",false,true];
         }
             else
         {
             titleText ["Sirens On","PLAIN"];
-            vehicle player setVariable["sirenall",true,true];
-            [[vehicle player],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+            _veh setVariable["sirenall",true,true];
+            if((typeof _veh) in ["O_MRAP_02_F","B_MRAP_01_F","B_MRAP_01_hmg_F","I_Truck_02_box_F"]) then {
+            [[_veh,"SirenPress",1.51],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+            }else{
+            [[_veh,"SirenLong",1.38],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+            };
         };
     };                                            
 };
@@ -279,7 +284,9 @@ case 33:
 							_veh lock 0;
 						} else {
 							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+                            
 						};
+                        [_veh,"unlock"] call life_fnc_globalSound;
 						systemChat "You have unlocked your vehicle.";
 					} else {
 						if(local _veh) then {
@@ -287,31 +294,15 @@ case 33:
 						} else {
 							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};	
+                        [_veh,"lock"] call life_fnc_globalSound;
 						systemChat "You have locked your vehicle.";
 					};
 				};
 			};
 		};
 	};
-    //Ä Key
-	case 40:
-	{
-		if (_shift && (playerSide == west) && (vehicle player != player)) then {
-			[] call life_fnc_copOpener;
-		};
-		
-		if (_shift && (playerSide == east) && (vehicle player != player)) then {
-			[] call life_fnc_adacOpener;
-		};
-		if (_shift && (playerSide == civilian) && (vehicle player != player)) then {
-			[] call life_fnc_adacOpener;
-		};
-		if (_shift && (playerSide == resistance) && (vehicle player != player)) then {
-			[] call life_fnc_adacOpener;
-		};
-	};
     //Q Key
-	case 16:
+	case 15:
 	{	
 		if((!life_action_inUse) && (vehicle player == player) ) then
 		{
@@ -331,7 +322,7 @@ case 33:
     //o für cop´s
 	case 24:
 	{
-		if (!_shift && !_alt && !_ctrlKey && (playerSide == west)) then {
+		if (playerSide != civilian) then {
 			[] call life_fnc_copOpener;
 		};
 	};

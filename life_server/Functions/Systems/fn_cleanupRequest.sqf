@@ -1,11 +1,4 @@
-/*
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Client sends a cleanup request when they hit Abort,
-	the server will then monitor when that client aborts and
-	delete the weapon holders.
-*/
+
 private["_client","_loops"];
 _client = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _client) exitWith {};

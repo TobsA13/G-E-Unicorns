@@ -22,13 +22,31 @@ switch (_vehicle) do
 			case 3: {_color = "Blue";};
 			case 4: {_color = "Dark Red";};
 			case 5: {_color = "Blue / White"};
-			case 6: {_color = "Black"};
+			case 6: {_color = "Polizei"};
 			case 7: {_color = "Black"};
 			case 8: {_color = "Taxi"};
             case 9: {_color = "ADAC"};
             case 10: {_color = "Unicorn"};
             case 11: {_color = "Rockstar Gelb";};
             case 12: {_color = "Rockstar Lila";};
+            case 13: {_color = "SEK";};
+            case 14: {_color = "FTP";};
+		};
+	};
+	
+    case "B_G_Offroad_01_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "FTP";};			
+		};
+	};
+	
+    case "B_G_Offroad_01_armed_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "FTP";};		
 		};
 	};
 	
@@ -89,7 +107,9 @@ switch (_vehicle) do
             case 15: {_color = "Ghostrider";};
             case 16: {_color = "Monster";};
             case 17: {_color = "ADAC";};
-		};
+            case 18: {_color = "SEK";};
+            case 19: {_color = "ServerSUP";};
+        };
 	};
 	
 	case "C_Van_01_box_F":
@@ -98,6 +118,15 @@ switch (_vehicle) do
 		{
 			case 0: {_color = "White"};
 			case 1: {_color = "Red"};
+            case 2: {_color = "RTW"};
+		};
+	};
+	
+    case "I_Truck_02_box_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Transporter"};
 		};
 	};
 	
@@ -114,7 +143,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Brown"};
+			case 0: {_color = "Ordnungsa."};
 			case 1: {_color = "Digi Desert"};
 			case 2: {_color = "Black"};
 			case 3: {_color = "Blue"};
@@ -122,7 +151,7 @@ switch (_vehicle) do
 			case 5: {_color = "White"};
 			case 6: {_color = "Digi Green"};
 			case 7: {_color = "Hunter Camo"};
-			case 8: {_color = "Rebel Camo"};
+			case 8: {_color = "FTP"};
             case 9: {_color = "Camo"};
 		};
 	};
@@ -144,7 +173,7 @@ switch (_vehicle) do
 			case 10: {_color = "Sunset"};
 			case 11: {_color = "Vrana"};
 			case 12: {_color = "Waves Blue"};
-			case 13: {_color = "Rebel Digital"};
+			case 13: {_color = "FTP"};
             case 14: {_color = "Digital"};
             case 15: {_color = "Schwarz"};
             case 16: {_color = "Hello Kitty"};
@@ -258,12 +287,14 @@ switch (_vehicle) do
 		};
 	};
 
-	case "0_MRAP_02_F":
+	case "O_MRAP_02_F":
 	{
 		switch (_index) do
 		{	
-			case 0: {_color = "Regular"};
+			case 0: {_color = "FTP"};
 			case 1: {_color = "Blackwater"};
+            case 2: {_color = "Polizei"};
+            case 3: {_color = "SEK"};
 		};
 	};
 	

@@ -1,8 +1,9 @@
 #include <macro.h>
+
 /*
 	File: fn_vehicleShopBuy.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Does something with vehicle purchasing.
 */
@@ -42,19 +43,18 @@ hint format["You bought a %1 for $%2",getText(configFile >> "CfgVehicles" >> _cl
 
 //Spawn the vehicle and prep it.
 if((life_veh_shop select 0) == "med_air_hs") then {
+	systemChat "Tickle";
 	_vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"}; //Wait?
-    _vehicle allowDamage false; //Temp disable damage handling..
+	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle attachTo[_hs,[-0.4,-4,16]];
+	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
 	_vehicle lock 2;
 	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	_vehicle setVariable["trunk_in_use",false,true];
-	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,player getVariable["realname",name player]]],true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-	detach _vehicle;
-    _vehicle allowDamage true; //Re-enable damage handling.
 } else {
 	_vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"}; //Wait?
@@ -64,13 +64,11 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	_vehicle setDir (markerDir _spawnPoint);
 	_vehicle setPos (getMarkerPos _spawnPoint);
 	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
-	_vehicle allowDamage true; //Re-enable damage handling.
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	_vehicle setVariable["trunk_in_use",false,true];
-	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,player getVariable["realname",name player]]],true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 };
-
 //Side Specific actions.
 switch(playerSide) do {
 	case west: {
@@ -95,6 +93,7 @@ switch(playerSide) do {
 	};
     
     case east: {
+        [_vehicle,"service_truck",true] spawn life_fnc_vehicleAnimate;
         _vehicle setVariable["lightsS",playerSide,true];
         _vehicle setVariable["lightson",false,true];
     };
@@ -109,6 +108,7 @@ if(_mode) then {
 	};
 };
 
+_vehicle allowDamage true;
 [] call SOCK_fnc_updateRequest; //Sync silently because it's obviously silently..
 closeDialog 0; //Exit the menu.
 true;

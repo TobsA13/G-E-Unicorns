@@ -999,4 +999,38 @@
 			<Russian>Пожалуйста, знайте, что если вы прикрепите его к своему оружию, то ваше текущее крепление в этом слоте будет потеряно.</Russian>
 		</Key>
 	</Package>
+    <Package name="ATMDrop">
+		<Key ID="STR_ATM_Alt">
+			<Original>Höhe:</Original>
+			<French>Altitude:</French>
+		</Key>
+		<Key ID="STR_ATM_Keys">
+			<Original></Original>
+			<French>Choisir Une touche:</French>
+		</Key>
+		<Key ID="STR_ATM_Main">
+			<Original>Wähle deine Absprunghöhe:</Original>
+			<French>Choisir votre altitude et une touche</French>
+		<Key>
+		<Key ID="STR_ATM_hover">
+			<Original>Deine Absprunghöhe</Original>
+			<French>Votre Altitude choisi</French>
+		</Key>
+		<Key ID="STR_ATM_hinton">
+			<Original>Wähle Absprunghöhe und LZ auf der Map</Original>
+			<French>Sélectionner votre Altitude et désigner une LZ sur la carte</French>
+		</Key>
+		<Key ID="STR_ATM_hintjump">
+			<Original>Action Taste um die Seile durchzuschneiden!</Original>
+			<French>Appuyer sur votre touche pour couper les suspentes</French>
+		</Key>
+		<Key ID="STR_ATM_hintload">
+			<Original>loading loadout ...</Original>
+			<French>Chargement de votre équipement ...</French>
+		</Key>
+		<Key ID="STR_ATM_Close">
+			<Original>LZ Wählen</Original>
+			<French>Fermer</French>
+		</Key>
+	</Package>
 </Project>

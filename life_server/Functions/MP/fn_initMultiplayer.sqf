@@ -1,15 +1,4 @@
-/*
-	Author: Karel Moricky
 
-	Description:
-	Multiplayer mission init, executed automatically upon mission start.
-
-	Parameter(s):
-	None
-
-	Returns:
-	NOTHING
-*/
 
 //--- Execute MP functions
 if (isMultiplayer) then {

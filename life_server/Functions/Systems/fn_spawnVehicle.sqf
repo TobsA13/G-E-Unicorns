@@ -1,11 +1,4 @@
-/*
-	File: fn_spawnVehicle.sqf
-	Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Sends the query request to the database, if an array is returned then it creates
-	the vehicle if it's not in use or dead.
-*/
 private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
@@ -67,10 +60,7 @@ _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid
 
 waitUntil {!DB_Async_Active};
 [_query,false] spawn DB_fnc_asyncCall;
-/*
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
-*/
+
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};

@@ -88,6 +88,17 @@ life_market_resources = [
 			["glass",1]
 		] 
 	],
+    
+    ["turtleb", 1500, 0, 4000, 5, 2,  
+		[ 
+			["diamondc",1], 
+			["oilp",1],
+			["iron_r",1],
+			["copper_r",1],
+			["salt_r",1],
+			["glass",1]
+		] 
+	],
 	
 	///////////////////////////////////
 	

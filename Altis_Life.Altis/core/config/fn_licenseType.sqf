@@ -44,6 +44,8 @@ switch (_mode) do
 			case "blackwater": {_var = "license_civ_blackwater"};
 			case "kopfgeld": {_var = "license_civ_kopfgeld"};
 			case "inkasso": {_var = "license_civ_inkasso"};
+            case "platin": {_var = "license_civ_platin"};
+			case "black": {_var = "license_civ_black"};
 			default {_var = ""};
 		};
 	};
@@ -80,6 +82,8 @@ switch (_mode) do
 			case "license_civ_blackwater": {_var = "blackwater"};
 			case "license_civ_kopfgeld": {_var = "kopfgeld"};
 			case "license_civ_inkasso": {_var = "inkasso"};
+            case "license_civ_platin": {_var = "platin"};
+			case "license_civ_black": {_var = "black"};
 			default {_var = ""};
 		};
 	};

@@ -1,10 +1,4 @@
-/*
-	File: fn_robberyState.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Determines the robbery state?
-*/
+
 private["_vault","_state","_funds"];
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _state = [_this,1,-1,[0]] call BIS_fnc_param;

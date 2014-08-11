@@ -1,10 +1,4 @@
-/*
-	File: fn_wantedRemove.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Removes a person from the wanted list.
-*/
+
 private["_uid","_index"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 if(_uid == "") exitWith {}; //Bad data

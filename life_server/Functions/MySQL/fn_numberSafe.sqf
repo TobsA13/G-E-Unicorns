@@ -1,15 +1,4 @@
-/*
-	Author: Karel Moricky
 
-	Description:
-	Convert a number into string (avoiding scientific notation)
-
-	Parameter(s):
-	_this: NUMBER
-
-	Returns:
-	STRING
-*/
 private ["_number","_mod","_digots","_digitsCount","_modBase","_numberText"];
 
 _number = [_this,0,0,[0]] call bis_fnc_param;

@@ -47,21 +47,21 @@ switch(_shop) do
 			{
 				["Schwarzmarkt",
 					[
-						["arifle_TRG20_F",nil,25000],
-						["arifle_Katiba_F",nil,30000],
-						["srifle_DMR_01_F",nil,50000],
-						["arifle_SDAR_F",nil,20000],
-						["optic_ACO_grn",nil,3500],
-						["optic_Holosight",nil,3600],
+						["arifle_TRG20_F",nil,75000],
+						["arifle_Katiba_F",nil,90000],
+						["srifle_DMR_01_F",nil,150000],
+						["arifle_SDAR_F",nil,60000],
+						["optic_ACO_grn",nil,13500],
+						["optic_Holosight",nil,13600],
 						["acc_flashlight",nil,1000],
-						["optic_Hamr",nil,7500],
-						["optic_DMS",nil,15000],
-						["30Rnd_9x21_Mag",nil,200],
-						["20Rnd_556x45_UW_mag",nil,125],
-						["30Rnd_556x45_Stanag",nil,300],
-						["10Rnd_762x51_Mag",nil,500],
-						["30Rnd_65x39_caseless_green",nil,275],
-						["NVGoggles",nil,1200]
+						["optic_Hamr",nil,17500],
+						["optic_DMS",nil,89000],
+						["30Rnd_9x21_Mag",nil,2000],
+						["20Rnd_556x45_UW_mag",nil,1250],
+						["30Rnd_556x45_Stanag",nil,3000],
+						["10Rnd_762x51_Mag",nil,5000],
+						["30Rnd_65x39_caseless_green",nil,2750],
+						["NVGoggles",nil,9200]
 					]
 				];
 			};
@@ -145,7 +145,8 @@ switch(_shop) do
                         ["B_Bergen_sgg",nil,4500],
                         ["B_Kitbag_cbr",nil,4500],
                         ["B_Carryall_oli",nil,5000],
-                        ["B_Carryall_khk",nil,5000]
+                        ["B_Carryall_khk",nil,5000],
+                        ["ItemRadio","Handy",380]
 					]
 				];
 			};
@@ -168,7 +169,8 @@ switch(_shop) do
 						["ToolKit",nil,50],
 						["itemgps",nil,50],
 						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75]
+						["30Rnd_9x21_Mag",nil,75],
+                        ["ItemRadio","Handy",380]
 					]
 				];
 			};
@@ -186,7 +188,8 @@ switch(_shop) do
 						["itemgps",nil,50],
 						["16Rnd_9x21_Mag",nil,25],
 						["30Rnd_9x21_Mag",nil,75],
-						["30Rnd_556x45_Stanag",nil,125]
+						["30Rnd_556x45_Stanag",nil,125],
+                        ["ItemRadio","Handy",380]
 					]
 				];
 			};
@@ -208,7 +211,8 @@ switch(_shop) do
 						["16Rnd_9x21_Mag",nil,25],
 						["30Rnd_9x21_Mag",nil,75],
 						["11Rnd_45ACP_Mag",nil,85],
-						["30Rnd_556x45_Stanag",nil,125]
+						["30Rnd_556x45_Stanag",nil,125],
+                        ["ItemRadio","Handy",380]
 					]
 				];
 			};

@@ -1,10 +1,4 @@
-/*
-	File: fn_vehicleStore.sqf
-	Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Stores the vehicle in the 'Garage'
-*/
 private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;

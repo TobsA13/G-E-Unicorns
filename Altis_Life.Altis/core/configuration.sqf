@@ -45,9 +45,6 @@ life_respawned2 = false;
 
 rip = false; //Tankstelle ausrauben
 
-MCC_path = "";
-
-
 
 //Revive constant variables.
 __CONST__(life_revive_cops,TRUE); //Set to false if you don't want cops to be able to revive downed players.
@@ -124,12 +121,12 @@ switch (playerSide) do
 	case civilian: 
 	{
 		life_atmcash = 3000; //Starting Bank Money
-		life_paycheck = 350; //Paycheck Amount
+		life_paycheck = 650; //Paycheck Amount
 	};
 	
 	case independent: {
 		life_atmcash = 6500;
-		life_paycheck = 450;
+		life_paycheck = 2400;
 	};
 	
 	case east: 
@@ -204,7 +201,12 @@ life_inv_items =
 	"life_inv_uspeed3",
     "life_inv_udown1",
     "life_inv_udown2",
-    "life_inv_udown3"
+    "life_inv_udown3",
+    "life_inv_platinr",
+    "life_inv_platin",
+    "life_inv_blackr",
+    "life_inv_black",
+    "life_inv_turtleb"
 ];
 
 //Setup variable inv vars.
@@ -246,7 +248,9 @@ life_licenses =
 	["license_civ_kopfgeld","civ"],
     ["license_civ_sparkasse","civ"],
 	["license_civ_asa","civ"],
-	["license_civ_inkasso","civ"]
+	["license_civ_inkasso","civ"],
+	["license_civ_platin","civ"],
+	["license_civ_black","civ"]
 ];
 
 //Setup License Variables
@@ -255,6 +259,7 @@ life_licenses =
 life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9","dp_10","dp_11","dp_12","dp_13","dp_14","dp_15","dp_15","dp_16","dp_17","dp_18","dp_19","dp_20","dp_21","dp_22","dp_23","dp_24","dp_25"];
 //[shortVar,reward]
 life_illegal_items = [["heroinu",1200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000]];
+life_illegal_items2 = ["heroinu","heroinp","cocaine","cocainep","marijuana","turtle"];
 
 
 /*
@@ -294,7 +299,8 @@ sell_array =
 	["glass",1450],
 	["fuelF",500],
 	["spikeStrip",1200],
-	["cement",1950]
+	["cement",1950],
+	["turtleb",900]
 ];
 __CONST__(sell_array,sell_array);
 

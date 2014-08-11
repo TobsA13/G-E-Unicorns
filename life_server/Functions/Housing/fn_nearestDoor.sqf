@@ -1,10 +1,4 @@
-/*
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Fetches the nearest door of the building the player is looking
-	at.
-*/
+
 private["_house","_door","_numOfDoors"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house) exitWith {0};

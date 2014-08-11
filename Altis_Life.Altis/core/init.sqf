@@ -43,6 +43,7 @@ cutText["Finishing client setup procedure","BLACK FADED"];
 //diag_log "::Life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
 
+
 switch (playerSide) do
 {
 	case west:
@@ -98,7 +99,8 @@ life_sidechat = true;
 
 [[player,playerSide],"TON_fnc_addChannel",false,false] spawn life_fnc_MP;
 
-cutText ["","BLACK IN"];
+[] spawn life_fnc_loadTexture;
+//cutText ["","BLACK IN"];
 
 [] call life_fnc_hudSetup;
 
@@ -130,3 +132,6 @@ if(__GETC__(life_adminlevel) > 0) then {player setVariable["admintag",TRUE,TRUE]
 [] execVM "core\init_survival.sqf";
 
 __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
+
+HouseMarkerGar = createMarkerLocal ["HouseMarkerGar", [0,0,0]];
+"HouseMarkerGar" setMarkerAlphaLocal 0;

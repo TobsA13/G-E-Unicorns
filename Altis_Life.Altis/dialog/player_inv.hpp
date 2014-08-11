@@ -313,7 +313,7 @@ class playerSettings {
 		class ButtonMarket : Life_RscButtonMenu {
 			idc = 2024;
 			text = "Markt";
-			onButtonClick = "[] spawn life_fnc_openMarketView;";
+			onButtonClick = "life_drog = false; [] spawn life_fnc_openMarketView;";
 			//x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;

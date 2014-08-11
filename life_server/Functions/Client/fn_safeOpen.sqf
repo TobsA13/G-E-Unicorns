@@ -1,10 +1,4 @@
-/*	
-	File: fn_safeOpen.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Opens the safe inventory menu.
-*/
+
 if(dialog) exitWith {}; //A dialog is already open.
 life_safeObj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull life_safeObj) exitWith {};

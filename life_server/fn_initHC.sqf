@@ -1,10 +1,4 @@
-/*
-	File: fn_initHC.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Server checks for the headless client and initializes?
-*/
+
 private["_HC_Monitor"];
 if(isNil "life_HC_isActive") then {life_HC_isActive = false;};
 //Check to see if our headless client has went away if he disconnects so we know..

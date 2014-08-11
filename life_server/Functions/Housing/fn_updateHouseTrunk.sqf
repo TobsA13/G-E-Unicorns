@@ -1,9 +1,4 @@
-/*
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Updates the storage for a house blah blah
-*/
+
 private["_house"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house) exitWith {};

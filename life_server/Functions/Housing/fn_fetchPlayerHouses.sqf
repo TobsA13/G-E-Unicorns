@@ -1,9 +1,4 @@
-/*
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Fetches all the players houses and sets them up.
-*/
+
 private["_query","_houses"];
 if(_this == "") exitWith {};
 

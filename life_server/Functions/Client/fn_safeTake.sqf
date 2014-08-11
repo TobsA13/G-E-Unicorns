@@ -1,11 +1,5 @@
 #define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
-/*
-	File: fn_safeTake.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Gateway to fn_vehTakeItem.sqf but for safe(s).
-*/
+
 private["_ctrl","_num","_safeInfo"];
 disableSerialization;
 

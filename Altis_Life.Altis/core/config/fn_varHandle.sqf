@@ -74,7 +74,12 @@ switch (_mode) do
             case "uspeed3": {"life_inv_uspeed3"};
             case "udown1": {"life_inv_udown1"}; 
             case "udown2": {"life_inv_udown2"}; 
-            case "udown3": {"life_inv_udown3"};             
+            case "udown3": {"life_inv_udown3"}; 
+            case "blackr": {"life_inv_blackr"};
+            case "black": {"life_inv_black"};
+            case "platinr": {"life_inv_platinr"};
+            case "platin": {"life_inv_platin"};
+            case "turtleb": {"life_inv_turtleb"};
 		};
 	};
 	
@@ -141,6 +146,11 @@ switch (_mode) do
             case "life_inv_udown1": {"udown1"}; 
             case "life_inv_udown2": {"udown2"}; 
             case "life_inv_udown3": {"udown3"}; 
+            case "life_inv_blackr": {"blackr"};
+            case "life_inv_black": {"black"};
+            case "life_inv_platinr": {"platinr"};
+            case "life_inv_platin": {"platin"};
+            case "life_inv_turtleb": {"turtleb"};
 		};
 	};
 };

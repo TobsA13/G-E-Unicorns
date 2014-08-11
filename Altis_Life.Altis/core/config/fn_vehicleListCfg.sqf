@@ -24,14 +24,14 @@ switch (_shop) do
 	case "med_shop":
 	{
 		_return = [
-			["C_SUV_01_F",0]
+			["C_SUV_01_F",0],
+            ["C_Van_01_box_F",0]
 		];
 	};
 	
 	case "med_air_hs": {
 		_return = [
-			["B_Heli_Light_01_F",0],
-			["I_Heli_Transport_02_F",0]
+			["B_Heli_Light_01_F",0]
 		];
 	};
 	
@@ -67,14 +67,14 @@ switch (_shop) do
 		[
 			["B_Quadbike_01_F",2500],
 			["B_G_Offroad_01_F",15000],
-			["O_MRAP_02_F",150000],
+			["O_MRAP_02_F",400000],
 			["B_Heli_Light_01_F",325000]
 		];
 		
 		if(license_civ_rebel) then
 		{
 			_return set[count _return,
-			["B_G_Offroad_01_armed_F",750000]];
+			["B_G_Offroad_01_armed_F",890000]];
 		};
 	};
 	
@@ -84,7 +84,8 @@ switch (_shop) do
         if(__GETC__(life_coplevel) > 1) then
         {
             _return set[count _return,["C_Offroad_01_F",0]];
-            _return set[count _return,["C_SUV_01_F",0]];
+            _return set[count _return,["C_SUV_01_F",0]]; 
+            _return set[count _return,["I_Truck_02_box_F",0]];
         };
 		if(__GETC__(life_coplevel) > 5) then
 		{
@@ -98,6 +99,7 @@ switch (_shop) do
 		{
 			_return set[count _return,["B_MRAP_01_hmg_F",0]];
 		};
+       
 	};
 	
 	case "civ_air":
@@ -166,8 +168,8 @@ switch (_shop) do
 		_return =
 		[
 			["B_Truck_01_transport_F",10000],
-			["C_Offroad_01_F",3500],
-			["C_SUV_01_F",5000]//,
+			["C_Offroad_01_F",3500]//,
+			//["C_SUV_01_F",5000]//
             //["B_Truck_01_mover_F",25000]
 		];
 	};

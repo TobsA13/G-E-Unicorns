@@ -20,6 +20,17 @@ switch (playerSide) do
 		//Rob person
 		life_actions = life_actions + [player addAction["Rob Person",life_fnc_robAction,"",0,false,false,"",'
 		!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget && animationState cursorTarget == "Incapacitated" && !(cursorTarget getVariable["robbed",FALSE]) ']];
+        //Use Chemlights in hand
+        life_actions = life_actions + [player addAction["Chemlight (RED) in Hand",life_fnc_chemlightUse,"red",-1,false,false,"",
+        ' isNil "life_chemlight" && "Chemlight_red" in (magazines player) && vehicle player == player ']];
+        life_actions = life_actions + [player addAction["Chemlight (YELLOW) in Hand",life_fnc_chemlightUse,"yellow",-1,false,false,"",
+        ' isNil "life_chemlight" && "Chemlight_yellow" in (magazines player) && vehicle player == player ']];
+        life_actions = life_actions + [player addAction["Chemlight (GREEN) in Hand",life_fnc_chemlightUse,"green",-1,false,false,"",
+        ' isNil "life_chemlight" && "Chemlight_green" in (magazines player) && vehicle player == player ']];
+        life_actions = life_actions + [player addAction["Chemlight (BLUE) in Hand",life_fnc_chemlightUse,"blue",-1,false,false,"",
+        ' isNil "life_chemlight" && "Chemlight_blue" in (magazines player) && vehicle player == player ']];
+        //Drop Chemlight
+        life_actions = life_actions + [player addAction["Drop Chemlight",{if(isNil "life_chemlight") exitWith {};if(isNull life_chemlight) exitWith {};detach life_chemlight; life_chemlight = nil;},"",-1,false,false,"",'!isNil "life_chemlight" && !isNull life_chemlight && vehicle player == player ']];
 	};
 };
 
@@ -28,17 +39,7 @@ switch (playerSide) do
 life_actions = life_actions + [player addAction["Repair Vehicle ($500)",life_fnc_pumpRepair,"",999,false,false,"",
 ' vehicle player != player && (typeOf cursorTarget == "Land_fs_feed_F") && (vehicle player) distance cursorTarget < 6 ']];
 life_actions = life_actions + [player addAction["Place Spike Strip",{if(!isNull life_spikestrip) then {detach life_spikeStrip; life_spikeStrip = ObjNull;};},"",999,false,false,"",'!isNull life_spikestrip']];
-//Use Chemlights in hand
-life_actions = life_actions + [player addAction["Chemlight (RED) in Hand",life_fnc_chemlightUse,"red",-1,false,false,"",
-' isNil "life_chemlight" && "Chemlight_red" in (magazines player) && vehicle player == player ']];
-life_actions = life_actions + [player addAction["Chemlight (YELLOW) in Hand",life_fnc_chemlightUse,"yellow",-1,false,false,"",
-' isNil "life_chemlight" && "Chemlight_yellow" in (magazines player) && vehicle player == player ']];
-life_actions = life_actions + [player addAction["Chemlight (GREEN) in Hand",life_fnc_chemlightUse,"green",-1,false,false,"",
-' isNil "life_chemlight" && "Chemlight_green" in (magazines player) && vehicle player == player ']];
-life_actions = life_actions + [player addAction["Chemlight (BLUE) in Hand",life_fnc_chemlightUse,"blue",-1,false,false,"",
-' isNil "life_chemlight" && "Chemlight_blue" in (magazines player) && vehicle player == player ']];
-//Drop Chemlight
-life_actions = life_actions + [player addAction["Drop Chemlight",{if(isNil "life_chemlight") exitWith {};if(isNull life_chemlight) exitWith {};detach life_chemlight; life_chemlight = nil;},"",-1,false,false,"",'!isNil "life_chemlight" && !isNull life_chemlight && vehicle player == player ']];
+
 //Custom Heal
 life_actions = life_actions + [player addAction["<t color='#FF0000'>Heal Self</t>",life_fnc_heal,"",99,false,false,"",' vehicle player == player && (damage player) > 0.25 && ("FirstAidKit" in (items player)) && (currentWeapon player == "")']];
 //Custom Repair

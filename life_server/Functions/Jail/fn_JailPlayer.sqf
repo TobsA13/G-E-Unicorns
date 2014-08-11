@@ -1,8 +1,4 @@
-/*
 
-	Sets jail values for player
-
-*/
 private["_player", "_playeruid", "_query", "_result", "_time"];
 
 _player = _this select 0;

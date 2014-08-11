@@ -1,10 +1,4 @@
-/*
 
-	I Update table of player
-	[II Check for remainingtime <= 0
-	III delete and return money value]
-
-*/
 private["_player", "_playeruid", "_query", "_result", "_injail"];
 
 _player = _this select 0;

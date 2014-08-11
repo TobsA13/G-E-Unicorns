@@ -8,9 +8,8 @@ if(!createDialog "marketView") exitWith {hint "Failed Creating Dialog";}; //Coul
 disableSerialization;
 
 
-
 waitUntil {!isnull (findDisplay 39500)};
 
 
 //Refresh
-[] spawn life_fnc_refreshMarketView;
+[_drog] spawn life_fnc_refreshMarketView;

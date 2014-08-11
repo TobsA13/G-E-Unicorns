@@ -55,9 +55,9 @@ switch (_side) do
             _markers set [count _markers, ["civ_spawn_10","Donator Sofia","textures\server\don.paa"]]; 
         };
         if(license_civ_rebel) then {
-            _markers set [count _markers, ["civ_spawn_5","Rebellen M","textures\server\head.paa"]];
-            _markers set [count _markers, ["civ_spawn_6","Rebellen S","textures\server\head.paa"]];
-            _markers set [count _markers, ["civ_spawn_7","Rebellen N","textures\server\head.paa"]];       
+            _markers set [count _markers, ["civ_spawn_5","Rebellen Bezirk","textures\server\head.paa"]];
+            //_markers set [count _markers, ["civ_spawn_6","Rebellen S","textures\server\head.paa"]];
+            _markers set [count _markers, ["civ_spawn_7","Rebellen Außenp.","textures\server\head.paa"]];       
         };
         
         if(count life_houses > 0) then {
@@ -83,7 +83,7 @@ switch (_side) do
     case east: 
     {
         _markers = [
-            ["as_spawn_1","ADAC Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+            ["adac_spawn_1","ADAC Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
             ["adac_spawn_2","ADAC Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
             ["adac_spawn_3","ADAC Pygros","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
         ];

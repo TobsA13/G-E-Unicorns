@@ -1,11 +1,5 @@
 #define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
-/*
-	File: fn_safeStore.sqf
-	Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Gateway copy of fn_vehStoreItem but designed for the safe.
-*/
 private["_ctrl","_num"];
 disableSerialization;
 _ctrl = ctrlSelData(3503);

@@ -1,10 +1,4 @@
-/*
-	File: fn_silentSync.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Receives the silent sync and sends the query.
-*/
+
 private["_uid","_side","_cash","_bank","_gear","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,civilian,[sideUnknown]] call BIS_fnc_param;

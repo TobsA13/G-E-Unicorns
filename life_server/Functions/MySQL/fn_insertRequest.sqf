@@ -1,11 +1,4 @@
-/*
-	File: fn_insertRequest.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Does something with inserting... Don't have time for
-	descriptions... Need to write it...
-*/
+
 private["_uid","_name","_side","_money","_bank","_licenses","_handler","_thread","_queryResult","_query","_alias"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
@@ -51,14 +44,7 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
     _position
 ];
 
-/*_query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, asadac_licenses, civ_gear, cop_gear, asadac_gear, medic_gear, lastposition) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','%6')",
-	_uid,
-	_name,
-	_money,
-	_bank,
-	_alias,
-    _position
-];*/
+
 
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;

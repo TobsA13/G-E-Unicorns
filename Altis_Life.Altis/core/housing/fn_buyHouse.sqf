@@ -19,7 +19,6 @@ closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if(count _houseCfg == 0) exitWith {};
-if(life_atmcash < (_houseCfg select 0)) exitWith {hint "You do not have enough money!"};
 
 _action = [
 	format["This house is available for <t color='#8cff9b'>$%1</t><br/>It supports up to %2 storage containers",
@@ -28,6 +27,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
+    if(life_atmcash < (_houseCfg select 0)) exitWith {hint "You do not have enough money!"};
 	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,player getVariable["realname",name player]],true];
 	_house setVariable["locked",true,true];

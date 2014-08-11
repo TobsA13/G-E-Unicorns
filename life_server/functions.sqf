@@ -38,26 +38,7 @@ compileFinal "
 ";
 publicVariable "fnc_player_query";
 
-/*
-fnc_player_query =
-compileFinal "
-	private[""_req"",""_packet"",""_ret""];
-	_ret = _this select 0;
-	_req = _this select 1;
-	_req = call compile format[""%1"", _req];
-	if(isNull _req) exitWith {admin_query_info = [];(owner _ret) publicVariableClient ""admin_query_info""; sleep 0.5; admin_query_info = nil};
-	[[],""admin_is_querying"",_req,false] spawn life_fnc_MP;
-	waitUntil {!isNil {serv_query_info}};
-	admin_query_info = [(owner _req)];
-	admin_query_info set[count admin_query_info,(serv_query_info select 0)];
-	admin_query_info set[count admin_query_info,(serv_query_info select 1)];
-	admin_query_info set[count admin_query_info,_req];
-	(owner _ret) publicVariableClient ""admin_query_info"";
-	sleep 0.5;
-	admin_query_info = nil;
-	serv_query_info = nil;
-";
-*/
+
 publicVariable "fnc_index";
 
 clientWireTransfer =
@@ -144,13 +125,7 @@ compileFinal "
 publicVariable "clientGangLeader";
 
 //Cell Phone Messaging
-/*
-	-fnc_cell_textmsg
-	-fnc_cell_textcop
-	-fnc_cell_textadmin
-	-fnc_cell_adminmsg
-	-fnc_cell_adminmsgall
-*/
+
 
 //To EMS
 fnc_cell_emsrequest = 
@@ -261,13 +236,7 @@ publicVariable "fnc_cell_adminmsgall";
 publicVariable "fnc_cell_emsrequest";
 publicVariable "fnc_cell_textadac";
 //Client Message
-/*
-	0 = private message
-	1 = police message
-	2 = message to admin
-	3 = message from admin
-	4 = admin message to all
-*/
+
 clientMessage =
 compileFinal "
 	if(isServer) exitWith {};
